@@ -557,7 +557,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   <div class="wrap">
     <div class="eyebrow">Chapter 12 · Starting from the beginning</div>
     <h2 class="rv">Waiter and host at Murphy's Grill</h2>
-    <div class="when rv">Part-time · Murphy's Grill, on the campus of The Catholic University of America · While studying</div>
+    <div class="when rv">February – May 2026 · Part-time · Murphy's Grill, on the campus of The Catholic University of America</div>
     <div class="grid2 rev">
       <figure class="ph rv"><img data-par="0.12" src="web_restaurant.jpg" alt="Restaurant tables set for service" loading="lazy"><figcaption>Illustrative photo: restaurant dining room</figcaption></figure>
       <div>
@@ -769,7 +769,7 @@ $('#lb').addEventListener('click',()=>$('#lb').classList.remove('on'));
 addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
 
 /* journey timeline */
-const J=[['2018','Diploma complete','Civil engineering diploma, Government Polytechnic Ponnur','#c1',0],['Mar–May 2018','Canal internship','18-mile irrigation canal, Kavali','#c3',0],['2018–2021','B.Tech','Civil Engineering, VVIT / JNTU Kakinada','#c5',0],['2018–2021','NSS volunteer','Best Volunteer of the Year','#cn',0],['Jun–Jul 2019','Housing internship','300 affordable homes, Hyderabad','#ch',0],['Sep 2021–Feb 2022','Sewer internship','Sewer and water lines, Mangalagiri','#c6',0],['Mar 2022–Jul 2024','Sree Geetha','Assistant PE to Project Engineer, 3 projects','#c7',0],['Aug 2024','Moved to the U.S.','M.S. at The Catholic University of America','#c8',1],['Feb–May 2025','Engineering lab job','Facilities & Lab Resources Assistant','#cl2',1],['2024–2026','Murphy\'s Grill','Waiter and host on campus','#cr',1],['2018–2026','Academic projects','Capstone, IoT, cost, schedule, field study','#cp',0],['2025–2026','Site visits','Plans, concrete, earthwork, bus shelters','#c9b',1],['May 2026','M.S. conferred','GPA 3.57','#c8',1],['Jul–Oct 2026','Certified','OSHA 30, flagger, Procore','#c9',1]];
+const J=[['2018','Diploma complete','Civil engineering diploma, Government Polytechnic Ponnur','#c1',0],['Mar–May 2018','Canal internship','18-mile irrigation canal, Kavali','#c3',0],['2018–2021','B.Tech','Civil Engineering, VVIT / JNTU Kakinada','#c5',0],['2018–2021','NSS volunteer','Best Volunteer of the Year','#cn',0],['Jun–Jul 2019','Housing internship','300 affordable homes, Hyderabad','#ch',0],['Sep 2021–Feb 2022','Sewer internship','Sewer and water lines, Mangalagiri','#c6',0],['Mar 2022–Jul 2024','Sree Geetha','Assistant PE to Project Engineer, 3 projects','#c7',0],['Aug 2024','Moved to the U.S.','M.S. at The Catholic University of America','#c8',1],['Feb–May 2025','Engineering lab job','Facilities & Lab Resources Assistant','#cl2',1],['Feb–May 2026','Murphy\'s Grill','Waiter and host on campus','#cr',1],['2018–2026','Academic projects','Capstone, IoT, cost, schedule, field study','#cp',0],['2025–2026','Site visits','Plans, concrete, earthwork, bus shelters','#c9b',1],['May 2026','M.S. conferred','GPA 3.57','#c8',1],['Jul–Oct 2026','Certified','OSHA 30, flagger, Procore','#c9',1]];
 $('#tl').innerHTML=J.map(j=>`<a href="${j[3]}" class="${j[4]?'us':''}"><b>${j[0]}</b><span>${j[1]}</span><small>${j[2]}</small></a>`).join('');
 $('#acts').innerHTML=['Blood donation camps','Dental camps','Clean-city drives','Tree planting','Eco-awareness programs','Event organizing'].map(t=>`<i>${t}</i>`).join('');
 
