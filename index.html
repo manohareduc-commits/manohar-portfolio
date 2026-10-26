@@ -193,6 +193,19 @@ svg .bar{cursor:pointer;transition:.3s}svg .bar:hover{opacity:.8}
 footer{font-size:12.5px;opacity:.7;margin-top:60px}
 @media(max-width:700px){.num{font-size:64px;top:14px;right:4%;opacity:.45}.hero:after{background:linear-gradient(180deg,rgba(39,50,61,.45) 0%,rgba(39,50,61,.55) 40%,rgba(39,50,61,.92))}.hero .wrap{padding-bottom:9vh}.scrollcue{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+.calc select{width:100%;margin-top:4px;padding:9px 11px;border-radius:12px;border:1px solid var(--line);background:#fff;font:500 15px Inter;color:var(--ink)}
+.calc.tl4{grid-template-columns:repeat(3,1fr)}
+.tri3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}.tri3 input{margin-top:0!important}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.bnote{font-size:15px;color:var(--steel);margin-top:12px}
+.bhov{font-size:15px;background:var(--bg);border-radius:14px;padding:10px 14px;margin-top:8px;color:var(--steel);min-height:44px}
+.kp{display:none;animation:fade .6s}.kp.on{display:block}
+.presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.presets button{border:1px solid var(--line);background:var(--bg);padding:7px 14px;border-radius:99px;font:500 13px Inter;color:var(--steel);cursor:pointer;transition:.25s}.presets button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.chk{list-style:none;margin-top:14px;display:grid;gap:8px}.chk li{display:flex;gap:12px;align-items:center;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:14.5px}
+.chk li b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;flex:none}.chk li.ok b{background:var(--good)}.chk li.no b{background:var(--bad)}.chk li span{flex:1}.chk li em{font-style:normal;color:var(--mute);font-size:13px;text-align:right}
+.paddy{margin:0;max-width:340px;align-self:start}.paddy svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:var(--shadow)}.paddy figcaption{font-size:12.5px;color:var(--mute);margin-top:8px}
+@media(max-width:700px){.calc.tl4{grid-template-columns:1fr 1fr}.calc.tl4>div:nth-child(-n+2){grid-column:1/-1}.chk li{flex-wrap:wrap}.chk li em{text-align:left;width:100%}}
 </style>
 </head>
 <body>
@@ -208,6 +221,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     <h1 class="rv d1">Manohar<br>Ballipalli</h1>
     <p class="lead rv d2">I learned this trade the hands-on way: in the heat with the laborers, running survey lines with an auto level, and standing at the rebar before every pour. Now I am in the U.S., excited to keep learning and growing here. Scroll for the whole story, from India to today.</p>
     <div class="chips rv d3"><span class="chip">MS · Catholic University of America · GPA 3.57</span><span class="chip">Bachelor of Technology (B.Tech), Civil Engineering</span><span class="chip">3-year Civil Engineering Diploma</span><span class="chip">College Park · DC Metro</span></div>
+    <p class="rv d3" style="margin-top:22px"><a class="btn" href="#ct" style="margin-left:0">Try my beam and concrete calculators ↓</a></p>
   </div>
   <div class="scrollcue">Scroll the story</div>
 </header>
@@ -216,7 +230,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   <div class="wrap">
     <div class="rv"><b>3.57</b><span>Master's GPA (4.0 scale)</span></div>
     <div class="rv d1"><b data-count="3">0</b><span>Government internships</span></div>
-    <div class="rv d2"><b data-count="110" data-suf="°F">0</b><span>Heat I learned to work in</span></div>
+    <div class="rv d2"><b data-count="110" data-suf="°F">0</b><span>Summer heat on my India sites</span></div>
     <div class="rv d3"><b data-count="2">0</b><span>Countries of experience</span></div>
   </div>
 </div>
@@ -243,23 +257,17 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   <div class="num">02</div>
   <div class="wrap">
     <div class="eyebrow">Chapter 02 · Life at my grandfather's house</div>
-    <h2 class="rv">Fields, 110°F, and the people who work through it</h2>
+    <h2 class="rv">Summers on my grandfather's farm</h2>
     <div class="grid2 rev">
-      <figure class="ph rv"><img data-par="0.12" src="field.jpg" alt="Golden farm field at sunrise" loading="lazy"><figcaption>Farm work alongside the laborers</figcaption></figure>
+      <figure class="paddy rv" aria-label="A small paddy field"><svg viewBox="0 0 300 170" role="img" aria-label="Small paddy field with rows of rice seedlings"><defs><linearGradient id="pw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9d2cf"/><stop offset="1" stop-color="#9dbdb6"/></linearGradient></defs><rect width="300" height="170" rx="16" fill="#efe8dc"/><path d="M10 60 L290 60 L296 156 L4 156 Z" fill="url(#pw)" stroke="#a58f6a" stroke-width="5" stroke-linejoin="round"/><g stroke="#6f9a5a" stroke-width="2" stroke-linecap="round" id="rice"></g></svg><figcaption>A small paddy field, like the one I worked beside</figcaption></figure>
       <div>
-        <p class="rv">While I studied, I also helped with farm work. I spent my days with the laborers and saw first-hand how hard they work in dusty, 110°F (about 43°C) heat — no shade, no shortcuts, and no complaints.</p>
-        <p class="rv d1">That respect for people who do the physical work never left me. It is why, on every site since, I check on the crew before I check the schedule.</p>
+        <p class="rv">During my diploma I stayed at my grandfather's house and helped with the farm work, mostly around a small paddy field. Summers in Andhra Pradesh are hard: dusty, with little shade, and up to 110°F (about 43°C).</p>
+        <p class="rv d1">Every civil internship I did in India also fell in the summer, so I learned to do site work in that heat, and I saw how hard the laborers work through it. On my U.S. site work the weather was a typical Maryland summer, which felt mild by comparison.</p>
+        <p class="rv d1">That respect for people who do the physical work never left me. It is why, on every site since, I check on the crew before I check the schedule. Somewhere in those months I also learned to ride a motorcycle: look at the top of this page, that little bike has been following your scroll all along.</p>
         <div class="card rv d2" style="margin-top:20px">
-          <div class="thermo"><div class="tube"><i id="mercury"></i></div><div><big id="deg">0°F</big><small>Hover over the thermometer to feel the field.</small></div></div>
+          <div class="thermo"><div class="tube"><i id="mercury"></i></div><div><big id="deg">0°F</big><small>Hover over the thermometer to feel an Indian summer day.</small></div></div>
         </div>
       </div>
-    </div>
-    <div class="grid2" style="margin-top:60px">
-      <div>
-        <h2 class="rv" style="font-size:clamp(26px,3.6vw,40px)">And then I learned to ride</h2>
-        <p class="rv d1">Somewhere in those months I learned to ride a motorcycle. It became my way of getting around, of clearing my head, and — later — of exploring with friends. Look at the top of this page: that little bike has been following your scroll all along.</p>
-      </div>
-      <figure class="ph rv d1"><img data-par="0.12" src="crops.jpg" alt="Young crops growing in rows" loading="lazy"><figcaption>Growing season</figcaption></figure>
     </div>
   </div>
 </section>
@@ -274,7 +282,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
       <button class="on" data-p="s_1">Safety</button><button data-p="s_2">Inspection</button><button data-p="s_3">Surveying</button><button data-p="s_4">Concrete testing</button><button data-p="s_5">Managing crews</button>
     </div>
     <div class="pane on card grid2 sp" id="s_1" style="margin-top:0"><div><h3>Safety comes first, every time</h3>
-      <ul class="bul"><li>Caught workers without proper PPE and stopped the work until they complied: "no PPE, no work."</li><li>Enforced daily safety compliance at Sree Geetha Constructions.</li><li>Watched lab safety and equipment condition as a lab assistant at CUA.</li><li>OSHA 30-Hour (Construction) and certified flagger, earned in the U.S. in 2026.</li></ul></div>
+      <ul class="bul"><li>Caught workers without proper PPE and stopped the work until they complied: "no PPE, no work."</li><li>Enforced daily safety compliance at Sree Geetha Constructions.</li><li>Watched lab safety and equipment condition as a lab assistant at CUA.</li><li>OSHA 30-Hour (Construction) and certified flagger, both completed in person in the U.S. in 2026.</li></ul></div>
       <figure class="ph" style="aspect-ratio:4/3"><img src="s1_group.jpg" alt="Site visit in safety vests and hard hats" loading="lazy"><figcaption>Site visit: vests and hard hats</figcaption></figure></div>
     <div class="pane card grid2 sp" id="s_2" style="margin-top:0"><div><h3>Inspection before anything gets buried or poured</h3>
       <ul class="bul"><li>Pre-pour checks: rebar size, spacing, cover, minimum ties, top and bottom steel on cantilevers, formwork alignment, MEP sleeves and embeds.</li><li>Caught two cantilevers with the main bars on the bottom and had them fixed before the concrete.</li><li>Inspected underground sewer and water lines: invert elevations, pipe diameters, slopes, manhole covers and field tests.</li><li>Kept QA/QC logs, inspection requests and structural inspection records.</li></ul></div>
@@ -313,7 +321,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
         <p class="rv">A state government project to widen and upgrade an 18-mile irrigation canal, raising its flow capacity from 250 to 450 cubic feet per second so farms downstream get reliable water. Budget about $1.4M, built in one-mile segments. I was a three-month site engineer intern.</p>
         <p class="rv d1">I ran field leveling surveys with the auto level, recorded ground elevations for the canal alignment, and checked the numbers in the office against the design drawings and slope requirements. I studied the plans, cost estimates and quantity calculations, and documented canal deepening, shotcrete lining, retaining walls, check-dam repairs and culvert installation. It was my first look at civil infrastructure, survey instruments and government engineering paperwork.</p>
         <div class="tags rv d2"><span class="tag">Auto level surveys</span><span class="tag">Elevation checks</span><span class="tag">Quantity takeoffs</span><span class="tag">Shotcrete lining</span><span class="tag">Culverts</span><span class="tag">Check dams</span></div>
-        <figure class="ph rv d2" style="margin-top:22px"><img data-par="0.12" src="e_channel.jpg" alt="Drainage channel along a site" loading="lazy"><figcaption>My own photo, from a U.S. site visit: a drainage channel</figcaption></figure><div class="duo rv d2"><figure class="ph"><img src="e_excavator.jpg" alt="Excavator working a cut" loading="lazy"><figcaption>My photo: earthwork, U.S. site</figcaption></figure><figure class="ph"><img src="e_pipe.jpg" alt="Drainage structure set in a pad" loading="lazy"><figcaption>My photo: drainage structure, U.S. site</figcaption></figure></div>
+        <figure class="ph rv d2" style="margin-top:22px"><img data-par="0.12" src="e_channel.jpg" alt="Drainage swale along a site" loading="lazy"><figcaption>My own photo, from a U.S. site visit: a drainage swale</figcaption></figure><div class="duo rv d2"><figure class="ph"><img src="e_excavator.jpg" alt="Excavator working a cut" loading="lazy"><figcaption>My photo: earthwork, U.S. site</figcaption></figure><figure class="ph"><img src="e_pipe.jpg" alt="Drainage structure set in a pad" loading="lazy"><figcaption>My photo: drainage structure, U.S. site</figcaption></figure></div>
       </div>
       <div class="card rv d1">
         <h3>Try it: leveling calculator</h3>
@@ -473,7 +481,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
       <div>
         <h3>"No PPE, no work."</h3>
         <p>I caught workers who were not following safety rules. Some new laborers didn't listen to me directly, so I went to the contractor and said "no PPE, no work." After that, they followed.</p>
-        <p>Safety is the one thing I never negotiate on — and it is why I later earned my OSHA 30 and flagger certifications here in the U.S.</p>
+        <p>Safety is the one thing I never negotiate on — and it is why I later earned my OSHA 30 and flagger certifications here in the U.S., both in person.</p>
       </div>
     </div>
     <div class="pane card grid2" id="p3" style="margin-top:0">
@@ -612,6 +620,85 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
 </section>
 <div id="lb" aria-hidden="true"><img alt=""><button aria-label="Close">×</button></div>
 
+<!-- tools: beam lab -->
+<section class="ch" id="ct" data-title="Beam lab">
+  <div class="wrap">
+    <div class="eyebrow">Try it yourself · Structures</div>
+    <h2 class="rv">Beam lab: shear, moment and deflection</h2>
+    <p class="rv">Pick a beam, pick a load, type in your numbers. The calculator solves it and draws the diagrams. Move your cursor over the plots to read values at any point along the span.</p>
+    <div class="card rv" style="margin-top:22px">
+      <div class="calc tl4">
+        <div><label for="bt">Beam type</label><select id="bt">
+          <option value="ss">Simply supported</option><option value="cant">Cantilever (fixed at left)</option><option value="ff">Fixed at both ends</option><option value="prop">Propped cantilever (fixed left, roller right)</option><option value="over">Overhanging (supports at 0 and 0.7L)</option></select></div>
+        <div><label for="lt">Load type</label><select id="lt">
+          <option value="point">Point load</option><option value="udl">Uniform load (full span)</option><option value="tri">Triangular load (zero at left, peak at right)</option><option value="moment">Applied moment (clockwise)</option></select></div>
+        <div><label for="bL">Span L (ft)</label><input id="bL" type="number" value="20" min="1" step="1"></div>
+        <div><label for="bV" id="bVl">Load P (kips)</label><input id="bV" type="number" value="10" step="0.5"></div>
+        <div id="bAw"><label for="bA">Load position from left (ft)</label><input id="bA" type="number" value="10" min="0" step="0.5"></div>
+        <div><label for="bE">Material (E)</label><select id="bE"><option value="29000">Steel, 29,000 ksi</option><option value="3600" selected>Concrete (4,000 psi), 3,600 ksi</option><option value="1600">Douglas fir-larch, 1,600 ksi</option></select></div>
+        <div><label for="bI">Moment of inertia I (in⁴)</label><input id="bI" type="number" value="800" min="1" step="10"></div>
+      </div>
+      <div class="out" id="bout"></div>
+      <div class="bnote" id="bnote"></div>
+      <div style="overflow-x:auto"><svg id="bsvg" viewBox="0 0 760 700" role="img" aria-label="Beam, shear, moment and deflection diagrams" style="width:100%;min-width:620px;height:auto;display:block;margin-top:14px"></svg></div>
+      <div id="bhov" class="bhov">Hover or tap the diagrams to read values.</div>
+      <p class="hint" style="margin:12px 0 0">Linear-elastic, constant EI, small deflections. Loads are factored by you, not by me; always check a real design against the governing code. Sagging moment is plotted positive, up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- tools: concrete toolkit -->
+<section class="ch" id="cc" data-title="Concrete toolkit">
+  <div class="wrap">
+    <div class="eyebrow">Try it yourself · Concrete</div>
+    <h2 class="rv">Concrete toolkit: slope, yards and mix</h2>
+    <p class="rv">Three quick calculators I would actually use on a pour. Type in numbers and the results update as you go.</p>
+    <div class="tabs rv" id="ctabs"><button class="on" data-p="k_1">Slope check</button><button data-p="k_2">Concrete yards</button><button data-p="k_3">Mix design</button></div>
+
+    <div class="kp on card" id="k_1">
+      <p class="hint">Enter two elevations and the horizontal distance between them, or tap a preset.</p>
+      <div class="presets"><button data-s="8.333">ADA ramp 1:12</button><button data-s="2">Walk cross-slope 2%</button><button data-s="1">Min. drainage 1%</button><button data-s="25">Slope 4:1 (25%)</button></div>
+      <div class="calc">
+        <div><label for="sA">Start elevation (ft)</label><input id="sA" type="number" value="100" step="0.01"></div>
+        <div><label for="sB">End elevation (ft)</label><input id="sB" type="number" value="99.5" step="0.01"></div>
+        <div><label for="sD">Horizontal distance (ft)</label><input id="sD" type="number" value="25" min="0.1" step="0.5"></div>
+      </div>
+      <div class="out" id="sout"></div>
+      <ul class="chk" id="schk"></ul>
+    </div>
+
+    <div class="kp card" id="k_2">
+      <p class="hint">Cubic yards to order, with waste and truck loads.</p>
+      <div class="calc">
+        <div><label for="yS">Shape</label><select id="yS"><option value="slab">Slab or footing</option><option value="wall">Wall</option><option value="col">Round column</option></select></div>
+        <div><label id="y1l" for="y1">Length (ft)</label><input id="y1" type="number" value="30" step="0.5" min="0"></div>
+        <div><label id="y2l" for="y2">Width (ft)</label><input id="y2" type="number" value="20" step="0.5" min="0"></div>
+        <div><label id="y3l" for="y3">Thickness (in)</label><input id="y3" type="number" value="6" step="0.5" min="0"></div>
+        <div><label for="yN">Number of identical pieces</label><input id="yN" type="number" value="1" step="1" min="1"></div>
+        <div><label for="yW">Waste and spillage (%)</label><input id="yW" type="number" value="5" step="1" min="0"></div>
+        <div><label for="yP">Price per yd³ (optional, $)</label><input id="yP" type="number" placeholder="e.g. 185" step="1" min="0"></div>
+      </div>
+      <div class="out" id="yout"></div>
+    </div>
+
+    <div class="kp card" id="k_3">
+      <p class="hint">A first-trial mix proportioned with the ACI 211.1 absolute volume method. Materials are in saturated surface dry condition.</p>
+      <div class="calc">
+        <div><label for="mF">Specified strength f′c (psi)</label><input id="mF" type="number" value="4000" min="2000" max="6000" step="500"></div>
+        <div><label for="mG">Max aggregate size</label><select id="mG"><option value="0">3/8 in.</option><option value="1">1/2 in.</option><option value="2" selected>3/4 in.</option><option value="3">1 in.</option></select></div>
+        <div><label for="mS">Slump</label><select id="mS"><option value="0">1 to 2 in.</option><option value="1" selected>3 to 4 in.</option><option value="2">6 to 7 in.</option></select></div>
+        <div><label for="mA">Exposure and air</label><select id="mA"><option value="0">Indoor, no freeze-thaw (no air)</option><option value="1">Air-entrained, moderate exposure</option><option value="2">Air-entrained, severe exposure</option></select></div>
+        <div><label for="mM">Sand fineness modulus</label><input id="mM" type="number" value="2.7" min="2.4" max="3" step="0.05"></div>
+        <div><label for="mU">Coarse agg. dry-rodded unit wt (lb/ft³)</label><input id="mU" type="number" value="100" min="80" max="120" step="1"></div>
+        <div><label for="mC">Specific gravity: cement / stone / sand</label><div class="tri3"><input id="mSc" type="number" value="3.15" step="0.01"><input id="mSg" type="number" value="2.65" step="0.01"><input id="mSf" type="number" value="2.65" step="0.01"></div></div>
+        <div><label for="mV">Batch volume (yd³)</label><input id="mV" type="number" value="1" min="0.1" step="0.5"></div>
+      </div>
+      <div class="out" id="mout"></div>
+      <p class="hint" style="margin:12px 0 0" id="mnote"></p>
+    </div>
+  </div>
+</section>
+
 <!-- skills -->
 
 <section class="ch" id="c9" data-title="Skills">
@@ -626,8 +713,8 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
 
     <h3 class="rv" style="margin-top:56px;font-size:30px">Certifications</h3>
     <div class="cert">
-      <div class="card rv"><h3>OSHA 30-Hour</h3><small>Construction Safety &amp; Health · Mid Atlantic OTI · July 2026</small></div>
-      <div class="card rv d1"><h3>Certified Flagger</h3><small>ATSSA · July 2026 – July 2030</small></div>
+      <div class="card rv"><h3>OSHA 30-Hour</h3><small>Construction Safety &amp; Health · Mid Atlantic OTI · July 2026 · completed in person</small></div>
+      <div class="card rv d1"><h3>Certified Flagger</h3><small>ATSSA · July 2026 – July 2030 · completed in person</small></div>
       <div class="card rv d2"><h3>Procore Certification</h3><small>Student · Procore Technologies · October 2026</small></div>
       <div class="card rv d3"><h3>BPI Certification</h3><small>Building Performance Institute</small></div>
       <div class="card rv d3"><h3>FE Exam</h3><small>Currently preparing</small></div>
@@ -804,8 +891,8 @@ const vis={
  p:{note:'Reading drawings, plan sheets and field paperwork, the way I would on my own job.',items:[['v_circuits','Electrical circuits traced on the site plan: four circuits (47, 45, 37, 39) from the main pole to each shelter junction box'],['v_busbay','Bus-bay concrete demolition limits: dimensions and area calculations'],['s1_plans2','Reading architectural sections on site'],['s1_plans','Pointing out details on the drawings'],['s1_plans3','Renovation and addition drawing set (street address blurred)'],['e_sheet','Field sheet: daily paperwork and logs']]},
  c:{note:'Concrete placement and the tests that go with it.',items:[['d_temp','Checking concrete temperature with a thermometer'],['d_sleeve','Embedded sleeve checked in fresh concrete'],['d_pour','Concrete placement from the chute'],['d_finish','Crew finishing the slab'],['d_prep','Rebar mat ready before the pour'],['d_rebar','Reinforcement and subgrade inspection']]},
  d:{note:'A metro bus-shelter renovation, from demolition to finished concrete.',items:[['d_shelter','The finished shelter area'],['d_demo','Demolition of the old concrete'],['d_rubble','Breaking out and hauling rubble'],['d_rubble2','Broken concrete before removal'],['d_marks','Layout marks and limits painted on the slab'],['d_dig','Excavating for the new base'],['d_trench','Trenching for utilities'],['d_gnss','Setting out points with a GNSS rover'],['d_gnss2','GNSS rover on site'],['d_night','The canopy at night']]},
- e:{note:'Large-scale earthwork and ground preparation on an empty site.',items:[['e_excavator','Excavator working the cut'],['e_dump','Loading an articulated dump truck'],['e_roller','Roller compacting the subgrade'],['e_grade','Graded and compacted pad'],['e_loader','Wheel loader with forks'],['e_loader2','Wheel loader on the pad'],['e_rock','Rock found while grading'],['e_pipe','Drainage structure set in the pad'],['e_channel','Drainage channel along the site'],['e_stake','Survey stakes marking grade'],['e_wide','Whole site at work'],['e_compact','Compaction pass'],['e_truck','Hauling spoil'],['e_haul','Excavator and haul trucks']]},
- s:{note:'A basement renovation and addition: foundation walls, formwork and shoring.',items:[['s1_wide','Foundation walls and formwork'],['s1_walls','Wall forms and crew on a class site visit'],['s1_formwork','Formwork alignment'],['s1_shoring','Shoring and bracing'],['s1_trench','Footing trench and rebar'],['s1_rebar','Rebar in the footing'],['s1_channel','Wall form channel detail'],['s1_group','Learning on site with a class group']]}};
+ e:{note:'Large-scale earthwork and ground preparation on an empty site.',items:[['e_excavator','Excavator working the cut'],['e_dump','Loading an articulated dump truck'],['e_roller','Roller compacting the subgrade'],['e_grade','Graded and compacted pad'],['e_loader','Wheel loader with forks'],['e_loader2','Wheel loader on the pad'],['e_rock','Rock found while grading'],['e_pipe','Drainage structure set in the pad'],['e_channel','Drainage swale along the site'],['e_stake','Survey stakes marking grade'],['e_wide','Whole site at work'],['e_compact','Compaction pass'],['e_truck','Hauling spoil'],['e_haul','Excavator and haul trucks']]},
+ s:{note:'A basement renovation and addition: foundation walls, formwork and shoring.',items:[['s1_wide','Foundation walls and formwork'],['s1_walls','Wall forms and crew on a class site visit'],['s1_formwork','Formwork alignment'],['s1_shoring','Shoring and bracing'],['s1_trench','Footing trench and rebar'],['s1_rebar','Rebar in the footing'],['s1_channel','Wall formwork with rebar and form ties, residential site'],['s1_group','Learning on site with a class group']]}};
 function gal(k){const v=vis[k];$('#vnote').textContent=v.note;
  $('#gal').innerHTML=v.items.map(n=>`<figure><img src="${n[0]}.jpg" alt="${n[1]}" loading="lazy"><figcaption>${n[1]}</figcaption></figure>`).join('');
  $$('#gal figure').forEach(f=>f.addEventListener('click',()=>{$('#lb img').src=f.querySelector('img').src;$('#lb').classList.add('on')}))}
@@ -837,6 +924,203 @@ $$('#skf button').forEach(b=>b.addEventListener('click',()=>{
   $$('.sk').forEach(s=>s.classList.toggle('dim',b.dataset.f!=='all'&&s.dataset.g!==b.dataset.f));
 }));
 })();
+</script>
+<script>
+(function(){
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const fx=(v,d)=>Number.isFinite(v)?v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d}):'–';
+/* Beam solver: Euler-Bernoulli FEM, constant EI. Units: kip, in. Loads downward positive. */
+function solveBeam(o){
+  const N=100, L=o.L, l=L/N, EI=o.EI, nd=N+1, ndof=2*nd;
+  const K=Array.from({length:ndof},()=>new Float64Array(ndof)), F=new Float64Array(ndof);
+  const kloc=[[12,6*l,-12,6*l],[6*l,4*l*l,-6*l,2*l*l],[-12,-6*l,12,-6*l],[6*l,2*l*l,-6*l,4*l*l]].map(r=>r.map(v=>v*EI/(l*l*l)));
+  const fe=Array.from({length:N},()=>[0,0,0,0]);
+  const gp=[-Math.sqrt(.6),0,Math.sqrt(.6)], gw=[5/9,8/9,5/9];
+  function addDist(e,q1,q2){ // downward q kip/in linearly from q1 to q2
+    for(let g=0;g<3;g++){const s=(gp[g]+1)/2, x=s*l, q=q1+(q2-q1)*s, w=gw[g]*l/2;
+      const Nn=[1-3*s*s+2*s**3, l*(s-2*s*s+s**3), 3*s*s-2*s**3, l*(-s*s+s**3)];
+      for(let i=0;i<4;i++)fe[e][i]+=-q*Nn[i]*w;}
+  }
+  const type=o.load;
+  const idx=Math.min(N,Math.max(1,Math.round(o.a/L*N))) , aSnap=idx*l;
+  if(type==='udl'){for(let e=0;e<N;e++)addDist(e,o.w,o.w)}
+  else if(type==='tri'){for(let e=0;e<N;e++)addDist(e,o.w*e/N,o.w*(e+1)/N)}
+  else if(type==='point'){F[2*idx]+=-o.P}
+  else if(type==='moment'){F[2*idx+1]+=-o.M} // clockwise M positive
+  for(let e=0;e<N;e++){const d=[2*e,2*e+1,2*e+2,2*e+3];
+    for(let i=0;i<4;i++){F[d[i]]+=fe[e][i];for(let j=0;j<4;j++)K[d[i]][d[j]]+=kloc[i][j]}}
+  // supports: array of [nodeIndex, 'w'|'wt'] (wt = fixed)
+  const fixed=new Set();
+  o.sup.forEach(([n,t])=>{fixed.add(2*n);if(t==='fix')fixed.add(2*n+1)});
+  const free=[];for(let i=0;i<ndof;i++)if(!fixed.has(i))free.push(i);
+  const n=free.length,A=free.map(i=>free.map(j=>K[i][j]).concat([F[i]]));
+  for(let c=0;c<n;c++){let p=c;for(let r=c+1;r<n;r++)if(Math.abs(A[r][c])>Math.abs(A[p][c]))p=r;[A[c],A[p]]=[A[p],A[c]];
+    for(let r=c+1;r<n;r++){const f=A[r][c]/A[c][c];if(f)for(let k=c;k<=n;k++)A[r][k]-=f*A[c][k]}}
+  const sol=new Float64Array(n);for(let r=n-1;r>=0;r--){let s=A[r][n];for(let k=r+1;k<n;k++)s-=A[r][k]*sol[k];sol[r]=s/A[r][r]}
+  const d=new Float64Array(ndof);free.forEach((g,i)=>d[g]=sol[i]);
+  const R=[];o.sup.forEach(([nn,t])=>{let r=0,m=0;for(let j=0;j<ndof;j++){r+=K[2*nn][j]*d[j];if(t==='fix')m+=K[2*nn+1][j]*d[j]}
+    r-=F[2*nn]; if(t==='fix')m-=F[2*nn+1]; R.push({x:nn*l,Ry:r,M:m,t})});
+  // diagrams: points with x (in), V (kip), M (kip-in sagging +), y (in, down +)
+  const pts=[];
+  for(let e=0;e<N;e++){const de=[d[2*e],d[2*e+1],d[2*e+2],d[2*e+3]];
+    const f=[0,0,0,0];for(let i=0;i<4;i++){for(let j=0;j<4;j++)f[i]+=kloc[i][j]*de[j];f[i]-=fe[e][i]}
+    pts.push({x:e*l,V:f[0],M:-f[1],y:-d[2*e],e,side:'L'});
+    pts.push({x:(e+1)*l,V:-f[2],M:f[3],y:-d[2*e+2],e,side:'R'});}
+  return {pts,R,aSnap,L};
+}
+
+/* ---------- Beam lab ---------- */
+const SUP={ss:[[0,'pin'],[100,'pin']],cant:[[0,'fix']],ff:[[0,'fix'],[100,'fix']],prop:[[0,'fix'],[100,'pin']],over:[[0,'pin'],[70,'pin']]};
+const svg=$('#bsvg'),NS='http://www.w3.org/2000/svg';
+let last=null;
+function el(t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e}
+function beam(){
+  const bt=$('#bt').value,lt=$('#lt').value;
+  const Lf=Math.max(1,+$('#bL').value||0),E=+$('#bE').value,I=Math.max(1,+$('#bI').value||1);
+  let v=+$('#bV').value||0,a=Math.min(Lf,Math.max(0,+$('#bA').value||0));
+  const lab={point:'Load P (kips)',udl:'Load w (kips per ft)',tri:'Peak load w (kips per ft)',moment:'Moment M (kip-ft)'};
+  $('#bVl').textContent=lab[lt];
+  $('#bAw').style.display=(lt==='point'||lt==='moment')?'':'none';
+  const o={L:Lf*12,EI:E*I,load:lt,a:a*12,sup:SUP[bt]};
+  if(lt==='point')o.P=v;if(lt==='udl'||lt==='tri')o.w=v/12;if(lt==='moment')o.M=v*12;
+  const r=solveBeam(o);last={r,Lf,bt,lt,v,a,aS:r.aSnap/12};
+  let mV=0,mM=0,mY=0,xV=0,xM=0,xY=0;
+  r.pts.forEach(p=>{if(Math.abs(p.V)>mV+1e-9){mV=Math.abs(p.V);xV=p.x}if(Math.abs(p.M)>Math.abs(mM)+1e-9){mM=p.M;xM=p.x}if(Math.abs(p.y)>Math.abs(mY)+1e-9){mY=p.y;xY=p.x}});
+  const lim=Lf*12/360,ok=Math.abs(mY)<=lim;
+  const rs=r.R.map((q,i)=>'R'+(i+1)+' = '+fx(q.Ry,2)+' kips'+(q.t==='fix'?', M = '+fx(q.M/12,1)+' kip-ft':'')).join('<br>');
+  $('#bout').innerHTML=`<div>Reactions (up positive)<b style="font-size:16px;line-height:1.5">${rs}</b></div><div>Max shear |V|<b>${fx(mV,2)} kips</b>at ${fx(xV/12,1)} ft</div><div>Max moment<b>${fx(mM/12,1)} kip-ft</b>at ${fx(xM/12,1)} ft ${mM<0?'(hogging)':'(sagging)'}</div><div>Max deflection<b>${fx(Math.abs(mY),3)} in</b>${y2(mY)} at ${fx(xY/12,1)} ft</div>`;
+  const nt=[];
+  nt.push(`Deflection limit L/360 = ${fx(lim,2)} in: <b style="color:var(${ok?'--good':'--bad'})">${ok?'OK':'exceeds the limit'}</b>.`);
+  if((lt==='point'||lt==='moment')&&Math.abs(last.aS-a)>0.06)nt.push(`The load is placed at ${fx(last.aS,2)} ft, the nearest 1/100 of the span.`);
+  $('#bnote').innerHTML=nt.join(' ');
+  draw();
+}
+function y2(y){return y>0?'(down)':y<0?'(up)':''}
+function draw(){
+  const {r,Lf,bt,lt,v,aS}=last,X0=60,X1=730,W=X1-X0,L=r.L;
+  const px=x=>X0+x/L*W;
+  svg.innerHTML='';
+  const css=getComputedStyle(document.documentElement);
+  const steel='#4f6477',acc='#c47a47',ink='#27323d',mute='#6b7480',good='#5f8f6e',bad='#b9573f';
+  // panel 0: beam
+  const by=95;
+  svg.appendChild(el('rect',{x:X0,y:by-7,width:W,height:14,fill:steel,rx:3}));
+  SUP[bt].forEach(([n,t])=>{const x=px(n/100*L);
+    if(t==='fix'){const left=n===0;const xx=left?x:x;
+      svg.appendChild(el('rect',{x:left?x-12:x,y:by-34,width:12,height:68,fill:'#bfb6a4'}));
+      for(let k=0;k<7;k++)svg.appendChild(el('line',{x1:left?x-12:x+12,y1:by-30+k*9,x2:left?x-20:x+20,y2:by-22+k*9,stroke:mute,'stroke-width':1.3}));
+    }else if(bt==='ss'&&n===100||bt==='prop'&&n===100||bt==='over'&&n===70){
+      svg.appendChild(el('circle',{cx:x,cy:by+14,r:6,fill:'none',stroke:ink,'stroke-width':2}));svg.appendChild(el('line',{x1:x-14,y1:by+23,x2:x+14,y2:by+23,stroke:ink,'stroke-width':2}));
+    }else{svg.appendChild(el('path',{d:`M${x},${by+7} l-12,20 h24 z`,fill:'#e9e2d4',stroke:ink,'stroke-width':2}))}
+  });
+  const arrow=(x,y1,y2,c)=>{svg.appendChild(el('line',{x1:x,y1:y1,x2:x,y2:y2,stroke:c,'stroke-width':2}));svg.appendChild(el('path',{d:`M${x-4.5},${y2-8} L${x},${y2} L${x+4.5},${y2-8}`,fill:'none',stroke:c,'stroke-width':2}))};
+  if(lt==='point'){const x=px(aS*12);arrow(x,18,by-9,acc);svg.appendChild(el('text',{x:x+8,y:28,fill:acc,'font-size':13,'font-weight':600},fx(v,1)+' kips'))}
+  if(lt==='udl'||lt==='tri'){const n=16;for(let k=0;k<=n;k++){const x=X0+k/n*W,h=lt==='udl'?1:k/n;if(h>0.04)arrow(x,by-10-h*52,by-9,acc)}
+    svg.appendChild(el('path',{d:lt==='udl'?`M${X0},${by-62} H${X1}`:`M${X0},${by-10} L${X1},${by-62}`,stroke:acc,'stroke-width':2,fill:'none'}));
+    svg.appendChild(el('text',{x:X1-4,y:by-70,fill:acc,'font-size':13,'font-weight':600,'text-anchor':'end'},fx(v,2)+' kips/ft'))}
+  if(lt==='moment'){const x=px(aS*12),cw=v>=0;svg.appendChild(el('path',{d:`M${x-22},${by-26} A24,24 0 1 ${cw?1:0} ${x+22},${by-26}`,fill:'none',stroke:acc,'stroke-width':2.5}));
+    svg.appendChild(el('path',{d:cw?`M${x+22},${by-26} l-9,-3 m9,3 l-2,9`:`M${x-22},${by-26} l9,-3 m-9,3 l2,9`,stroke:acc,'stroke-width':2.5,fill:'none'}));
+    svg.appendChild(el('text',{x:x+30,y:by-34,fill:acc,'font-size':13,'font-weight':600},fx(Math.abs(v),1)+' kip-ft'))}
+  svg.appendChild(el('text',{x:X0,y:152,fill:mute,'font-size':12},'0 ft'));svg.appendChild(el('text',{x:X1,y:152,fill:mute,'font-size':12,'text-anchor':'end'},fx(Lf,1)+' ft'));
+  // panels
+  const panels=[{k:'V',t:'Shear force, V (kips)',y:262,c:good,u:1},{k:'M',t:'Bending moment, M (kip-ft, sagging +)',y:422,c:acc,u:1/12},{k:'y',t:'Deflection (in, down +)',y:582,c:steel,u:1,down:true}];
+  const H=58;
+  panels.forEach(pn=>{
+    let mx=0;r.pts.forEach(p=>mx=Math.max(mx,Math.abs(p[pn.k])));if(mx<1e-12)mx=1;
+    const sy=v=>pn.down?pn.y+v/mx*H:pn.y-v/mx*H;
+    svg.appendChild(el('text',{x:X0,y:pn.y-H-30,fill:ink,'font-size':13,'font-weight':600},pn.t));
+    svg.appendChild(el('line',{x1:X0,y1:pn.y,x2:X1,y2:pn.y,stroke:'#b5a98f','stroke-width':1}));
+    let d=`M${px(0)},${pn.y}`;r.pts.forEach(p=>d+=` L${px(p.x).toFixed(1)},${sy(p[pn.k]).toFixed(1)}`);d+=` L${px(L)},${pn.y} Z`;
+    svg.appendChild(el('path',{d:d,fill:pn.c,'fill-opacity':.22,stroke:pn.c,'stroke-width':2,'stroke-linejoin':'round'}));
+    // peak label
+    let pk=r.pts[0];r.pts.forEach(p=>{if(Math.abs(p[pn.k])>Math.abs(pk[pn.k])+1e-12)pk=p});
+    if(Math.abs(pk[pn.k])>1e-9){const tx=Math.min(X1-30,Math.max(X0+30,px(pk.x)));const ty=sy(pk[pn.k]);
+      svg.appendChild(el('circle',{cx:px(pk.x),cy:ty,r:3.5,fill:pn.c}));
+      const lbl=fx(pn.k==='y'?pk.y:pk[pn.k]*pn.u,pn.k==='y'?3:2);
+      const up=(pn.down?pk[pn.k]<0:pk[pn.k]>0);
+      svg.appendChild(el('text',{x:tx,y:up?ty-9:ty+18,fill:ink,'font-size':12.5,'font-weight':600,'text-anchor':'middle'},lbl))}
+  });
+  // hover line
+  const hl=el('line',{x1:0,y1:200,x2:0,y2:650,stroke:ink,'stroke-width':1,'stroke-dasharray':'4 4',opacity:0});svg.appendChild(hl);
+  const cap=el('rect',{x:X0,y:200,width:W,height:460,fill:'transparent'});svg.appendChild(cap);
+  const move=e=>{const b=svg.getBoundingClientRect();const cx=(e.touches?e.touches[0].clientX:e.clientX);const x=Math.min(L,Math.max(0,((cx-b.left)/b.width*760-X0)/W*L));
+    const pts=r.pts.filter(p=>p.side==='L');let best=pts[0];pts.forEach(p=>{if(Math.abs(p.x-x)<Math.abs(best.x-x))best=p});
+    if(x>L-L/200)best=r.pts[r.pts.length-1];
+    hl.setAttribute('x1',px(best.x));hl.setAttribute('x2',px(best.x));hl.setAttribute('opacity',1);
+    $('#bhov').innerHTML=`At <b>${fx(best.x/12,2)} ft</b> &nbsp;·&nbsp; V = <b>${fx(best.V,2)} kips</b> &nbsp;·&nbsp; M = <b>${fx(best.M/12,2)} kip-ft</b> &nbsp;·&nbsp; deflection = <b>${fx(best.y,3)} in</b>`};
+  cap.addEventListener('mousemove',move);cap.addEventListener('touchstart',move,{passive:true});cap.addEventListener('touchmove',move,{passive:true});
+}
+['bt','lt','bL','bV','bA','bE','bI'].forEach(i=>$('#'+i).addEventListener('input',beam));
+// sensible default load when load type changes
+$('#lt').addEventListener('change',()=>{const d={point:10,udl:1.5,tri:2,moment:60};$('#bV').value=d[$('#lt').value];beam()});
+$('#bt').addEventListener('change',()=>{if($('#bt').value==='cant'&&$('#lt').value==='point')$('#bA').value=$('#bL').value;beam()});
+beam();
+
+/* ---------- tabs for concrete toolkit ---------- */
+$$('#ctabs button').forEach(b=>b.addEventListener('click',()=>{$$('#ctabs button').forEach(x=>x.classList.toggle('on',x===b));$$('.kp').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p))}));
+
+/* ---------- slope ---------- */
+function slope(){
+  const a=+$('#sA').value,b=+$('#sB').value,d=+$('#sD').value;
+  if(!(d>0)){$('#sout').innerHTML='<div>Enter a distance greater than zero.</div>';$('#schk').innerHTML='';return}
+  const rise=b-a,pct=rise/d*100,ang=Math.atan(Math.abs(rise)/d)*180/Math.PI;
+  const ratio=Math.abs(rise)>1e-9?'1 : '+fx(d/Math.abs(rise),1):'level';
+  $('#sout').innerHTML=`<div>Slope<b>${fx(Math.abs(pct),2)}%</b>${rise<0?'falling':rise>0?'rising':'level'}</div><div>Ratio (rise : run)<b>${ratio}</b></div><div>Angle<b>${fx(ang,2)}°</b></div><div>Change in elevation<b>${fx(Math.abs(rise)*12,2)} in</b>over ${fx(d,1)} ft</div>`;
+  const s=Math.abs(pct),c=[];
+  c.push([s>=1,'At least 1% for surface drainage',s>=1?'Meets':'Too flat, water may pond']);
+  c.push([s<=2,'Walkway cross-slope limit of 2% (ADA)',s<=2?'Within the limit':'Over 2%']);
+  c.push([s<=8.333,'Ramp running slope limit of 1:12, 8.33% (ADA)',s<=8.333?'Within the limit':'Steeper than 1:12']);
+  c.push([s<=33.3,'Flatter than 3:1 for a stable soil slope (general guide)',s<=33.3?'Flatter than 3:1':'Steeper than 3:1, check geotech']);
+  $('#schk').innerHTML=c.map(x=>`<li class="${x[0]?'ok':'no'}"><b>${x[0]?'✓':'!'}</b><span>${x[1]}</span><em>${x[2]}</em></li>`).join('');
+}
+['sA','sB','sD'].forEach(i=>$('#'+i).addEventListener('input',slope));
+$$('.presets button').forEach(b=>b.addEventListener('click',()=>{const a=+$('#sA').value||100,d=+$('#sD').value||20;$('#sB').value=(a-(+b.dataset.s)/100*d).toFixed(3).replace(/\.?0+$/,'');slope()}));
+slope();
+
+/* ---------- yards ---------- */
+const YL={slab:[['Length (ft)',30],['Width (ft)',20],['Thickness (in)',6]],wall:[['Length (ft)',60],['Height (ft)',8],['Thickness (in)',8]],col:[['Diameter (in)',24],['Height (ft)',12],['(not used)',0]]};
+function yards(){
+  const sh=$('#yS').value,v1=+$('#y1').value,v2=+$('#y2').value,v3=+$('#y3').value,n=Math.max(1,+$('#yN').value||1),w=Math.max(0,+$('#yW').value||0),pr=+$('#yP').value;
+  let cf=0;
+  if(sh==='slab')cf=v1*v2*v3/12;if(sh==='wall')cf=v1*v2*v3/12;if(sh==='col'){const r=v1/24;cf=Math.PI*r*r*v2}
+  cf*=n;const cy=cf/27,tot=cy*(1+w/100),trucks=tot/10,tons=tot*4050/2000;
+  $('#yout').innerHTML=`<div>Volume needed<b>${fx(cy,2)} yd³</b>${fx(cf,1)} ft³</div><div>Order with ${fx(w,0)}% waste<b>${fx(Math.ceil(tot*4)/4,2)} yd³</b>rounded up to ¼ yd³</div><div>Truck loads (10 yd³)<b>${fx(trucks,1)}</b>${trucks>1?'plan the pour sequence and finishers':'one truck'}</div><div>Approx. weight<b>${fx(tons,1)} tons</b>at 150 lb/ft³${pr>0?'':''}</div>${pr>0?`<div>Concrete cost<b>$${fx(Math.ceil(tot*4)/4*pr,0)}</b>at $${fx(pr,0)} per yd³</div>`:''}`;
+}
+function ylabels(){const s=$('#yS').value;[1,2,3].forEach(i=>{const l=YL[s][i-1];$('#y'+i+'l').textContent=l[0];const inp=$('#y'+i);inp.value=l[1];inp.disabled=!l[1]&&s==='col'&&i===3});yards()}
+['yS'].forEach(i=>$('#'+i).addEventListener('change',ylabels));
+['y1','y2','y3','yN','yW','yP'].forEach(i=>$('#'+i).addEventListener('input',yards));
+yards();
+
+/* ---------- mix design (ACI 211.1, absolute volume) ---------- */
+const WATER={n:[[350,335,315,300],[385,365,340,325],[410,385,360,340]],a:[[305,295,280,270],[340,325,305,295],[365,345,325,310]]};
+const AIR={0:[3,2.5,2,1.5],1:[4.5,4,3.5,3],2:[7.5,7,6,6]};
+// moderate exposure uses ACI moderate values
+const AIRM={1:[6,5.5,5,4.5],2:[7.5,7,6,6]};
+const WC={n:[[6000,.41],[5000,.48],[4000,.57],[3000,.68],[2000,.82]],a:[[5000,.40],[4000,.48],[3000,.59],[2000,.74]]};
+const BB={2.4:[.5,.59,.66,.71],2.6:[.48,.57,.64,.69],2.8:[.46,.55,.62,.67],3.0:[.44,.53,.6,.65]};
+function wcFor(fcr,ae){const t=WC[ae?'a':'n'].slice().sort((x,y)=>x[0]-y[0]);if(fcr<=t[0][0])return t[0][1];if(fcr>=t[t.length-1][0])return t[t.length-1][1];
+  for(let i=0;i<t.length-1;i++)if(fcr>=t[i][0]&&fcr<=t[i+1][0]){const f=(fcr-t[i][0])/(t[i+1][0]-t[i][0]);return t[i][1]+f*(t[i+1][1]-t[i][1])}}
+function bbFor(fm,g){const ks=[2.4,2.6,2.8,3.0];fm=Math.min(3,Math.max(2.4,fm));let i=Math.min(2,Math.floor((fm-2.4)/.2+1e-9));return BB[ks[i]][g]+(fm-ks[i])/.2*(BB[ks[i+1]][g]-BB[ks[i]][g])}
+function mix(){
+  const fc=+$('#mF').value,g=+$('#mG').value,s=+$('#mS').value,ex=+$('#mA').value,fm=+$('#mM').value,uw=+$('#mU').value,vol=Math.max(.1,+$('#mV').value||1);
+  const sc=+$('#mSc').value||3.15,sg=+$('#mSg').value||2.65,sf=+$('#mSf').value||2.65;
+  if(!(fc>=2000&&fc<=6000)){$('#mout').innerHTML='<div>Enter f′c between 2,000 and 6,000 psi.</div>';$('#mnote').textContent='';return}
+  const ae=ex>0,fcr=fc<3000?fc+1000:fc<=5000?fc+1200:1.1*fc+700;
+  const water=WATER[ae?'a':'n'][s][g],air=ae?(ex===1?AIRM[1][g]:AIRM[2][g]):AIR[0][g];
+  const wc=wcFor(fcr,ae),cem=water/wc,ca=bbFor(fm,g)*uw*27,
+        vw=water/62.4,vc=cem/(sc*62.4),va=air/100*27,vg=ca/(sg*62.4),vf=27-vw-vc-va-vg,fa=vf*sf*62.4;
+  const tot=water+cem+ca+fa;
+  const row=(n,x,n2)=>`<div>${n}<b>${fx(x,0)} lb</b>${n2||''}</div>`;
+  $('#mout').innerHTML=row('Cement',cem,fx(cem/94,1)+' bags (94 lb)')+row('Water',water,fx(water/8.34,1)+' gallons')+row('Coarse aggregate',ca)+row('Fine aggregate (sand)',fa)+
+    `<div>Water-cement ratio<b>${fx(wc,2)}</b>for target f′cr ${fx(fcr,0)} psi</div><div>Air content<b>${fx(air,1)}%</b>${ae?'air-entrained':'entrapped'}</div><div>Unit weight<b>${fx(tot/27,1)} lb/ft³</b>${fx(tot,0)} lb per yd³</div><div>For ${fx(vol,1)} yd³<b>${fx(cem*vol/94,1)} bags</b>${fx(ca*vol/2000,2)} t stone · ${fx(fa*vol/2000,2)} t sand</div>`;
+  $('#mnote').textContent=vf<=0?'These inputs leave no room for sand. Check the unit weight and fineness modulus.':'Quantities are per cubic yard, saturated surface dry. A real mix still needs moisture correction and a lab trial batch, and the supplier’s approved mix governs.';
+}
+['mF','mG','mS','mA','mM','mU','mSc','mSg','mSf','mV'].forEach(i=>{const e=$('#'+i);e.addEventListener('input',mix);e.addEventListener('change',mix)});
+mix();
+})();
+
+/* paddy rows */
+(function(){var g=document.getElementById("rice");if(!g)return;var h="";for(var r=0;r<5;r++){var y=76+r*16;for(var c=0;c<22;c++){var x=22+c*12.4+(r%2)*6;h+="<path d=\"M"+x.toFixed(1)+" "+(y+8)+" l-2 -9 M"+x.toFixed(1)+" "+(y+8)+" l0 -11 M"+x.toFixed(1)+" "+(y+8)+" l2 -9\"/>"}}g.innerHTML=h})();
 </script>
 </body>
 </html>
