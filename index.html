@@ -69,7 +69,7 @@ section.ch:nth-of-type(even){background:var(--bg2)}
 .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,70px);align-items:center;margin-top:34px}
 .grid2.rev{grid-template-columns:.95fr 1.05fr}.grid2.rev>:first-child{order:2}
 @media(max-width:860px){.grid2,.grid2.rev{grid-template-columns:1fr}.grid2.rev>:first-child{order:0}}
-.ph{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:#ddd}
+.ph{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/10;background:#ddd}
 .ph img{position:absolute;left:0;top:-13%;width:100%;height:126%;object-fit:cover;will-change:transform}
 .ph figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,253,248,.92);padding:5px 12px;border-radius:99px;font-size:12.5px;color:var(--ink)}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
@@ -166,8 +166,8 @@ svg text{font-family:Inter,sans-serif}
 .bul{margin:14px 0 0 20px;color:#3f4b57;max-width:640px}.bul li{margin-bottom:8px}
 .stat4{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat4 div{background:var(--bg);border-radius:14px;padding:14px;font-size:13px;color:var(--mute)}.stat4 b{display:block;font:600 24px Fraunces,serif;color:var(--ink)}
 .chipbox{display:flex;flex-wrap:wrap;gap:8px;align-content:center}.chipbox span{padding:9px 15px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:14px}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.duo .ph{aspect-ratio:4/3}.duo .ph img{top:0;height:100%}
-.trio{display:grid;grid-template-columns:1fr 1fr;gap:10px}.trio .ph{aspect-ratio:4/3;box-shadow:none}.trio .ph img{top:0;height:100%}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.duo .ph{aspect-ratio:16/10}.duo .ph img{top:0;height:100%}
+.trio{display:grid;grid-template-columns:1fr 1fr;gap:10px}.trio .ph{aspect-ratio:16/10;box-shadow:none}.trio .ph img{top:0;height:100%}
 .pane p+p{margin-top:8px}.pane .hint{font-size:14px;color:var(--mute);margin-bottom:8px}
 .vnote{font-size:15px;color:var(--steel);margin:6px 0 16px!important;min-height:24px}
 .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;color:#fff;font-size:13px;background:linear-gradient(0deg,rgba(30,35,40,.88),rgba(30,35,40,.5) 60%,transparent)}
@@ -204,8 +204,56 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
 .presets{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.presets button{border:1px solid var(--line);background:var(--bg);padding:7px 14px;border-radius:99px;font:500 13px Inter;color:var(--steel);cursor:pointer;transition:.25s}.presets button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
 .chk{list-style:none;margin-top:14px;display:grid;gap:8px}.chk li{display:flex;gap:12px;align-items:center;padding:10px 14px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:14.5px}
 .chk li b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;flex:none}.chk li.ok b{background:var(--good)}.chk li.no b{background:var(--bad)}.chk li span{flex:1}.chk li em{font-style:normal;color:var(--mute);font-size:13px;text-align:right}
-.paddy{margin:0;max-width:340px;align-self:start}.paddy svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:var(--shadow)}.paddy figcaption{font-size:12.5px;color:var(--mute);margin-top:8px}
+.paddy{margin:0;max-width:280px;align-self:start}.paddy svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:var(--shadow)}.paddy figcaption{font-size:12.5px;color:var(--mute);margin-top:8px}
 @media(max-width:700px){.calc.tl4{grid-template-columns:1fr 1fr}.calc.tl4>div:nth-child(-n+2){grid-column:1/-1}.chk li{flex-wrap:wrap}.chk li em{text-align:left;width:100%}}
+
+/* ===== compact + living touches ===== */
+body{font-size:16px;line-height:1.6}
+.wrap{width:min(1040px,100% - 36px)}
+.hero{min-height:80vh}.hero h1{font-size:clamp(38px,6.2vw,78px);margin:10px 0 12px}.hero .wrap{padding-bottom:7vh}
+.hero p.lead{font-size:clamp(16px,1.8vw,19px)}
+.stats{padding:24px 0}.stats b{font-size:clamp(26px,3.4vw,36px)}.stats span{font-size:13px}
+section.ch{padding:clamp(34px,5vw,60px) 0}
+section.ch.tight{padding:clamp(24px,4vw,44px) 0}
+.num{font-size:clamp(44px,7vw,84px);top:12px;opacity:.5}
+.ch h2{font-size:clamp(24px,3.2vw,36px);margin:6px 0 12px}
+.ch p{margin-bottom:10px;max-width:62ch}
+.grid2{margin-top:16px;gap:clamp(16px,3vw,34px)}
+.card{padding:clamp(14px,2vw,22px)}
+.medal{width:46px!important;height:46px!important;font-size:22px!important;margin-bottom:8px!important}
+.thermo big{font-size:38px}.tube{height:100px;width:20px}
+.ph{aspect-ratio:16/10}
+.ph figcaption{font-size:12px;padding:4px 10px}
+.ph{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.ph:hover{transform:translateY(-4px);box-shadow:0 26px 44px -22px rgba(60,45,30,.5)}
+.ph img{transition:scale .9s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.07}
+.ph.flat img{top:0;height:100%}
+.ph img.ov{opacity:0;transition:opacity .38s ease;z-index:1;top:0;height:100%}
+.ph .live{position:absolute;right:10px;top:10px;z-index:3;font-style:normal;font-size:11px;letter-spacing:.04em;background:rgba(39,50,61,.72);color:#fff;padding:3px 9px;border-radius:99px;opacity:.9;pointer-events:none;transition:.3s}
+.ph figcaption{z-index:3}
+.ph canvas.rain{position:absolute;inset:0;width:100%;height:100%;z-index:2;opacity:0;transition:opacity .5s;pointer-events:none}
+.ph.wet:after{content:"";position:absolute;inset:0;background:rgba(40,60,80,.28);z-index:1;pointer-events:none}
+.card{transition:transform .35s,box-shadow .35s}.card:hover{transform:translateY(-2px)}
+.tag,.chip{transition:transform .25s}.tag:hover{transform:translateY(-2px)}
+.tabs{margin:14px 0 10px;gap:6px}.tabs button{padding:6px 14px;font-size:13px}
+.strip figure{flex:0 0 min(60vw,260px)}
+/* toolbox */
+.tb{padding:clamp(12px,1.8vw,18px)}
+.tb .tabs{margin:0 0 12px}
+.tb label{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--mute);display:block}
+.tb input,.tb select{width:100%;margin-top:3px;padding:6px 9px;border-radius:9px;border:1px solid var(--line);background:#fff;font:500 13.5px Inter;color:var(--ink)}
+.bgrid{display:grid;grid-template-columns:210px 1fr;gap:14px;align-items:start}
+.bctl{display:grid;gap:8px}.bctl .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bctl .out.sm{grid-template-columns:1fr 1fr}
+.bplot svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:12px}
+.tb .calc{display:grid;gap:8px;margin-bottom:10px}.tb .calc.c3{grid-template-columns:repeat(3,1fr)}.tb .calc.c4{grid-template-columns:repeat(4,1fr)}
+.tb .out.sm{grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:6px;margin-top:8px}
+.tb .out.sm div{padding:6px 9px;font-size:11px;border-radius:10px}.tb .out.sm b{font-size:16px;line-height:1.25}
+.tb .chk{margin-top:8px;gap:5px}.tb .chk li{padding:6px 10px;font-size:13px}.tb .chk li b{width:18px;height:18px;font-size:11px}
+.tb .presets{margin-bottom:8px}.tb .presets button{padding:4px 11px;font-size:12px}
+.tb .hint{font-size:12px}
+.tb .tri3 input{padding:6px 5px}
+@media(max-width:760px){.bgrid{grid-template-columns:1fr}.tb .calc.c4,.tb .calc.c3{grid-template-columns:1fr 1fr}.bplot{overflow-x:auto}.bplot svg{min-width:520px}}
+.nssrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.nssrow .ph{aspect-ratio:4/3}.nssrow .ph figcaption{font-size:11px}@media(max-width:700px){.nssrow{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -221,7 +269,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     <h1 class="rv d1">Manohar<br>Ballipalli</h1>
     <p class="lead rv d2">I learned this trade the hands-on way: in the heat with the laborers, running survey lines with an auto level, and standing at the rebar before every pour. Now I am in the U.S., excited to keep learning and growing here. Scroll for the whole story, from India to today.</p>
     <div class="chips rv d3"><span class="chip">MS · Catholic University of America · GPA 3.57</span><span class="chip">Bachelor of Technology (B.Tech), Civil Engineering</span><span class="chip">3-year Civil Engineering Diploma</span><span class="chip">College Park · DC Metro</span></div>
-    <p class="rv d3" style="margin-top:22px"><a class="btn" href="#ct" style="margin-left:0">Try my beam and concrete calculators ↓</a></p>
+    <p class="rv d3" style="margin-top:22px"><a class="btn" href="#tb" style="margin-left:0">Try the toolbox ↓</a></p>
   </div>
   <div class="scrollcue">Scroll the story</div>
 </header>
@@ -247,7 +295,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
         <p class="rv d1">To keep studying, I moved in with my grandfather. Quiet evenings, a lot of reading, and a life far simpler than any site office I would see later.</p>
         <div class="tags rv d2"><span class="tag">Building drawing</span><span class="tag">Surveying</span><span class="tag">Concrete technology</span><span class="tag">Estimating</span></div>
       </div>
-      <figure class="ph rv d1"><img data-par="0.12" src="plans.jpg" alt="Hands drawing on construction plans" loading="lazy"><figcaption>Where it started — plans on a desk</figcaption></figure>
+      <figure class="ph rv d1"><img data-par="0.12" src="plans.jpg" alt="Hands drawing on construction plans" loading="lazy"><figcaption>Illustrative photo: plans on a desk</figcaption></figure>
     </div>
   </div>
 </section>
@@ -259,7 +307,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     <div class="eyebrow">Chapter 02 · Life at my grandfather's house</div>
     <h2 class="rv">Summers on my grandfather's farm</h2>
     <div class="grid2 rev">
-      <figure class="paddy rv" aria-label="A small paddy field"><svg viewBox="0 0 300 170" role="img" aria-label="Small paddy field with rows of rice seedlings"><defs><linearGradient id="pw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9d2cf"/><stop offset="1" stop-color="#9dbdb6"/></linearGradient></defs><rect width="300" height="170" rx="16" fill="#efe8dc"/><path d="M10 60 L290 60 L296 156 L4 156 Z" fill="url(#pw)" stroke="#a58f6a" stroke-width="5" stroke-linejoin="round"/><g stroke="#6f9a5a" stroke-width="2" stroke-linecap="round" id="rice"></g></svg><figcaption>A small paddy field, like the one I worked beside</figcaption></figure>
+      <figure class="ph flat paddy rv" data-rain style="aspect-ratio:4/3"><img src="paddy_real.jpg" alt="Paddy field with hills in the distance" loading="lazy"><figcaption>Illustrative photo: a paddy field</figcaption></figure>
       <div>
         <p class="rv">During my diploma I stayed at my grandfather's house and helped with the farm work, mostly around a small paddy field. Summers in Andhra Pradesh are hard: dusty, with little shade, and up to 110°F (about 43°C).</p>
         <p class="rv d1">Every civil internship I did in India also fell in the summer, so I learned to do site work in that heat, and I saw how hard the laborers work through it. On my U.S. site work the weather was a typical Maryland summer, which felt mild by comparison.</p>
@@ -283,19 +331,19 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     </div>
     <div class="pane on card grid2 sp" id="s_1" style="margin-top:0"><div><h3>Safety comes first, every time</h3>
       <ul class="bul"><li>Caught workers without proper PPE and stopped the work until they complied: "no PPE, no work."</li><li>Enforced daily safety compliance at Sree Geetha Constructions.</li><li>Watched lab safety and equipment condition as a lab assistant at CUA.</li><li>OSHA 30-Hour (Construction) and certified flagger, both completed in person in the U.S. in 2026.</li></ul></div>
-      <figure class="ph" style="aspect-ratio:4/3"><img src="s1_group.jpg" alt="Site visit in safety vests and hard hats" loading="lazy"><figcaption>Site visit: vests and hard hats</figcaption></figure></div>
+      <figure data-clip="s1_group|Site visit: vests and hard hats;d_prep|Safety vest and hard hat while setting rebar;d_pour|Safety vests at the concrete pour;d_dig|Crew member in a vest excavating" class="ph" style="aspect-ratio:16/10"><img src="s1_group.jpg" alt="Site visit in safety vests and hard hats" loading="lazy"><figcaption>Site visit: vests and hard hats</figcaption></figure></div>
     <div class="pane card grid2 sp" id="s_2" style="margin-top:0"><div><h3>Inspection before anything gets buried or poured</h3>
       <ul class="bul"><li>Pre-pour checks: rebar size, spacing, cover, minimum ties, top and bottom steel on cantilevers, formwork alignment, MEP sleeves and embeds.</li><li>Caught two cantilevers with the main bars on the bottom and had them fixed before the concrete.</li><li>Inspected underground sewer and water lines: invert elevations, pipe diameters, slopes, manhole covers and field tests.</li><li>Kept QA/QC logs, inspection requests and structural inspection records.</li></ul></div>
-      <figure class="ph" style="aspect-ratio:4/3"><img src="d_rebar.jpg" alt="Rebar mat inspected before a pour" loading="lazy"><figcaption>Rebar mat before the pour</figcaption></figure></div>
+      <figure data-clip="d_rebar|Rebar mat before the pour;s1_rebar|Rebar in the footing;d_sleeve|A sleeve embedded in fresh concrete;s1_formwork|Formwork alignment" class="ph" style="aspect-ratio:16/10"><img src="d_rebar.jpg" alt="Rebar mat inspected before a pour" loading="lazy"><figcaption>Rebar mat before the pour</figcaption></figure></div>
     <div class="pane card grid2 sp" id="s_3" style="margin-top:0"><div><h3>Surveying and layout</h3>
       <ul class="bul"><li>Total station, auto level and Emlid GNSS rover.</li><li>Leveling surveys and elevation calculations, starting with an 18-mile canal.</li><li>Checking field numbers against design drawings and slopes.</li><li>Setting out points on site and reading survey stakes.</li></ul></div>
-      <figure class="ph" style="aspect-ratio:4/3"><img src="d_gnss.jpg" alt="GNSS rover on site" loading="lazy"><figcaption>GNSS rover on a site visit</figcaption></figure></div>
+      <figure data-clip="d_gnss|GNSS rover on a site visit;d_gnss2|Setting out points with the rover;e_stake|Wooden stakes and pipe stubs at the pad edge;d_marks|Layout marks painted on the slab" class="ph" style="aspect-ratio:16/10"><img src="d_gnss.jpg" alt="GNSS rover on site" loading="lazy"><figcaption>GNSS rover on a site visit</figcaption></figure></div>
     <div class="pane card grid2 sp" id="s_4" style="margin-top:0"><div><h3>Concrete testing and quality</h3>
       <ul class="bul"><li>Tested concrete during my internship on a 300-unit housing project.</li><li>Quality-checked every pour on the high-rise structure and arranged concrete tests with the pour.</li><li>Watched concrete temperature checks and placement on a U.S. bus-shelter rebuild.</li><li>Controlled ready-mix concrete billing against what was placed.</li></ul></div>
-      <figure class="ph" style="aspect-ratio:4/3"><img src="d_temp.jpg" alt="Thermometer on fresh concrete" loading="lazy"><figcaption>Checking concrete temperature</figcaption></figure></div>
+      <figure data-clip="d_temp|Checking concrete temperature;d_pour|Concrete placement from the chute;d_finish|Crew finishing the slab;d_sleeve|A sleeve embedded in fresh concrete" class="ph" style="aspect-ratio:16/10"><img src="d_temp.jpg" alt="Thermometer on fresh concrete" loading="lazy"><figcaption>Checking concrete temperature</figcaption></figure></div>
     <div class="pane card grid2 sp" id="s_5" style="margin-top:0"><div><h3>Managing crews and trades</h3>
       <ul class="bul"><li>Directed laborers day to day, and stayed with the crew on the critical work.</li><li>Supervised a team of assistant engineers: assigned tasks and reviewed daily reports.</li><li>Coordinated structural, electrical and plumbing subcontractors, suppliers, architects and clients.</li><li>Held quick meetings with MEP and structural subs before each new section and adjusted the schedule.</li></ul></div>
-      <figure class="ph" style="aspect-ratio:4/3"><img src="d_pour.jpg" alt="Crew placing concrete" loading="lazy"><figcaption>A crew placing concrete</figcaption></figure></div>
+      <figure data-clip="d_pour|A crew placing concrete;d_finish|Crew finishing the slab;d_rubble|Breaking out and hauling rubble;d_demo|Demolition of the old concrete" class="ph" style="aspect-ratio:16/10"><img src="d_pour.jpg" alt="Crew placing concrete" loading="lazy"><figcaption>A crew placing concrete</figcaption></figure></div>
   </div>
 </section>
 
@@ -321,7 +369,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
         <p class="rv">A state government project to widen and upgrade an 18-mile irrigation canal, raising its flow capacity from 250 to 450 cubic feet per second so farms downstream get reliable water. Budget about $1.4M, built in one-mile segments. I was a three-month site engineer intern.</p>
         <p class="rv d1">I ran field leveling surveys with the auto level, recorded ground elevations for the canal alignment, and checked the numbers in the office against the design drawings and slope requirements. I studied the plans, cost estimates and quantity calculations, and documented canal deepening, shotcrete lining, retaining walls, check-dam repairs and culvert installation. It was my first look at civil infrastructure, survey instruments and government engineering paperwork.</p>
         <div class="tags rv d2"><span class="tag">Auto level surveys</span><span class="tag">Elevation checks</span><span class="tag">Quantity takeoffs</span><span class="tag">Shotcrete lining</span><span class="tag">Culverts</span><span class="tag">Check dams</span></div>
-        <figure class="ph rv d2" style="margin-top:22px"><img data-par="0.12" src="e_channel.jpg" alt="Drainage swale along a site" loading="lazy"><figcaption>My own photo, from a U.S. site visit: a drainage swale</figcaption></figure><div class="duo rv d2"><figure class="ph"><img src="e_excavator.jpg" alt="Excavator working a cut" loading="lazy"><figcaption>My photo: earthwork, U.S. site</figcaption></figure><figure class="ph"><img src="e_pipe.jpg" alt="Drainage structure set in a pad" loading="lazy"><figcaption>My photo: drainage structure, U.S. site</figcaption></figure></div>
+        <figure data-rain class="ph rv d2" style="margin-top:22px"><img data-par="0.12" src="e_channel.jpg" alt="Drainage swale along a site" loading="lazy"><figcaption>My own photo, from a U.S. site visit: a drainage swale</figcaption></figure><div class="duo rv d2"><figure data-clip="e_excavator|Excavator working the cut;e_dump|Loading an articulated dump truck;e_roller|Roller compacting the subgrade;e_grade|Graded and compacted pad" class="ph"><img src="e_excavator.jpg" alt="Excavator working a cut" loading="lazy"><figcaption>My photo: earthwork, U.S. site</figcaption></figure><figure class="ph"><img src="e_pipe.jpg" alt="Drainage structure set in a pad" loading="lazy"><figcaption>My photo: pipe riser in the pad, U.S. site</figcaption></figure></div>
       </div>
       <div class="card rv d1">
         <h3>Try it: leveling calculator</h3>
@@ -365,7 +413,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     <div class="grid2">
       <div>
         <p class="rv">Alongside my degree I served as a student volunteer with the National Service Scheme, India's national student community-service program, for almost three years. I was honored with the <b>Best Volunteer of the Year award</b>.</p>
-        <p class="rv d1">I organized many community events, ran awareness programs on eco-friendly living, and helped lead blood donation camps, dental camps, clean-city drives (the national Clean India campaign) and tree planting.</p>
+        <p class="rv d1">I organized many community events, ran awareness programs on eco-friendly living, and helped lead blood donation camps, dental camps, clean-city drives (the national Clean India campaign) and tree planting. On September 1, 2019, I took part in an NSS special camp in Guntur district, helping with a Ganesh idol distribution.</p>
         <div class="tags rv d2"><span class="tag">Blood donation camps</span><span class="tag">Dental camps</span><span class="tag">Clean-city drives</span><span class="tag">Tree planting</span><span class="tag">Eco-awareness</span><span class="tag">Event organizing</span></div>
       </div>
       <div class="card rv d1 award">
@@ -374,6 +422,11 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
         <p class="hint" style="margin:0">National Service Scheme · Student Volunteer, 2018 – 2021</p>
         <div class="acts" id="acts"></div>
       </div>
+    </div>
+    <div class="nssrow">
+      <figure class="ph flat rv"><img src="nss_blood.jpg" alt="Blood donation camp (faces blurred)" loading="lazy"><figcaption>Illustrative photo: a blood donation camp</figcaption></figure>
+      <figure class="ph flat rv d1"><img src="nss_plant.jpg" alt="Students planting a sapling (faces blurred)" loading="lazy"><figcaption>Illustrative photo: planting a tree</figcaption></figure>
+      <figure class="ph flat rv d2"><img src="nss_rangoli.jpg" alt="Lamp-lit India map at a camp evening (faces blurred)" loading="lazy"><figcaption>Illustrative photo: a camp evening</figcaption></figure>
     </div>
   </div>
 </section>
@@ -407,7 +460,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
       <div>
         <p class="rv">A government rural-development project building underground sanitary sewer and water pipe systems for the growing city of Mangalagiri, working beside engineers and contractors.</p>
         <p class="rv d1">I inspected the pipe systems against the design: inlet and invert elevations, pipe diameters, percent slopes, manhole cover installation and field test results. I watched and documented excavation, pipe bedding and backfilling, reported every observation and non-conformance to the site supervisor, and worked around live road traffic. It was my first professional site experience and taught me inspection methods, documentation and site safety.</p>
-        <div class="duo rv d2"><figure class="ph"><img src="d_trench.jpg" alt="Utility trench" loading="lazy"><figcaption>My photo: utility trenching, U.S. site</figcaption></figure><figure class="ph"><img src="s1_trench.jpg" alt="Footing trench with rebar" loading="lazy"><figcaption>My photo: trench, U.S. site</figcaption></figure></div>
+        <div class="duo rv d2"><figure class="ph"><img src="d_trench.jpg" alt="Utility trench" loading="lazy"><figcaption>My photo: utility trenching, U.S. site</figcaption></figure><figure class="ph"><img src="s1_trench.jpg" alt="Footing trench with rebar" loading="lazy"><figcaption>My photo: footing trench with rebar, U.S. site</figcaption></figure></div>
         <div class="tags rv d2"><span class="tag">Sanitary sewer</span><span class="tag">Water mains</span><span class="tag">Manholes</span><span class="tag">Invert elevations</span><span class="tag">Trench safety</span></div>
       </div>
       <div class="card rv d1">
@@ -436,14 +489,14 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
         <h3>4-story residential building</h3><p class="hint">About $700K · March – September 2022 · Assistant Project Engineer</p>
         <p>Coordinated the structural, electrical and plumbing subcontractors, suppliers, the architect and the client's representative. Ran quality checks before every concrete pour: reinforcement, formwork alignment, bar spacing and cover blocks. Tracked planned versus actual progress, slab cycles and floor-by-floor finishing. Managed RFIs, drawing reviews, work permits, inspection requests and QA/QC documentation, verified quantities and material procurement, resolved trade disputes and enforced daily safety.</p>
       </div>
-      <figure class="ph" style="aspect-ratio:4/3"><img data-par="0.08" src="li_construction1.jpg" alt="Formwork on site" loading="lazy"><figcaption>Formwork and reinforcement</figcaption></figure>
+      <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="li_construction1.jpg" alt="Formwork on site" loading="lazy"><figcaption>Formwork and reinforcement</figcaption></figure>
     </div>
     <div class="pane card grid2 pj" id="pj2" style="margin-top:0">
       <div>
         <h3>10-story apartment building</h3><p class="hint">About $6.6M · September 2022 – July 2024 · Project Engineer · 8 units per floor (one-, two- and three-bedroom)</p>
         <p>The developer's own project, and I led the full lifecycle: earthwork, structure, MEP and finishes. I managed subcontractor coordination, bill approvals and meetings with the consultant and client, tracked more than 50 RFIs and submittals, and kept QA/QC logs and progress reports current throughout.</p>
       </div>
-      <figure class="ph" style="aspect-ratio:4/3"><img data-par="0.08" src="li_building.jpg" alt="Building under construction" loading="lazy"><figcaption>Structure rising</figcaption></figure>
+      <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="li_building.jpg" alt="Building under construction" loading="lazy"><figcaption>High-rise structure under construction</figcaption></figure>
     </div>
     <div class="pane card grid2 pj" id="pj3" style="margin-top:0">
       <div>
@@ -452,7 +505,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
         <p>On those two towers, which were at different stages (basement and superstructure), I supervised a team of assistant engineers, assigned tasks and reviewed their daily reports, controlled labor and ready-mix concrete billing, and quality-checked every pour. I also monitored MIVAN panel assembly, slab cycles and stripping schedules (MIVAN is a reusable aluminum formwork system that casts concrete walls and slabs floor after floor), coordinated with the general contractor's team, and kept the structural inspection records. MIVAN was new to me, and I learned it quickly.</p>
         <div class="mini" id="mivanPics"></div>
       </div>
-      <figure class="ph" style="aspect-ratio:4/3"><img data-par="0.08" src="li_mivan.jpg" alt="MIVAN formwork panels" loading="lazy"><figcaption>MIVAN formwork panels</figcaption></figure>
+      <figure data-clip="li_mivan|MIVAN formwork panels;li_shuttering|Shuttering;li_construction1|Wall formwork;li_building|High-rise structure under construction" class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="li_mivan.jpg" alt="MIVAN formwork panels" loading="lazy"><figcaption>MIVAN formwork panels</figcaption></figure>
     </div>
 
     <h3 class="rv" style="margin:56px 0 4px;font-size:28px">How I work on site</h3>
@@ -559,7 +612,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     <h2 class="rv">Starting again, on purpose</h2>
     <div class="when rv">August 2024 – May 2026 · M.S. Construction Engineering Management · The Catholic University of America · GPA 3.57</div>
     <div class="grid2 rev">
-      <figure class="ph rv"><img data-par="0.12" src="usa.jpg" alt="City skyscrapers seen from below" loading="lazy"><figcaption>Washington, DC metro area</figcaption></figure>
+      <figure class="ph rv"><img data-par="0.12" src="usa.jpg" alt="City skyline seen from below (illustrative)" loading="lazy"><figcaption>Illustrative photo: city skyline</figcaption></figure>
       <div>
         <p class="rv">I moved to the United States in August 2024 to earn my Master of Science in Civil Engineering, with a concentration in Construction Engineering Management, at The Catholic University of America in Washington, DC. I graduated in May 2026 with a 3.57 GPA.</p>
         <p class="rv d1">Nobody hands you a title in a new country, and I never minded starting from the beginning. I came here to learn how construction is built, inspected and managed in the U.S.: the codes, the standards, the way crews and inspectors work. Since graduating I have also earned my OSHA 30, flagger and Procore credentials, and I am preparing for the FE exam.</p>
@@ -620,81 +673,64 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
 </section>
 <div id="lb" aria-hidden="true"><img alt=""><button aria-label="Close">×</button></div>
 
-<!-- tools: beam lab -->
-<section class="ch" id="ct" data-title="Beam lab">
+<!-- toolbox -->
+<section class="ch tight" id="tb" data-title="Toolbox">
   <div class="wrap">
-    <div class="eyebrow">Try it yourself · Structures</div>
-    <h2 class="rv">Beam lab: shear, moment and deflection</h2>
-    <p class="rv">Pick a beam, pick a load, type in your numbers. The calculator solves it and draws the diagrams. Move your cursor over the plots to read values at any point along the span.</p>
-    <div class="card rv" style="margin-top:22px">
-      <div class="calc tl4">
-        <div><label for="bt">Beam type</label><select id="bt">
-          <option value="ss">Simply supported</option><option value="cant">Cantilever (fixed at left)</option><option value="ff">Fixed at both ends</option><option value="prop">Propped cantilever (fixed left, roller right)</option><option value="over">Overhanging (supports at 0 and 0.7L)</option></select></div>
-        <div><label for="lt">Load type</label><select id="lt">
-          <option value="point">Point load</option><option value="udl">Uniform load (full span)</option><option value="tri">Triangular load (zero at left, peak at right)</option><option value="moment">Applied moment (clockwise)</option></select></div>
-        <div><label for="bL">Span L (ft)</label><input id="bL" type="number" value="20" min="1" step="1"></div>
-        <div><label for="bV" id="bVl">Load P (kips)</label><input id="bV" type="number" value="10" step="0.5"></div>
-        <div id="bAw"><label for="bA">Load position from left (ft)</label><input id="bA" type="number" value="10" min="0" step="0.5"></div>
-        <div><label for="bE">Material (E)</label><select id="bE"><option value="29000">Steel, 29,000 ksi</option><option value="3600" selected>Concrete (4,000 psi), 3,600 ksi</option><option value="1600">Douglas fir-larch, 1,600 ksi</option></select></div>
-        <div><label for="bI">Moment of inertia I (in⁴)</label><input id="bI" type="number" value="800" min="1" step="10"></div>
-      </div>
-      <div class="out" id="bout"></div>
-      <div class="bnote" id="bnote"></div>
-      <div style="overflow-x:auto"><svg id="bsvg" viewBox="0 0 760 700" role="img" aria-label="Beam, shear, moment and deflection diagrams" style="width:100%;min-width:620px;height:auto;display:block;margin-top:14px"></svg></div>
-      <div id="bhov" class="bhov">Hover or tap the diagrams to read values.</div>
-      <p class="hint" style="margin:12px 0 0">Linear-elastic, constant EI, small deflections. Loads are factored by you, not by me; always check a real design against the governing code. Sagging moment is plotted positive, up.</p>
-    </div>
-  </div>
-</section>
+    <div class="eyebrow">Try it · Toolbox</div>
+    <h2 class="rv">Small tools I would use on site</h2>
+    <div class="card tb rv">
+      <div class="tabs sm" id="tbt"><button class="on" data-p="k_0">Beam</button><button data-p="k_1">Slope</button><button data-p="k_2">Concrete yards</button><button data-p="k_3">Mix design</button></div>
 
-<!-- tools: concrete toolkit -->
-<section class="ch" id="cc" data-title="Concrete toolkit">
-  <div class="wrap">
-    <div class="eyebrow">Try it yourself · Concrete</div>
-    <h2 class="rv">Concrete toolkit: slope, yards and mix</h2>
-    <p class="rv">Three quick calculators I would actually use on a pour. Type in numbers and the results update as you go.</p>
-    <div class="tabs rv" id="ctabs"><button class="on" data-p="k_1">Slope check</button><button data-p="k_2">Concrete yards</button><button data-p="k_3">Mix design</button></div>
-
-    <div class="kp on card" id="k_1">
-      <p class="hint">Enter two elevations and the horizontal distance between them, or tap a preset.</p>
-      <div class="presets"><button data-s="8.333">ADA ramp 1:12</button><button data-s="2">Walk cross-slope 2%</button><button data-s="1">Min. drainage 1%</button><button data-s="25">Slope 4:1 (25%)</button></div>
-      <div class="calc">
-        <div><label for="sA">Start elevation (ft)</label><input id="sA" type="number" value="100" step="0.01"></div>
-        <div><label for="sB">End elevation (ft)</label><input id="sB" type="number" value="99.5" step="0.01"></div>
-        <div><label for="sD">Horizontal distance (ft)</label><input id="sD" type="number" value="25" min="0.1" step="0.5"></div>
+      <div class="kp on" id="k_0">
+        <div class="bgrid">
+          <div class="bctl">
+            <div><label for="bt">Beam</label><select id="bt"><option value="ss">Simply supported</option><option value="cant">Cantilever</option><option value="ff">Fixed both ends</option><option value="prop">Fixed + roller</option><option value="over">Overhanging</option></select></div>
+            <div><label for="lt">Load</label><select id="lt"><option value="point">Point load</option><option value="udl">Uniform</option><option value="tri">Triangular</option><option value="moment">Applied moment</option></select></div>
+            <div class="two"><div><label for="bL">Span (ft)</label><input id="bL" type="number" value="20" min="1" step="1"></div>
+            <div><label for="bV" id="bVl">Load P (kips)</label><input id="bV" type="number" value="10" step="0.5"></div></div>
+            <div id="bAw"><label for="bA">Position from left (ft)</label><input id="bA" type="number" value="10" min="0" step="0.5"></div>
+            <div><label for="bE">Material E</label><select id="bE"><option value="29000">Steel, 29,000 ksi</option><option value="3600" selected>Concrete, 3,600 ksi</option><option value="1600">Timber, 1,600 ksi</option></select></div>
+            <div><label for="bI">Moment of inertia I (in⁴)</label><input id="bI" type="number" value="800" min="1" step="10"></div>
+            <div class="out sm" id="bout"></div>
+          </div>
+          <div class="bplot"><svg id="bsvg" viewBox="0 0 640 404" role="img" aria-label="Beam with shear, moment and deflection diagrams"></svg></div>
+        </div>
       </div>
-      <div class="out" id="sout"></div>
-      <ul class="chk" id="schk"></ul>
-    </div>
 
-    <div class="kp card" id="k_2">
-      <p class="hint">Cubic yards to order, with waste and truck loads.</p>
-      <div class="calc">
-        <div><label for="yS">Shape</label><select id="yS"><option value="slab">Slab or footing</option><option value="wall">Wall</option><option value="col">Round column</option></select></div>
-        <div><label id="y1l" for="y1">Length (ft)</label><input id="y1" type="number" value="30" step="0.5" min="0"></div>
-        <div><label id="y2l" for="y2">Width (ft)</label><input id="y2" type="number" value="20" step="0.5" min="0"></div>
-        <div><label id="y3l" for="y3">Thickness (in)</label><input id="y3" type="number" value="6" step="0.5" min="0"></div>
-        <div><label for="yN">Number of identical pieces</label><input id="yN" type="number" value="1" step="1" min="1"></div>
-        <div><label for="yW">Waste and spillage (%)</label><input id="yW" type="number" value="5" step="1" min="0"></div>
-        <div><label for="yP">Price per yd³ (optional, $)</label><input id="yP" type="number" placeholder="e.g. 185" step="1" min="0"></div>
+      <div class="kp" id="k_1">
+        <div class="presets"><button data-s="8.333">ADA ramp 1:12</button><button data-s="2">Walk cross-slope 2%</button><button data-s="1">Min. drainage 1%</button><button data-s="25">4:1 slope</button></div>
+        <div class="calc c3"><div><label for="sA">Start elev. (ft)</label><input id="sA" type="number" value="100" step="0.01"></div><div><label for="sB">End elev. (ft)</label><input id="sB" type="number" value="99.5" step="0.01"></div><div><label for="sD">Distance (ft)</label><input id="sD" type="number" value="25" min="0.1" step="0.5"></div></div>
+        <div class="out sm" id="sout"></div>
+        <ul class="chk" id="schk"></ul>
       </div>
-      <div class="out" id="yout"></div>
-    </div>
 
-    <div class="kp card" id="k_3">
-      <p class="hint">A first-trial mix proportioned with the ACI 211.1 absolute volume method. Materials are in saturated surface dry condition.</p>
-      <div class="calc">
-        <div><label for="mF">Specified strength f′c (psi)</label><input id="mF" type="number" value="4000" min="2000" max="6000" step="500"></div>
-        <div><label for="mG">Max aggregate size</label><select id="mG"><option value="0">3/8 in.</option><option value="1">1/2 in.</option><option value="2" selected>3/4 in.</option><option value="3">1 in.</option></select></div>
-        <div><label for="mS">Slump</label><select id="mS"><option value="0">1 to 2 in.</option><option value="1" selected>3 to 4 in.</option><option value="2">6 to 7 in.</option></select></div>
-        <div><label for="mA">Exposure and air</label><select id="mA"><option value="0">Indoor, no freeze-thaw (no air)</option><option value="1">Air-entrained, moderate exposure</option><option value="2">Air-entrained, severe exposure</option></select></div>
-        <div><label for="mM">Sand fineness modulus</label><input id="mM" type="number" value="2.7" min="2.4" max="3" step="0.05"></div>
-        <div><label for="mU">Coarse agg. dry-rodded unit wt (lb/ft³)</label><input id="mU" type="number" value="100" min="80" max="120" step="1"></div>
-        <div><label for="mC">Specific gravity: cement / stone / sand</label><div class="tri3"><input id="mSc" type="number" value="3.15" step="0.01"><input id="mSg" type="number" value="2.65" step="0.01"><input id="mSf" type="number" value="2.65" step="0.01"></div></div>
-        <div><label for="mV">Batch volume (yd³)</label><input id="mV" type="number" value="1" min="0.1" step="0.5"></div>
+      <div class="kp" id="k_2">
+        <div class="calc c4">
+          <div><label for="yS">Shape</label><select id="yS"><option value="slab">Slab / footing</option><option value="wall">Wall</option><option value="col">Round column</option></select></div>
+          <div><label id="y1l" for="y1">Length (ft)</label><input id="y1" type="number" value="30" step="0.5" min="0"></div>
+          <div><label id="y2l" for="y2">Width (ft)</label><input id="y2" type="number" value="20" step="0.5" min="0"></div>
+          <div><label id="y3l" for="y3">Thickness (in)</label><input id="y3" type="number" value="6" step="0.5" min="0"></div>
+          <div><label for="yN">Pieces</label><input id="yN" type="number" value="1" step="1" min="1"></div>
+          <div><label for="yW">Waste (%)</label><input id="yW" type="number" value="5" step="1" min="0"></div>
+          <div><label for="yP">$ per yd³ (optional)</label><input id="yP" type="number" placeholder="e.g. 185" step="1" min="0"></div>
+        </div>
+        <div class="out sm" id="yout"></div>
       </div>
-      <div class="out" id="mout"></div>
-      <p class="hint" style="margin:12px 0 0" id="mnote"></p>
+
+      <div class="kp" id="k_3">
+        <div class="calc c4">
+          <div><label for="mF">f′c (psi)</label><input id="mF" type="number" value="4000" min="2000" max="6000" step="500"></div>
+          <div><label for="mG">Max stone size</label><select id="mG"><option value="0">3/8 in.</option><option value="1">1/2 in.</option><option value="2" selected>3/4 in.</option><option value="3">1 in.</option></select></div>
+          <div><label for="mS">Slump</label><select id="mS"><option value="0">1–2 in.</option><option value="1" selected>3–4 in.</option><option value="2">6–7 in.</option></select></div>
+          <div><label for="mA">Exposure</label><select id="mA"><option value="0">Indoor, no air</option><option value="1">Air-entrained, moderate</option><option value="2">Air-entrained, severe</option></select></div>
+          <div><label for="mM">Sand FM</label><input id="mM" type="number" value="2.7" min="2.4" max="3" step="0.05"></div>
+          <div><label for="mU">Stone unit wt (lb/ft³)</label><input id="mU" type="number" value="100" min="80" max="120" step="1"></div>
+          <div><label>Sp. gravity C / S / F</label><div class="tri3"><input id="mSc" type="number" value="3.15" step="0.01"><input id="mSg" type="number" value="2.65" step="0.01"><input id="mSf" type="number" value="2.65" step="0.01"></div></div>
+          <div><label for="mV">Batch (yd³)</label><input id="mV" type="number" value="1" min="0.1" step="0.5"></div>
+        </div>
+        <div class="out sm" id="mout"></div>
+        <p class="hint" style="margin:8px 0 0" id="mnote"></p>
+      </div>
     </div>
   </div>
 </section>
@@ -758,7 +794,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     <h2 class="rv">Looking for a Project Engineer, Field Engineer or Inspector role</h2>
     <p class="rv d1">Happy to relocate anywhere in the U.S., and eager to learn and grow with a great team. Fluent in English, Telugu and Hindi.</p>
     <a class="btn rv d2" href="mailto:manohareduc@gmail.com">Email me</a><a class="btn ghost rv d2" href="https://www.linkedin.com/in/manoharballipalli/">LinkedIn</a>
-    <footer>© 2026 Manohar Ballipalli · College Park, MD · Faces in site photos are blurred · Photos are my own, except those marked illustrative (Wikimedia Commons). Internship chapters use photos I took on later U.S. site visits, not the internship sites · <a href="https://www.linkedin.com/in/manoharballipalli/">LinkedIn</a><br>Photo credits (Wikimedia Commons): restaurant interior (Amantaka, Luang Prabang), CC BY-SA 4.0; large-scale 3D printing platform (Manufacturing Demonstration Facility), CC BY 2.0; laser cutting machine at PTM shop, CC BY-SA 4.0; other illustrative photos as noted.</footer>
+    <footer>© 2026 Manohar Ballipalli · College Park, MD · Faces in site photos are blurred · Photos are my own, except those marked illustrative (Wikimedia Commons). Internship chapters use photos I took on later U.S. site visits, not the internship sites · <a href="https://www.linkedin.com/in/manoharballipalli/">LinkedIn</a><br>Photo credits (Wikimedia Commons): restaurant interior (Amantaka, Luang Prabang), CC BY-SA 4.0; large-scale 3D printing platform (Manufacturing Demonstration Facility), CC BY 2.0; laser cutting machine at PTM shop, CC BY-SA 4.0; blood donation camp, Ramakrishna Mission Belur Math, public domain; tree planting, Danyal Atif, CC BY-SA 4.0; camp evening, Vishwanatha Badikana, CC BY-SA 4.0; paddy field, Conquester, CC BY-SA 3.0 (faces in these photos are blurred); other illustrative photos as noted.</footer>
   </div>
 </section>
 
@@ -890,8 +926,8 @@ $$('#cl li').forEach(li=>li.addEventListener('click',()=>{
 const vis={
  p:{note:'Reading drawings, plan sheets and field paperwork, the way I would on my own job.',items:[['v_circuits','Electrical circuits traced on the site plan: four circuits (47, 45, 37, 39) from the main pole to each shelter junction box'],['v_busbay','Bus-bay concrete demolition limits: dimensions and area calculations'],['s1_plans2','Reading architectural sections on site'],['s1_plans','Pointing out details on the drawings'],['s1_plans3','Renovation and addition drawing set (street address blurred)'],['e_sheet','Field sheet: daily paperwork and logs']]},
  c:{note:'Concrete placement and the tests that go with it.',items:[['d_temp','Checking concrete temperature with a thermometer'],['d_sleeve','Embedded sleeve checked in fresh concrete'],['d_pour','Concrete placement from the chute'],['d_finish','Crew finishing the slab'],['d_prep','Rebar mat ready before the pour'],['d_rebar','Reinforcement and subgrade inspection']]},
- d:{note:'A metro bus-shelter renovation, from demolition to finished concrete.',items:[['d_shelter','The finished shelter area'],['d_demo','Demolition of the old concrete'],['d_rubble','Breaking out and hauling rubble'],['d_rubble2','Broken concrete before removal'],['d_marks','Layout marks and limits painted on the slab'],['d_dig','Excavating for the new base'],['d_trench','Trenching for utilities'],['d_gnss','Setting out points with a GNSS rover'],['d_gnss2','GNSS rover on site'],['d_night','The canopy at night']]},
- e:{note:'Large-scale earthwork and ground preparation on an empty site.',items:[['e_excavator','Excavator working the cut'],['e_dump','Loading an articulated dump truck'],['e_roller','Roller compacting the subgrade'],['e_grade','Graded and compacted pad'],['e_loader','Wheel loader with forks'],['e_loader2','Wheel loader on the pad'],['e_rock','Rock found while grading'],['e_pipe','Drainage structure set in the pad'],['e_channel','Drainage swale along the site'],['e_stake','Survey stakes marking grade'],['e_wide','Whole site at work'],['e_compact','Compaction pass'],['e_truck','Hauling spoil'],['e_haul','Excavator and haul trucks']]},
+ d:{note:'A metro bus-shelter renovation, from demolition to finished concrete.',items:[['d_shelter','The finished shelter area'],['d_demo','Demolition of the old concrete'],['d_rubble','Breaking out and hauling rubble'],['d_rubble2','Broken concrete before removal'],['d_marks','Layout marks and limits painted on the slab'],['d_dig','Excavating for the new base'],['d_trench','Trenching for utilities'],['d_gnss','Setting out points with a GNSS rover'],['d_gnss2','GNSS rover on site'],['d_night','Plastic sheeting laid under the shelter canopy']]},
+ e:{note:'Large-scale earthwork and ground preparation on an empty site.',items:[['e_excavator','Excavator working the cut'],['e_dump','Loading an articulated dump truck'],['e_roller','Roller compacting the subgrade'],['e_grade','Graded and compacted pad'],['e_loader','Wheel loader with forks'],['e_loader2','Wheel loader on the pad'],['e_rock','Rock found while grading'],['e_pipe','Corrugated pipe riser set in the pad'],['e_channel','Drainage swale along the site'],['e_stake','Wooden stakes and pipe stubs at the pad edge'],['e_wide','Whole site at work'],['e_compact','Compaction pass'],['e_truck','Hauling spoil'],['e_haul','Excavator and haul trucks']]},
  s:{note:'A basement renovation and addition: foundation walls, formwork and shoring.',items:[['s1_wide','Foundation walls and formwork'],['s1_walls','Wall forms and crew on a class site visit'],['s1_formwork','Formwork alignment'],['s1_shoring','Shoring and bracing'],['s1_trench','Footing trench and rebar'],['s1_rebar','Rebar in the footing'],['s1_channel','Wall formwork with rebar and form ties, residential site'],['s1_group','Learning on site with a class group']]}};
 function gal(k){const v=vis[k];$('#vnote').textContent=v.note;
  $('#gal').innerHTML=v.items.map(n=>`<figure><img src="${n[0]}.jpg" alt="${n[1]}" loading="lazy"><figcaption>${n[1]}</figcaption></figure>`).join('');
@@ -969,7 +1005,7 @@ function solveBeam(o){
   return {pts,R,aSnap,L};
 }
 
-/* ---------- Beam lab ---------- */
+/* ---------- Beam lab (compact, values on the diagram) ---------- */
 const SUP={ss:[[0,'pin'],[100,'pin']],cant:[[0,'fix']],ff:[[0,'fix'],[100,'fix']],prop:[[0,'fix'],[100,'pin']],over:[[0,'pin'],[70,'pin']]};
 const svg=$('#bsvg'),NS='http://www.w3.org/2000/svg';
 let last=null;
@@ -978,86 +1014,82 @@ function beam(){
   const bt=$('#bt').value,lt=$('#lt').value;
   const Lf=Math.max(1,+$('#bL').value||0),E=+$('#bE').value,I=Math.max(1,+$('#bI').value||1);
   let v=+$('#bV').value||0,a=Math.min(Lf,Math.max(0,+$('#bA').value||0));
-  const lab={point:'Load P (kips)',udl:'Load w (kips per ft)',tri:'Peak load w (kips per ft)',moment:'Moment M (kip-ft)'};
+  const lab={point:'Load P (kips)',udl:'Load w (kips/ft)',tri:'Peak w (kips/ft)',moment:'Moment M (kip-ft)'};
   $('#bVl').textContent=lab[lt];
   $('#bAw').style.display=(lt==='point'||lt==='moment')?'':'none';
   const o={L:Lf*12,EI:E*I,load:lt,a:a*12,sup:SUP[bt]};
   if(lt==='point')o.P=v;if(lt==='udl'||lt==='tri')o.w=v/12;if(lt==='moment')o.M=v*12;
   const r=solveBeam(o);last={r,Lf,bt,lt,v,a,aS:r.aSnap/12};
-  let mV=0,mM=0,mY=0,xV=0,xM=0,xY=0;
-  r.pts.forEach(p=>{if(Math.abs(p.V)>mV+1e-9){mV=Math.abs(p.V);xV=p.x}if(Math.abs(p.M)>Math.abs(mM)+1e-9){mM=p.M;xM=p.x}if(Math.abs(p.y)>Math.abs(mY)+1e-9){mY=p.y;xY=p.x}});
+  let mV=0,mM=0,mY=0;
+  r.pts.forEach(p=>{mV=Math.max(mV,Math.abs(p.V));if(Math.abs(p.M)>Math.abs(mM))mM=p.M;if(Math.abs(p.y)>Math.abs(mY))mY=p.y});
   const lim=Lf*12/360,ok=Math.abs(mY)<=lim;
-  const rs=r.R.map((q,i)=>'R'+(i+1)+' = '+fx(q.Ry,2)+' kips'+(q.t==='fix'?', M = '+fx(q.M/12,1)+' kip-ft':'')).join('<br>');
-  $('#bout').innerHTML=`<div>Reactions (up positive)<b style="font-size:16px;line-height:1.5">${rs}</b></div><div>Max shear |V|<b>${fx(mV,2)} kips</b>at ${fx(xV/12,1)} ft</div><div>Max moment<b>${fx(mM/12,1)} kip-ft</b>at ${fx(xM/12,1)} ft ${mM<0?'(hogging)':'(sagging)'}</div><div>Max deflection<b>${fx(Math.abs(mY),3)} in</b>${y2(mY)} at ${fx(xY/12,1)} ft</div>`;
-  const nt=[];
-  nt.push(`Deflection limit L/360 = ${fx(lim,2)} in: <b style="color:var(${ok?'--good':'--bad'})">${ok?'OK':'exceeds the limit'}</b>.`);
-  if((lt==='point'||lt==='moment')&&Math.abs(last.aS-a)>0.06)nt.push(`The load is placed at ${fx(last.aS,2)} ft, the nearest 1/100 of the span.`);
-  $('#bnote').innerHTML=nt.join(' ');
+  $('#bout').innerHTML=`<div>Max V<b>${fx(mV,2)} k</b></div><div>Max M<b>${fx(Math.abs(mM)/12,1)} k-ft</b></div><div>Max deflection<b>${fx(Math.abs(mY),3)} in</b></div><div>L/360 = ${fx(lim,2)} in<b style="color:var(${ok?'--good':'--bad'})">${ok?'OK':'Too much'}</b></div>`;
   draw();
 }
-function y2(y){return y>0?'(down)':y<0?'(up)':''}
+window.__beamDraw=()=>{if(last)draw()};
 function draw(){
-  const {r,Lf,bt,lt,v,aS}=last,X0=60,X1=730,W=X1-X0,L=r.L;
+  const {r,Lf,bt,lt,v,aS}=last,X0=46,X1=612,W=X1-X0,L=r.L;
   const px=x=>X0+x/L*W;
   svg.innerHTML='';
-  const css=getComputedStyle(document.documentElement);
-  const steel='#4f6477',acc='#c47a47',ink='#27323d',mute='#6b7480',good='#5f8f6e',bad='#b9573f';
-  // panel 0: beam
-  const by=95;
-  svg.appendChild(el('rect',{x:X0,y:by-7,width:W,height:14,fill:steel,rx:3}));
+  const steel='#4f6477',acc='#c47a47',ink='#27323d',mute='#6b7480',good='#5f8f6e';
+  const by=58;
+  svg.appendChild(el('rect',{x:X0,y:by-5,width:W,height:10,fill:steel,rx:2}));
   SUP[bt].forEach(([n,t])=>{const x=px(n/100*L);
-    if(t==='fix'){const left=n===0;const xx=left?x:x;
-      svg.appendChild(el('rect',{x:left?x-12:x,y:by-34,width:12,height:68,fill:'#bfb6a4'}));
-      for(let k=0;k<7;k++)svg.appendChild(el('line',{x1:left?x-12:x+12,y1:by-30+k*9,x2:left?x-20:x+20,y2:by-22+k*9,stroke:mute,'stroke-width':1.3}));
-    }else if(bt==='ss'&&n===100||bt==='prop'&&n===100||bt==='over'&&n===70){
-      svg.appendChild(el('circle',{cx:x,cy:by+14,r:6,fill:'none',stroke:ink,'stroke-width':2}));svg.appendChild(el('line',{x1:x-14,y1:by+23,x2:x+14,y2:by+23,stroke:ink,'stroke-width':2}));
-    }else{svg.appendChild(el('path',{d:`M${x},${by+7} l-12,20 h24 z`,fill:'#e9e2d4',stroke:ink,'stroke-width':2}))}
+    if(t==='fix'){const left=n===0;
+      svg.appendChild(el('rect',{x:left?x-9:x,y:by-24,width:9,height:48,fill:'#bfb6a4'}));
+      for(let k=0;k<5;k++)svg.appendChild(el('line',{x1:left?x-9:x+9,y1:by-20+k*9,x2:left?x-15:x+15,y2:by-14+k*9,stroke:mute,'stroke-width':1.1}));
+    }else if(n===100||(bt==='over'&&n===70)){svg.appendChild(el('circle',{cx:x,cy:by+11,r:4.5,fill:'none',stroke:ink,'stroke-width':1.6}));svg.appendChild(el('line',{x1:x-10,y1:by+17,x2:x+10,y2:by+17,stroke:ink,'stroke-width':1.6}))}
+    else svg.appendChild(el('path',{d:`M${x},${by+5} l-8,14 h16 z`,fill:'#e9e2d4',stroke:ink,'stroke-width':1.6}));
   });
-  const arrow=(x,y1,y2,c)=>{svg.appendChild(el('line',{x1:x,y1:y1,x2:x,y2:y2,stroke:c,'stroke-width':2}));svg.appendChild(el('path',{d:`M${x-4.5},${y2-8} L${x},${y2} L${x+4.5},${y2-8}`,fill:'none',stroke:c,'stroke-width':2}))};
-  if(lt==='point'){const x=px(aS*12);arrow(x,18,by-9,acc);svg.appendChild(el('text',{x:x+8,y:28,fill:acc,'font-size':13,'font-weight':600},fx(v,1)+' kips'))}
-  if(lt==='udl'||lt==='tri'){const n=16;for(let k=0;k<=n;k++){const x=X0+k/n*W,h=lt==='udl'?1:k/n;if(h>0.04)arrow(x,by-10-h*52,by-9,acc)}
-    svg.appendChild(el('path',{d:lt==='udl'?`M${X0},${by-62} H${X1}`:`M${X0},${by-10} L${X1},${by-62}`,stroke:acc,'stroke-width':2,fill:'none'}));
-    svg.appendChild(el('text',{x:X1-4,y:by-70,fill:acc,'font-size':13,'font-weight':600,'text-anchor':'end'},fx(v,2)+' kips/ft'))}
-  if(lt==='moment'){const x=px(aS*12),cw=v>=0;svg.appendChild(el('path',{d:`M${x-22},${by-26} A24,24 0 1 ${cw?1:0} ${x+22},${by-26}`,fill:'none',stroke:acc,'stroke-width':2.5}));
-    svg.appendChild(el('path',{d:cw?`M${x+22},${by-26} l-9,-3 m9,3 l-2,9`:`M${x-22},${by-26} l9,-3 m-9,3 l2,9`,stroke:acc,'stroke-width':2.5,fill:'none'}));
-    svg.appendChild(el('text',{x:x+30,y:by-34,fill:acc,'font-size':13,'font-weight':600},fx(Math.abs(v),1)+' kip-ft'))}
-  svg.appendChild(el('text',{x:X0,y:152,fill:mute,'font-size':12},'0 ft'));svg.appendChild(el('text',{x:X1,y:152,fill:mute,'font-size':12,'text-anchor':'end'},fx(Lf,1)+' ft'));
-  // panels
-  const panels=[{k:'V',t:'Shear force, V (kips)',y:262,c:good,u:1},{k:'M',t:'Bending moment, M (kip-ft, sagging +)',y:422,c:acc,u:1/12},{k:'y',t:'Deflection (in, down +)',y:582,c:steel,u:1,down:true}];
-  const H=58;
+  // reaction labels
+  r.R.forEach(q=>{const x=px(q.x);const t='R = '+fx(q.Ry,2)+' k'+(q.t==='fix'?',  M = '+fx(q.M/12,1)+' k-ft':'');
+    svg.appendChild(el('text',{x:Math.min(X1-4,Math.max(X0+4,x)),y:by+34,fill:ink,'font-size':10.5,'font-weight':600,'text-anchor':x<X0+80?'start':x>X1-80?'end':'middle'},t))});
+  const arrow=(x,y1,y2,c)=>{svg.appendChild(el('line',{x1:x,y1:y1,x2:x,y2:y2,stroke:c,'stroke-width':1.5}));svg.appendChild(el('path',{d:`M${x-3.5},${y2-6} L${x},${y2} L${x+3.5},${y2-6}`,fill:'none',stroke:c,'stroke-width':1.5}))};
+  if(lt==='point'){const x=px(aS*12);arrow(x,10,by-6,acc);svg.appendChild(el('text',{x:x+6,y:16,fill:acc,'font-size':11,'font-weight':600},fx(v,1)+' kips'))}
+  if(lt==='udl'||lt==='tri'){const n=18;for(let k=0;k<=n;k++){const x=X0+k/n*W,h=lt==='udl'?1:k/n;if(h>0.05)arrow(x,by-7-h*30,by-6,acc)}
+    svg.appendChild(el('path',{d:lt==='udl'?`M${X0},${by-37} H${X1}`:`M${X0},${by-7} L${X1},${by-37}`,stroke:acc,'stroke-width':1.5,fill:'none'}));
+    svg.appendChild(el('text',{x:X1,y:by-43,fill:acc,'font-size':11,'font-weight':600,'text-anchor':'end'},fx(v,2)+' kips/ft'))}
+  if(lt==='moment'){const x=px(aS*12),cw=v>=0;svg.appendChild(el('path',{d:`M${x-14},${by-16} A15,15 0 1 ${cw?1:0} ${x+14},${by-16}`,fill:'none',stroke:acc,'stroke-width':2}));
+    svg.appendChild(el('text',{x:x+20,y:by-26,fill:acc,'font-size':11,'font-weight':600},fx(Math.abs(v),1)+' k-ft'))}
+  svg.appendChild(el('text',{x:X0,y:by+50,fill:mute,'font-size':9.5},'0'));svg.appendChild(el('text',{x:X1,y:by+50,fill:mute,'font-size':9.5,'text-anchor':'end'},fx(Lf,1)+' ft'));
+  const panels=[{k:'V',t:'V (kips)',y:176,c:good,u:1,d:2},{k:'M',t:'M (kip-ft)',y:262,c:acc,u:1/12,d:1},{k:'y',t:'δ (in)',y:338,c:steel,u:1,d:3,down:true}];
+  const H=26;
   panels.forEach(pn=>{
     let mx=0;r.pts.forEach(p=>mx=Math.max(mx,Math.abs(p[pn.k])));if(mx<1e-12)mx=1;
-    const sy=v=>pn.down?pn.y+v/mx*H:pn.y-v/mx*H;
-    svg.appendChild(el('text',{x:X0,y:pn.y-H-30,fill:ink,'font-size':13,'font-weight':600},pn.t));
-    svg.appendChild(el('line',{x1:X0,y1:pn.y,x2:X1,y2:pn.y,stroke:'#b5a98f','stroke-width':1}));
+    const sy=q=>pn.down?pn.y+q/mx*(H+4):pn.y-q/mx*H;
+    svg.appendChild(el('text',{x:11,y:pn.y,fill:ink,'font-size':10.5,'font-weight':600,'text-anchor':'middle',transform:`rotate(-90 11 ${pn.y})`},pn.t));
+    svg.appendChild(el('line',{x1:X0,y1:pn.y,x2:X1,y2:pn.y,stroke:'#b5a98f','stroke-width':.8}));
     let d=`M${px(0)},${pn.y}`;r.pts.forEach(p=>d+=` L${px(p.x).toFixed(1)},${sy(p[pn.k]).toFixed(1)}`);d+=` L${px(L)},${pn.y} Z`;
-    svg.appendChild(el('path',{d:d,fill:pn.c,'fill-opacity':.22,stroke:pn.c,'stroke-width':2,'stroke-linejoin':'round'}));
-    // peak label
-    let pk=r.pts[0];r.pts.forEach(p=>{if(Math.abs(p[pn.k])>Math.abs(pk[pn.k])+1e-12)pk=p});
-    if(Math.abs(pk[pn.k])>1e-9){const tx=Math.min(X1-30,Math.max(X0+30,px(pk.x)));const ty=sy(pk[pn.k]);
-      svg.appendChild(el('circle',{cx:px(pk.x),cy:ty,r:3.5,fill:pn.c}));
-      const lbl=fx(pn.k==='y'?pk.y:pk[pn.k]*pn.u,pn.k==='y'?3:2);
-      const up=(pn.down?pk[pn.k]<0:pk[pn.k]>0);
-      svg.appendChild(el('text',{x:tx,y:up?ty-9:ty+18,fill:ink,'font-size':12.5,'font-weight':600,'text-anchor':'middle'},lbl))}
+    svg.appendChild(el('path',{d:d,fill:pn.c,'fill-opacity':.2,stroke:pn.c,'stroke-width':1.6,'stroke-linejoin':'round'}));
+    // value labels: ends, max, min (plus the two sides of a point load)
+    const P=r.pts,cands=[P[0],P[P.length-1]];let mxp=P[0],mnp=P[0];P.forEach(p=>{if(p[pn.k]>mxp[pn.k])mxp=p;if(p[pn.k]<mnp[pn.k])mnp=p});cands.push(mxp,mnp);
+    if(pn.k==='V'&&(lt==='point')){const i=P.findIndex(p=>p.x>=aS*12-1e-6);if(i>0){cands.push(P[i-1],P[i+1]||P[i])}}
+    const shown=[];
+    cands.forEach(p=>{const val=p[pn.k];if(Math.abs(val)<mx*1e-4)return;
+      if(shown.some(s=>Math.abs(s.x-p.x)<L*0.07&&Math.abs(s.v-val)<mx*0.12))return;shown.push({x:p.x,v:val});
+      const tx=px(p.x),ty=sy(val),up=pn.down?val<0:val>0;
+      svg.appendChild(el('circle',{cx:tx,cy:ty,r:2.6,fill:pn.c}));
+      const anchor=tx<X0+26?'start':tx>X1-26?'end':'middle';
+      svg.appendChild(el('text',{x:tx+(anchor==='start'?-2:anchor==='end'?2:0),y:up?ty-5:ty+12,fill:ink,'font-size':10.5,'font-weight':600,'text-anchor':anchor},fx(val*pn.u,pn.d)))});
   });
-  // hover line
-  const hl=el('line',{x1:0,y1:200,x2:0,y2:650,stroke:ink,'stroke-width':1,'stroke-dasharray':'4 4',opacity:0});svg.appendChild(hl);
-  const cap=el('rect',{x:X0,y:200,width:W,height:460,fill:'transparent'});svg.appendChild(cap);
-  const move=e=>{const b=svg.getBoundingClientRect();const cx=(e.touches?e.touches[0].clientX:e.clientX);const x=Math.min(L,Math.max(0,((cx-b.left)/b.width*760-X0)/W*L));
+  svg.appendChild(el('text',{x:X1,y:401,fill:mute,'font-size':9.5,'text-anchor':'end'},'Moment: sagging +. Deflection: down +. Hover to read any point.'));
+  const hl=el('line',{x1:0,y1:104,x2:0,y2:372,stroke:ink,'stroke-width':.8,'stroke-dasharray':'3 3',opacity:0});svg.appendChild(hl);
+  const ht=el('text',{x:X1,y:12,fill:ink,'font-size':10.5,'text-anchor':'end'},'');svg.appendChild(ht);
+  const cap=el('rect',{x:X0,y:100,width:W,height:286,fill:'transparent'});svg.appendChild(cap);
+  const move=e=>{const b=svg.getBoundingClientRect();const cx=(e.touches?e.touches[0].clientX:e.clientX);const x=Math.min(L,Math.max(0,((cx-b.left)/b.width*640-X0)/W*L));
     const pts=r.pts.filter(p=>p.side==='L');let best=pts[0];pts.forEach(p=>{if(Math.abs(p.x-x)<Math.abs(best.x-x))best=p});
     if(x>L-L/200)best=r.pts[r.pts.length-1];
     hl.setAttribute('x1',px(best.x));hl.setAttribute('x2',px(best.x));hl.setAttribute('opacity',1);
-    $('#bhov').innerHTML=`At <b>${fx(best.x/12,2)} ft</b> &nbsp;·&nbsp; V = <b>${fx(best.V,2)} kips</b> &nbsp;·&nbsp; M = <b>${fx(best.M/12,2)} kip-ft</b> &nbsp;·&nbsp; deflection = <b>${fx(best.y,3)} in</b>`};
+    ht.textContent=`x = ${fx(best.x/12,1)} ft · V = ${fx(best.V,2)} k · M = ${fx(best.M/12,1)} k-ft · δ = ${fx(best.y,3)} in`};
   cap.addEventListener('mousemove',move);cap.addEventListener('touchstart',move,{passive:true});cap.addEventListener('touchmove',move,{passive:true});
 }
 ['bt','lt','bL','bV','bA','bE','bI'].forEach(i=>$('#'+i).addEventListener('input',beam));
-// sensible default load when load type changes
 $('#lt').addEventListener('change',()=>{const d={point:10,udl:1.5,tri:2,moment:60};$('#bV').value=d[$('#lt').value];beam()});
 $('#bt').addEventListener('change',()=>{if($('#bt').value==='cant'&&$('#lt').value==='point')$('#bA').value=$('#bL').value;beam()});
 beam();
 
 /* ---------- tabs for concrete toolkit ---------- */
-$$('#ctabs button').forEach(b=>b.addEventListener('click',()=>{$$('#ctabs button').forEach(x=>x.classList.toggle('on',x===b));$$('.kp').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p))}));
+$$('#tbt button').forEach(b=>b.addEventListener('click',()=>{$$('#tbt button').forEach(x=>x.classList.toggle('on',x===b));$$('.kp').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p));if(b.dataset.p==='k_0'&&window.__beamDraw)window.__beamDraw()}));
 
 /* ---------- slope ---------- */
 function slope(){
@@ -1121,6 +1153,41 @@ mix();
 
 /* paddy rows */
 (function(){var g=document.getElementById("rice");if(!g)return;var h="";for(var r=0;r<5;r++){var y=76+r*16;for(var c=0;c<22;c++){var x=22+c*12.4+(r%2)*6;h+="<path d=\"M"+x.toFixed(1)+" "+(y+8)+" l-2 -9 M"+x.toFixed(1)+" "+(y+8)+" l0 -11 M"+x.toFixed(1)+" "+(y+8)+" l2 -9\"/>"}}g.innerHTML=h})();
+
+/* ---------- living touches: hover clips and rain ---------- */
+(function(){
+const $$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+$$('figure[data-clip]').forEach(f=>{
+  const img=f.querySelector('img'),cap=f.querySelector('figcaption');if(!img)return;
+  const frames=f.dataset.clip.split(';').map(x=>x.split('|'));
+  f.classList.add('flat');img.removeAttribute('data-par');img.style.transform='';
+  const ov=document.createElement('img');ov.alt='';ov.className='ov';f.insertBefore(ov,cap);
+  const badge=document.createElement('i');badge.className='live';f.appendChild(badge);
+  let t=null,k=0,loaded=false;const base=[img.getAttribute('src'),cap?cap.textContent:''];
+  const dots=()=>frames.map((_,i)=>i===k?'●':'○').join(' ');
+  badge.textContent='▶ hover to play';
+  function show(i){k=i;ov.onload=()=>{ov.style.opacity=1;setTimeout(()=>{img.src=frames[i][0]+'.jpg';ov.style.opacity=0;},380)};ov.src=frames[i][0]+'.jpg';if(cap)cap.textContent=frames[i][1];badge.textContent=dots()}
+  function start(){if(reduce||t)return;if(!loaded){frames.forEach(fr=>{const p=new Image();p.src=fr[0]+'.jpg'});loaded=true}
+    badge.textContent=dots();t=setInterval(()=>show((k+1)%frames.length),1500)}
+  function stop(){clearInterval(t);t=null;k=0;img.src=base[0];ov.style.opacity=0;if(cap)cap.textContent=base[1];badge.textContent='▶ hover to play'}
+  f.addEventListener('mouseenter',start);f.addEventListener('mouseleave',stop);
+  f.addEventListener('click',()=>t?stop():start());
+});
+$$('figure[data-rain]').forEach(f=>{
+  if(reduce)return;
+  const cv=document.createElement('canvas');cv.className='rain';f.appendChild(cv);
+  const badge=document.createElement('i');badge.className='live';badge.textContent='☂ hover for rain';f.appendChild(badge);
+  const g=cv.getContext('2d');let raf=0,drops=[],on=false;
+  function size(){cv.width=f.clientWidth;cv.height=f.clientHeight}
+  function frame(){g.clearRect(0,0,cv.width,cv.height);g.strokeStyle='rgba(235,242,250,.65)';g.lineWidth=1.2;g.beginPath();
+    drops.forEach(d=>{g.moveTo(d.x,d.y);g.lineTo(d.x-d.l*.18,d.y+d.l);d.y+=d.v;d.x-=d.v*.18;if(d.y>cv.height){d.y=-20;d.x=Math.random()*(cv.width+60)}});g.stroke();
+    if(on||cv.style.opacity>0)raf=requestAnimationFrame(frame)}
+  f.addEventListener('mouseenter',()=>{size();on=true;drops=Array.from({length:Math.round(cv.width/5)},()=>({x:Math.random()*(cv.width+60),y:Math.random()*cv.height,l:10+Math.random()*14,v:11+Math.random()*9}));cv.style.opacity=1;f.classList.add('wet');cancelAnimationFrame(raf);frame()});
+  f.addEventListener('mouseleave',()=>{on=false;cv.style.opacity=0;f.classList.remove('wet');setTimeout(()=>{if(!on)cancelAnimationFrame(raf)},500)});
+});
+})();
+
 </script>
 </body>
 </html>
