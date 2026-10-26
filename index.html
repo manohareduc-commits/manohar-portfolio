@@ -264,6 +264,33 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   </div>
 </section>
 
+<!-- strengths -->
+<section class="ch" id="cs" data-title="Strengths" style="padding-bottom:60px">
+  <div class="wrap">
+    <div class="eyebrow">What I do best</div>
+    <h2 class="rv">Safety, inspection, surveying, concrete testing and crew leadership</h2>
+    <p class="rv">These five run through every job I have worked on. Tap one.</p>
+    <div class="tabs rv" id="stabs">
+      <button class="on" data-p="s_1">Safety</button><button data-p="s_2">Inspection</button><button data-p="s_3">Surveying</button><button data-p="s_4">Concrete testing</button><button data-p="s_5">Managing crews</button>
+    </div>
+    <div class="pane on card grid2 sp" id="s_1" style="margin-top:0"><div><h3>Safety comes first, every time</h3>
+      <ul class="bul"><li>Caught workers without proper PPE and stopped the work until they complied: "no PPE, no work."</li><li>Enforced daily safety compliance at Sree Geetha Constructions.</li><li>Watched lab safety and equipment condition as a lab assistant at CUA.</li><li>OSHA 30-Hour (Construction) and certified flagger, earned in the U.S. in 2026.</li></ul></div>
+      <figure class="ph" style="aspect-ratio:4/3"><img src="s1_group.jpg" alt="Site visit in safety vests and hard hats" loading="lazy"><figcaption>Site visit: vests and hard hats</figcaption></figure></div>
+    <div class="pane card grid2 sp" id="s_2" style="margin-top:0"><div><h3>Inspection before anything gets buried or poured</h3>
+      <ul class="bul"><li>Pre-pour checks: rebar size, spacing, cover, minimum ties, top and bottom steel on cantilevers, formwork alignment, MEP sleeves and embeds.</li><li>Caught two cantilevers with the main bars on the bottom and had them fixed before the concrete.</li><li>Inspected underground sewer and water lines: invert elevations, pipe diameters, slopes, manhole covers and field tests.</li><li>Kept QA/QC logs, inspection requests and structural inspection records.</li></ul></div>
+      <figure class="ph" style="aspect-ratio:4/3"><img src="d_rebar.jpg" alt="Rebar mat inspected before a pour" loading="lazy"><figcaption>Rebar mat before the pour</figcaption></figure></div>
+    <div class="pane card grid2 sp" id="s_3" style="margin-top:0"><div><h3>Surveying and layout</h3>
+      <ul class="bul"><li>Total station, auto level and Emlid GNSS rover.</li><li>Leveling surveys and elevation calculations, starting with an 18-mile canal.</li><li>Checking field numbers against design drawings and slopes.</li><li>Setting out points on site and reading survey stakes.</li></ul></div>
+      <figure class="ph" style="aspect-ratio:4/3"><img src="d_gnss.jpg" alt="GNSS rover on site" loading="lazy"><figcaption>GNSS rover on a site visit</figcaption></figure></div>
+    <div class="pane card grid2 sp" id="s_4" style="margin-top:0"><div><h3>Concrete testing and quality</h3>
+      <ul class="bul"><li>Tested concrete during my internship on a 300-unit housing project.</li><li>Quality-checked every pour on the high-rise structure and arranged concrete tests with the pour.</li><li>Watched concrete temperature checks and placement on a U.S. bus-shelter rebuild.</li><li>Controlled ready-mix concrete billing against what was placed.</li></ul></div>
+      <figure class="ph" style="aspect-ratio:4/3"><img src="d_temp.jpg" alt="Thermometer on fresh concrete" loading="lazy"><figcaption>Checking concrete temperature</figcaption></figure></div>
+    <div class="pane card grid2 sp" id="s_5" style="margin-top:0"><div><h3>Managing crews and trades</h3>
+      <ul class="bul"><li>Directed laborers day to day, and stayed with the crew on the critical work.</li><li>Supervised a team of assistant engineers: assigned tasks and reviewed daily reports.</li><li>Coordinated structural, electrical and plumbing subcontractors, suppliers, architects and clients.</li><li>Held quick meetings with MEP and structural subs before each new section and adjusted the schedule.</li></ul></div>
+      <figure class="ph" style="aspect-ratio:4/3"><img src="d_pour.jpg" alt="Crew placing concrete" loading="lazy"><figcaption>A crew placing concrete</figcaption></figure></div>
+  </div>
+</section>
+
 <!-- journey -->
 <section class="ch" id="cj" data-title="Journey" style="padding-bottom:50px">
   <div class="wrap">
@@ -725,7 +752,7 @@ $$('#sewer [data-k]').forEach(el=>el.addEventListener('click',()=>{
 function tabs(btn,pane,cls){$$(btn).forEach(b=>b.addEventListener('click',()=>{
   $$(btn).forEach(x=>x.classList.toggle('on',x===b));
   $$(pane).forEach(p=>p.classList.toggle('on',p.id===b.dataset.p))}))}
-tabs('#tabs button','#c7 > .wrap > .pane:not(.pj)');tabs('#ptabs button','.pj');tabs('#atabs button','.ap');
+tabs('#tabs button','#c7 > .wrap > .pane:not(.pj)');tabs('#ptabs button','.pj');tabs('#stabs button','.sp');tabs('#atabs button','.ap');
 
 /* cantilever */
 function cant(m){
