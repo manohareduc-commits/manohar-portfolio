@@ -149,6 +149,30 @@ svg text{font-family:Inter,sans-serif}
 #lb{position:fixed;inset:0;background:rgba(30,35,40,.92);display:none;place-items:center;z-index:100;padding:20px;cursor:zoom-out}
 #lb.on{display:grid}#lb img{max-width:100%;max-height:92vh;border-radius:10px}
 #lb button{position:absolute;top:14px;right:20px;font-size:38px;background:none;border:0;color:#fff;cursor:pointer}
+
+.tl{display:flex;gap:0;overflow-x:auto;padding:30px 4px 20px;scroll-snap-type:x proximity;position:relative}
+.tl a{flex:0 0 190px;text-decoration:none;color:inherit;position:relative;padding:22px 14px 0 0;scroll-snap-align:start}
+.tl a:before{content:"";position:absolute;top:6px;left:0;right:0;height:2px;background:var(--line)}
+.tl a:after{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg);transition:.3s}
+.tl a:hover:after{transform:scale(1.4);background:var(--ink)}
+.tl a.us:after{background:var(--accent2)}
+.tl b{display:block;font:600 13px Inter;color:var(--accent);letter-spacing:.04em}
+.tl span{display:block;font:600 16px/1.3 Fraunces,serif;margin:2px 0 4px}
+.tl small{display:block;font-size:13px;color:var(--mute);line-height:1.4}
+.award{text-align:center}.medal{width:70px;height:70px;border-radius:50%;margin:0 auto 12px;background:radial-gradient(circle at 30% 30%,#f6dcb0,#c47a47);color:#fff;font-size:34px;display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(196,122,71,.8);animation:pulse 3s infinite}
+@keyframes pulse{50%{transform:scale(1.07)}}
+.acts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.acts i{font-style:normal;font-size:13px;padding:6px 12px;border-radius:99px;background:var(--bg2);cursor:default;transition:.3s}.acts i:hover{background:var(--accent);color:#fff;transform:translateY(-3px)}
+.bul{margin:14px 0 0 20px;color:#3f4b57;max-width:640px}.bul li{margin-bottom:8px}
+.stat4{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat4 div{background:var(--bg);border-radius:14px;padding:14px;font-size:13px;color:var(--mute)}.stat4 b{display:block;font:600 24px Fraunces,serif;color:var(--ink)}
+.chipbox{display:flex;flex-wrap:wrap;gap:8px;align-content:center}.chipbox span{padding:9px 15px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:14px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.duo .ph{aspect-ratio:4/3}.duo .ph img{top:0;height:100%}
+.trio{display:grid;grid-template-columns:1fr 1fr;gap:10px}.trio .ph{aspect-ratio:4/3;box-shadow:none}.trio .ph img{top:0;height:100%}
+.pane p+p{margin-top:8px}.pane .hint{font-size:14px;color:var(--mute);margin-bottom:8px}
+.vnote{font-size:15px;color:var(--steel);margin:6px 0 16px!important;min-height:24px}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;color:#fff;font-size:13px;background:linear-gradient(0deg,rgba(30,35,40,.88),rgba(30,35,40,.5) 60%,transparent)}
+.pj .hint{margin-bottom:10px}
+svg .bar{cursor:pointer;transition:.3s}svg .bar:hover{opacity:.8}
 /* skills */
 .skillgrid{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .sk{padding:9px 16px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:15px;transition:.35s}
@@ -182,7 +206,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   <div class="wrap">
     <div class="eyebrow rv">Civil Engineer · M.S. Construction Engineering Management</div>
     <h1 class="rv d1">Manohar<br>Ballipalli</h1>
-    <p class="lead rv d2">I learned this trade the hands-on way: in the heat with the laborers, running survey lines with an auto level, and standing at the rebar before every pour. Now I am in the U.S., excited to keep learning and growing here. Scroll — this is how I got here.</p>
+    <p class="lead rv d2">I learned this trade the hands-on way: in the heat with the laborers, running survey lines with an auto level, and standing at the rebar before every pour. Now I am in the U.S., excited to keep learning and growing here. Scroll for the whole story, from India to today.</p>
     <div class="chips rv d3"><span class="chip">MS · Catholic University of America · GPA 3.57</span><span class="chip">Bachelor of Technology (B.Tech), Civil Engineering</span><span class="chip">3-year Civil Engineering Diploma</span><span class="chip">Hyattsville · DC Metro</span></div>
   </div>
   <div class="scrollcue">Scroll the story</div>
@@ -240,17 +264,29 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   </div>
 </section>
 
-<!-- 3 -->
-<section class="ch" id="c3" data-title="State internship">
+<!-- journey -->
+<section class="ch" id="cj" data-title="Journey" style="padding-bottom:50px">
+  <div class="wrap">
+    <div class="eyebrow">The whole story at a glance</div>
+    <h2 class="rv">From Andhra Pradesh to the DC area</h2>
+    <p class="rv">Tap any step to jump to it.</p>
+    <div class="tl rv" id="tl"></div>
+  </div>
+</section>
+
+<!-- AP internship -->
+<section class="ch" id="c3" data-title="Canal internship">
   <div class="num">03</div>
   <div class="wrap">
     <div class="eyebrow">Chapter 03 · First internship</div>
-    <h2 class="rv">State government internship — culverts, canals and the auto level</h2><div class="when rv">March – May 2018</div>
+    <h2 class="rv">Widening an 18-mile irrigation canal</h2>
+    <div class="when rv">March – May 2018 · Site Engineer Intern · Government of Andhra Pradesh · Kavali</div>
     <div class="grid2">
       <div>
-        <p class="rv">My first real site experience: a three-month internship with the state Government of Andhra Pradesh (similar to a state DOT or water-resources agency in the U.S.), working on culverts and surveying near Kavali. I assisted the engineers, took readings with the auto level, did the calculations, and read plans for irrigation canals and reservoirs.</p>
-        <div class="tags rv d1"><span class="tag">Culverts</span><span class="tag">Auto level</span><span class="tag">Canal plans</span><span class="tag">Reservoirs</span><span class="tag">Calculations</span></div>
-        <figure class="ph rv d2" style="margin-top:22px"><img data-par="0.12" src="culvert.jpg" alt="Concrete bridge structure from below" loading="lazy"><figcaption>Cross-drainage and bridge structures</figcaption></figure>
+        <p class="rv">A state government project to widen and upgrade an 18-mile irrigation canal, raising its flow capacity from 250 to 450 cubic feet per second so farms downstream get reliable water. Budget about $1.4M, built in one-mile segments. I was a three-month site engineer intern.</p>
+        <p class="rv d1">I ran field leveling surveys with the auto level, recorded ground elevations for the canal alignment, and checked the numbers in the office against the design drawings and slope requirements. I studied the plans, cost estimates and quantity calculations, and documented canal deepening, shotcrete lining, retaining walls, check-dam repairs and culvert installation. It was my first look at civil infrastructure, survey instruments and government engineering paperwork.</p>
+        <div class="tags rv d2"><span class="tag">Auto level surveys</span><span class="tag">Elevation checks</span><span class="tag">Quantity takeoffs</span><span class="tag">Shotcrete lining</span><span class="tag">Culverts</span><span class="tag">Check dams</span></div>
+        <figure class="ph rv d2" style="margin-top:22px"><img data-par="0.12" src="web_canal.jpg" alt="Excavator deepening a concrete-lined irrigation canal" loading="lazy"><figcaption>Illustrative photo: canal deepening and lining</figcaption></figure><div class="duo rv d2"><figure class="ph"><img src="web_canal2.jpg" alt="Concrete-lined canal" loading="lazy"><figcaption>Lined canal</figcaption></figure><figure class="ph"><img src="web_culvert.jpg" alt="Culvert and bridge under construction" loading="lazy"><figcaption>Culvert work</figcaption></figure></div>
       </div>
       <div class="card rv d1">
         <h3>Try it: leveling calculator</h3>
@@ -267,37 +303,80 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   </div>
 </section>
 
-<!-- 5 -->
-<section class="ch" id="c5" data-title="B.Tech">
+<!-- B.Tech -->
+<section class="ch" id="c5" data-title="Bachelor's">
   <div class="num">04</div>
   <div class="wrap">
     <div class="eyebrow">Chapter 04 · Bachelor of Technology</div>
-    <h2 class="rv">Applying everything I knew — and enjoying it</h2><div class="when rv">2018 – 2021 · Civil Engineering · 7.57 / 10 CGPA</div>
+    <h2 class="rv">Applying everything I knew — and enjoying it</h2>
+    <div class="when rv">2018 – 2021 · Civil Engineering · VVIT, JNTU Kakinada · 7.57 / 10 CGPA</div>
     <div class="grid2 rev">
-      <figure class="ph rv"><img data-par="0.12" src="s1_rebar.jpg" alt="Rebar and formwork in a foundation trench" loading="lazy"><figcaption>Rebar and formwork — the checks I learned in Hyderabad</figcaption></figure>
+      <figure class="ph rv"><img data-par="0.12" src="s1_rebar.jpg" alt="Rebar and formwork in a foundation trench" loading="lazy"><figcaption>Rebar and formwork — the checks I kept learning</figcaption></figure>
       <div>
-        <p class="rv">I earned my Bachelor of Technology (the four-year Indian engineering degree, equal to a U.S. bachelor's) at VVIT, affiliated with JNTU Kakinada. Because of my diploma I entered directly into the second year, and I applied everything I had already learned. I lived with my parents and spent plenty of time with friends — long motorcycle rides, good food, and movies.</p>
-        <p class="rv d1">During college I did a two-month internship (June – July 2019) on a government housing development in Hyderabad. Site inspection, rebar checks, reading plans, testing concrete and directing laborers — it was my first taste of being responsible for quality on site.</p>
-        <div class="tags rv d2"><span class="tag">Inspection</span><span class="tag">Rebar checking</span><span class="tag">Plan reading</span><span class="tag">Concrete testing</span><span class="tag">Crew coordination</span></div>
-        
+        <p class="rv">I earned my Bachelor of Technology (the four-year Indian engineering degree, equal to a U.S. bachelor's). Because of my diploma I entered directly into the second year, and I applied everything I had already learned. I lived with my parents and spent plenty of time with friends — long motorcycle rides, good food, and movies.</p>
+        <p class="rv d1">Beyond the classroom I led a capstone team, built an electronics project, and spent almost three years volunteering. Those are in the chapters below.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 6 -->
-<section class="ch" id="c6" data-title="Mangalagiri">
+<!-- NSS -->
+<section class="ch" id="cn" data-title="NSS volunteer">
   <div class="num">05</div>
   <div class="wrap">
-    <div class="eyebrow">Chapter 05 · After graduating</div>
-    <h2 class="rv">City public works internship — the world below the road</h2><div class="when rv">September 2021 – February 2022</div>
+    <div class="eyebrow">Chapter 05 · Giving back</div>
+    <h2 class="rv">Best Volunteer of the Year</h2>
+    <div class="when rv">July 2018 – March 2021 · Student Volunteer · National Service Scheme (NSS)</div>
     <div class="grid2">
       <div>
-        <p class="rv">After graduating I interned with the Mangalagiri Municipality (the city's public works department), working with engineers and contractors on underground utilities: setting manholes and building the underground sanitary sewer system.</p>
-        <p class="rv d1">Tap a layer in the section on the right to see what each one demands.</p>
-        <div class="tags rv d2"><span class="tag">Underground utilities</span><span class="tag">Manholes</span><span class="tag">Sanitary sewer lines</span><span class="tag">Contractor coordination</span></div>
+        <p class="rv">Alongside my degree I served as a student volunteer with the National Service Scheme, India's national student community-service program, for almost three years. I was honored with the <b>Best Volunteer of the Year award</b>.</p>
+        <p class="rv d1">I organized many community events, ran awareness programs on eco-friendly living, and helped lead blood donation camps, dental camps, clean-city drives (the national Clean India campaign) and tree planting.</p>
+        <div class="tags rv d2"><span class="tag">Blood donation camps</span><span class="tag">Dental camps</span><span class="tag">Clean-city drives</span><span class="tag">Tree planting</span><span class="tag">Eco-awareness</span><span class="tag">Event organizing</span></div>
+      </div>
+      <div class="card rv d1 award">
+        <div class="medal">★</div>
+        <h3>Best Volunteer of the Year</h3>
+        <p class="hint" style="margin:0">National Service Scheme · Student Volunteer, 2018 – 2021</p>
+        <div class="acts" id="acts"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hyderabad -->
+<section class="ch" id="ch" data-title="Housing internship">
+  <div class="num">06</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 06 · Second internship</div>
+    <h2 class="rv">300 affordable homes in Hyderabad</h2>
+    <div class="when rv">June – July 2019 · Site Engineer Intern · Government of Telangana · Maheswaram, Hyderabad</div>
+    <div class="grid2 rev">
+      <figure class="ph rv"><img data-par="0.12" src="web_housing.jpg" alt="Concrete slab with edge formwork" loading="lazy"><figcaption>Illustrative photo: concrete slab and formwork</figcaption></figure>
+      <div>
+        <p class="rv">A government-funded affordable housing project: 300 one-bedroom apartments for low-income families, about $24M. As a site engineer intern I assisted the construction team across every active phase of the building.</p>
+        <p class="rv d1">I observed and documented daily work — structure, masonry, plastering and finishes — supported quality inspections and site supervision under a senior engineer, and learned how large residential projects are sequenced, how subcontractors are managed, and how government projects stay compliant. This is where I first saw the building-construction side that shaped my career at Sree Geetha.</p>
+        <div class="tags rv d2"><span class="tag">Rebar checks</span><span class="tag">Plan reading</span><span class="tag">Concrete testing</span><span class="tag">Crew coordination</span><span class="tag">Quality inspections</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mangalagiri -->
+<section class="ch" id="c6" data-title="Sewer internship">
+  <div class="num">07</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 07 · After graduating</div>
+    <h2 class="rv">Sewer and water lines under the road</h2>
+    <div class="when rv">September 2021 – February 2022 · Site Engineer Intern · Government of Andhra Pradesh · Mangalagiri</div>
+    <div class="grid2">
+      <div>
+        <p class="rv">A government rural-development project building underground sanitary sewer and water pipe systems for the growing city of Mangalagiri, working beside engineers and contractors.</p>
+        <p class="rv d1">I inspected the pipe systems against the design: inlet and invert elevations, pipe diameters, percent slopes, manhole cover installation and field test results. I watched and documented excavation, pipe bedding and backfilling, reported every observation and non-conformance to the site supervisor, and worked around live road traffic. It was my first professional site experience and taught me inspection methods, documentation and site safety.</p>
+        <figure class="ph rv d2" style="margin-top:20px"><img data-par="0.1" src="web_sewer.jpg" alt="Sewer manhole cover set in concrete" loading="lazy"><figcaption>Illustrative photo: sanitary sewer manhole</figcaption></figure>
+        <div class="tags rv d2"><span class="tag">Sanitary sewer</span><span class="tag">Water mains</span><span class="tag">Manholes</span><span class="tag">Invert elevations</span><span class="tag">Trench safety</span></div>
       </div>
       <div class="card rv d1">
+        <p class="hint">Tap a part of the section.</p>
         <svg id="sewer" viewBox="0 0 440 280" width="100%" role="img" aria-label="Manhole and sewer section"></svg>
         <p id="sewerTxt" style="margin:8px 0 0;font-size:15px;min-height:50px">Tap a part of the section.</p>
       </div>
@@ -305,25 +384,48 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   </div>
 </section>
 
-<!-- 7 -->
+<!-- Sree Geetha -->
 <section class="ch" id="c7" data-title="Sree Geetha">
-  <div class="num">06</div>
+  <div class="num">08</div>
   <div class="wrap">
-    <div class="eyebrow">Chapter 06 · Sree Geetha Constructions · March 2022 – July 2024</div>
-    <h2 class="rv">Running the details on real building sites</h2>
-    <div class="grid2">
-      <div>
-        <p class="rv">I worked with Sree Geetha Constructions, a building contractor in Andhra Pradesh, on the construction side of the work. This was where everything came together. I handled survey work, MEP coordination, RFIs, submittals, change orders, scheduling, crew management, plan reading, and inspection before concrete pours — and, for my last two months, MIVAN formwork.</p><p class="rv d1">Three projects: a <b>4-story</b> building (about $700K), a <b>10-story</b> building (about $6.6M), and a six-tower <b>41-story</b> high-rise complex (about $240M total) where I worked with MIVAN from May to July 2024. <span style="color:var(--mute);font-size:14px">(Values converted from Indian rupees, approximate.)</span></p>
-        <div class="tags rv d1"><span class="tag">Total station</span><span class="tag">Auto level</span><span class="tag">Emlid GNSS</span><span class="tag">MEP</span><span class="tag">RFIs</span><span class="tag">Submittals</span><span class="tag">Change orders</span><span class="tag">Scheduling</span><span class="tag">Concrete testing</span></div>
-      </div>
-      <figure class="ph rv d1"><img data-par="0.12" src="li_building.jpg" alt="Concrete tower under construction" loading="lazy"><figcaption>The tower, floor by floor</figcaption></figure>
+    <div class="eyebrow">Chapter 08 · Sree Geetha Constructions</div>
+    <h2 class="rv">Two and a half years, three projects, each bigger than the last</h2>
+    <div class="when rv">March 2022 – July 2024 · Project Engineer · Vijayawada, Andhra Pradesh</div>
+    <p class="rv" style="margin-top:14px">I started as an Assistant Project Engineer and was promoted to Project Engineer within seven months. Pick a project below.</p>
+    <div class="tabs rv" id="ptabs">
+      <button class="on" data-p="pj1">4-story residential · $700K</button><button data-p="pj2">10-story apartments · $6.6M</button><button data-p="pj3">41-story towers · MIVAN</button>
     </div>
 
+    <div class="pane on card grid2 pj" id="pj1" style="margin-top:0">
+      <div>
+        <h3>4-story residential building</h3><p class="hint">About $700K · March – September 2022 · Assistant Project Engineer</p>
+        <p>Coordinated the structural, electrical and plumbing subcontractors, suppliers, the architect and the client's representative. Ran quality checks before every concrete pour: reinforcement, formwork alignment, bar spacing and cover blocks. Tracked planned versus actual progress, slab cycles and floor-by-floor finishing. Managed RFIs, drawing reviews, work permits, inspection requests and QA/QC documentation, verified quantities and material procurement, resolved trade disputes and enforced daily safety.</p>
+      </div>
+      <figure class="ph" style="aspect-ratio:4/3"><img data-par="0.08" src="li_construction1.jpg" alt="Formwork on site" loading="lazy"><figcaption>Formwork and reinforcement</figcaption></figure>
+    </div>
+    <div class="pane card grid2 pj" id="pj2" style="margin-top:0">
+      <div>
+        <h3>10-story apartment building</h3><p class="hint">About $6.6M · September 2022 – July 2024 · Project Engineer · 8 units per floor (one-, two- and three-bedroom)</p>
+        <p>The developer's own project, and I led the full lifecycle: earthwork, structure, MEP and finishes. I managed subcontractor coordination, bill approvals and meetings with the consultant and client, tracked more than 50 RFIs and submittals, and kept QA/QC logs and progress reports current throughout.</p>
+      </div>
+      <figure class="ph" style="aspect-ratio:4/3"><img data-par="0.08" src="li_building.jpg" alt="Building under construction" loading="lazy"><figcaption>Structure rising</figcaption></figure>
+    </div>
+    <div class="pane card grid2 pj" id="pj3" style="margin-top:0">
+      <div>
+        <h3>Six-tower, 41-story high-rise complex</h3><p class="hint">About $241M complex · May – July 2024 · Project Engineer · Sree Geetha was the structural subcontractor · my scope: 2 towers (about $48–60M) on 12 acres</p>
+        <p>I managed the structural work on two towers at different stages (basement and superstructure) using MIVAN, a reusable aluminum formwork system that casts concrete walls and slabs floor after floor. I supervised a team of assistant engineers, assigned tasks and reviewed daily reports, controlled labor and ready-mix concrete billing, quality-checked every high-rise pour, monitored MIVAN panel assembly, slab cycles and stripping schedules, coordinated with the general contractor's team, and kept all structural inspection records. MIVAN was new to me, and I learned it quickly.</p>
+        <div class="mini" id="mivanPics"></div>
+      </div>
+      <figure class="ph" style="aspect-ratio:4/3"><img data-par="0.08" src="li_mivan.jpg" alt="MIVAN formwork panels" loading="lazy"><figcaption>MIVAN formwork panels, numbered per wall</figcaption></figure>
+    </div>
+
+    <h3 class="rv" style="margin:56px 0 4px;font-size:28px">How I work on site</h3>
     <div class="tabs rv" id="tabs">
       <button class="on" data-p="p1">Catching rebar errors</button>
       <button data-p="p2">Safety on site</button>
       <button data-p="p3">Before every section</button>
-      <button data-p="p5">MIVAN, last 2 months</button><button data-p="p4">Pre-pour checklist</button>
+      <button data-p="p5">Formwork up close</button>
+      <button data-p="p4">Pre-pour checklist</button>
     </div>
 
     <div class="pane on card grid2" id="p1" style="margin-top:0">
@@ -338,16 +440,14 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
         <p id="cantTxt" style="font-size:14px;color:var(--mute);margin:4px 0 0"></p>
       </div>
     </div>
-
     <div class="pane card grid2" id="p2" style="margin-top:0">
-      <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="li_construction1.jpg" alt="Formwork and shuttering on site" loading="lazy"><figcaption>Every crew, every shift</figcaption></figure>
+      <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="li_shuttering.jpg" alt="Shuttering and reinforcement" loading="lazy"><figcaption>Every crew, every shift</figcaption></figure>
       <div>
         <h3>"No PPE, no work."</h3>
         <p>I caught workers who were not following safety rules. Some new laborers didn't listen to me directly, so I went to the contractor and said "no PPE, no work." After that, they followed.</p>
         <p>Safety is the one thing I never negotiate on — and it is why I later earned my OSHA 30 and flagger certifications here in the U.S.</p>
       </div>
     </div>
-
     <div class="pane card grid2" id="p3" style="margin-top:0">
       <div>
         <h3>Reading the drawings one more time</h3>
@@ -356,16 +456,10 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
       </div>
       <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="s1_plans.jpg" alt="Reading drawings on site" loading="lazy"><figcaption>Drawings first, always</figcaption></figure>
     </div>
-
     <div class="pane card grid2" id="p5" style="margin-top:0">
-      <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="li_mivan.jpg" alt="MIVAN aluminum formwork" loading="lazy"><figcaption>MIVAN formwork, 41-story tower</figcaption></figure>
-      <div>
-        <h3>The last two months: MIVAN</h3>
-        <p>In my final two months at Sree Geetha (May – July 2024) I worked with MIVAN, a reusable aluminum formwork system used to cast concrete walls and slabs floor after floor, on the 41-story towers. It was new to me, and I was glad to learn it on the job.</p>
-        <figure class="ph" style="aspect-ratio:16/9;margin-top:14px"><img data-par="0.05" src="li_shuttering.jpg" alt="Shuttering and reinforcement" loading="lazy"><figcaption>Shuttering and reinforcement</figcaption></figure>
-      </div>
+      <div class="trio"><figure class="ph"><img src="li_mivan.jpg" alt="MIVAN panels" loading="lazy"><figcaption>MIVAN panels</figcaption></figure><figure class="ph"><img src="li_shuttering.jpg" alt="Shuttering" loading="lazy"><figcaption>Shuttering</figcaption></figure><figure class="ph"><img src="li_construction2.jpg" alt="Work behind safety netting" loading="lazy"><figcaption>Behind the safety net</figcaption></figure><figure class="ph"><img src="li_construction1.jpg" alt="Formwork" loading="lazy"><figcaption>Wall formwork</figcaption></figure></div>
+      <div><h3>The details that matter</h3><p>Numbered panels, aligned ties, clean cover and safe access: a pour only goes well when all of it was checked before the concrete arrives.</p></div>
     </div>
-
     <div class="pane card grid2" id="p4" style="margin-top:0">
       <div>
         <h3>Are we ready to pour?</h3>
@@ -378,40 +472,120 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   </div>
 </section>
 
-<!-- 8 -->
-<section class="ch" id="c8" data-title="USA">
-  <div class="num">07</div>
+<!-- Classroom projects -->
+<section class="ch" id="cp" data-title="Projects">
+  <div class="num">09</div>
   <div class="wrap">
-    <div class="eyebrow">Chapter 07 · A new country — August 2024</div>
-    <h2 class="rv">Starting again, on purpose — and excited to</h2>
+    <div class="eyebrow">Chapter 09 · Projects, bachelor's to master's</div>
+    <h2 class="rv">What I built in the classroom</h2>
+    <p class="rv">Six projects across my bachelor's and master's programs: design, cost, schedule, risk and field study. Tap one.</p>
+    <div class="tabs rv" id="atabs">
+      <button class="on" data-p="a1">Capstone: 4-story home</button><button data-p="a2">IoT home automation</button><button data-p="a3">Cost &amp; CPM schedule</button><button data-p="a4">Earned value</button><button data-p="a5">Team simulation</button><button data-p="a6">Field study</button>
+    </div>
+    <div class="pane on card grid2 ap" id="a1" style="margin-top:0">
+      <div><h3>4-story residential building — design, BIM, schedule and cost</h3><p class="hint">Bachelor's capstone · I was the team leader of five · Guide: Mr. Y.V. Subba Reddy, M.Tech, VVIT</p>
+        <p>We designed a residential building with a swimming pool and parking from start to finish: AutoCAD plans (floor plan, structural, plumbing and electrical), a STAAD Pro structural analysis, a full 3D Revit BIM model with rendered views, a Primavera P6 schedule and a cost estimate of about $133,000.</p></div>
+      <div class="stat4"><div><b>138</b>nodes in the structural model</div><div><b>195</b>beam &amp; column elements</div><div><b>93</b>scheduled activities</div><div><b>374</b>day schedule</div></div>
+    </div>
+    <div class="pane card grid2 ap" id="a2" style="margin-top:0">
+      <div><h3>IoT home automation with Arduino</h3><p class="hint">Bachelor's project · Team of three · Guide: Sri N. Kumara Swamy, Dean of Academics, VVIT</p>
+        <p>A fully automated smart home on an Arduino UNO with Ethernet, Wi-Fi and GSM modules and a relay board, so every appliance can be controlled from a phone. Motion, smoke, temperature, gas and light sensors trigger alerts and automatic appliance shut-off. It worked end to end, with remote control and safety alerts.</p></div>
+      <div class="chipbox"><span>Motion (PIR)</span><span>Smoke</span><span>Temperature</span><span>Gas leak</span><span>Light (LDR)</span><span>Buzzer alarm</span><span>Wi-Fi / GSM control</span></div>
+    </div>
+    <div class="pane card grid2 ap" id="a3" style="margin-top:0">
+      <div><h3>Construction Home Office: cost estimate and CPM schedule</h3><p class="hint">Master's · CEE 541 · Catholic University of America</p>
+        <p>Part 1: a detailed cost estimate for a multi-story commercial building using RSMeans 2019 data, covering earthwork through fire protection, with 10% contingency, 2.6% inflation, 45% overhead and 15% profit. Total: <b>$31.45M</b>. Part 2: a full CPM schedule for a 5-story residential building with 171 activities, computing early and late dates, total and free float, and a Gantt chart with the critical path.</p></div>
+      <div class="stat4"><div><b>$31.45M</b>estimated building cost</div><div><b>171</b>schedule activities</div><div><b>RSMeans</b>cost data</div><div><b>MS Project</b>Gantt &amp; critical path</div></div>
+    </div>
+    <div class="pane card grid2 ap" id="a4" style="margin-top:0">
+      <div><h3>Earned value management: conveyor belt system</h3><p class="hint">Master's · CMGT 570 Project Management · $1.05M · MS Project</p>
+        <p>The full project-management lifecycle for a computer-controlled conveyor belt system: work breakdown structure, network diagram, a 530-day baseline Gantt, critical path and slack analysis, resource leveling and cash flow. Quarterly earned-value tracking ended with a final estimate at completion of $1,045,284, with the schedule extended to 559 days.</p></div>
+      <div><p class="hint">Cost performance index (CPI) by quarter. Tap a bar.</p><svg id="evm" viewBox="0 0 400 200" width="100%"></svg><p id="evmTxt" style="font-size:14px;color:var(--mute);margin:4px 0 0">Under 1.00 means over budget.</p></div>
+    </div>
+    <div class="pane card grid2 ap" id="a5" style="margin-top:0">
+      <div><h3>SimProject team simulation</h3><p class="hint">Master's · CMGT 570 · Team of five</p>
+        <p>A project-management simulation across three runs. Our team's final run came in at 12 weeks and $48,865, which is 2.8% under the $50,000 budget, with 10 defects (12 allowed) and every task complete. We reallocated resources beyond job titles, added incentives, held mid-project quality checks, planned with Gantt and network diagrams and sent monthly stakeholder updates.</p></div>
+      <div><p class="hint">Cost by run. Tap a bar.</p><svg id="sim" viewBox="0 0 400 200" width="100%"></svg><p id="simTxt" style="font-size:14px;color:var(--mute);margin:4px 0 0"></p></div>
+    </div>
+    <div class="pane card grid2 ap" id="a6" style="margin-top:0">
+      <div><h3>Field operations study: soil compaction and cement stabilization</h3><p class="hint">Master's · CEE 552 Construction Field Operations · Hyattsville, MD</p>
+        <p>Two visits to an active site, documenting how a road subgrade is prepared. Visit 1: excavator loading, truck hauling and drum and sheep-foot roller compaction (about 3 minutes loading, 2 hauling, 5 compacting per cycle). Visit 2: Portland cement spreading, reclaimer mixing, fine grading and vibratory rolling, producing 1,000–1,200 SF per lane at 95% Proctor density. I wrote process narratives with 25+ field photos, built CYCLONE simulation models, and analyzed productivity, bottlenecks and safety.</p></div>
+      <div class="trio"><figure class="ph"><img src="e_excavator.jpg" alt="Excavator loading" loading="lazy"><figcaption>Excavator loading</figcaption></figure><figure class="ph"><img src="e_roller.jpg" alt="Roller compaction" loading="lazy"><figcaption>Roller compaction</figcaption></figure><figure class="ph"><img src="e_dump.jpg" alt="Hauling" loading="lazy"><figcaption>Hauling</figcaption></figure><figure class="ph"><img src="e_grade.jpg" alt="Fine grading" loading="lazy"><figcaption>Grading</figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<!-- USA -->
+<section class="ch" id="c8" data-title="Master's">
+  <div class="num">10</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 10 · A new country — August 2024</div>
+    <h2 class="rv">Starting again, on purpose</h2>
+    <div class="when rv">August 2024 – May 2026 · M.S. Construction Engineering Management · The Catholic University of America · GPA 3.57</div>
     <div class="grid2 rev">
-      <figure class="ph rv"><img data-par="0.12" src="usa.jpg" alt="City skyscrapers seen from below" loading="lazy"><figcaption>Washington DC metro area</figcaption></figure>
+      <figure class="ph rv"><img data-par="0.12" src="usa.jpg" alt="City skyscrapers seen from below" loading="lazy"><figcaption>Washington, DC metro area</figcaption></figure>
       <div>
         <p class="rv">I moved to the United States in August 2024 to earn my Master of Science in Civil Engineering, with a concentration in Construction Engineering Management, at The Catholic University of America in Washington, DC. I graduated in May 2026 with a 3.57 GPA.</p>
-        <p class="rv d1">Alongside classes I worked in a university lab (February – May 2025) and as a waiter in the university restaurant. Nobody hands you a title in a new country, and I never minded starting from the beginning. I came here to learn how construction is built, inspected and managed in the U.S. — the codes, the standards, the way crews and inspectors work — and I am excited to keep growing here.</p>
-        <div class="tags rv d2"><span class="tag">University lab</span><span class="tag">University restaurant</span><span class="tag">Customer service</span><span class="tag">Teamwork</span></div>
+        <p class="rv d1">Nobody hands you a title in a new country, and I never minded starting from the beginning. I came here to learn how construction is built, inspected and managed in the U.S.: the codes, the standards, the way crews and inspectors work. Since graduating I have also earned my OSHA 30, flagger and Procore credentials, and I am preparing for the FE exam.</p>
       </div>
     </div>
     <div class="quote rv">Whatever position you reach, there is always something left to learn.</div>
   </div>
 </section>
 
-<!-- 9 -->
-<section class="ch" id="c9b" data-title="Site visits">
-  <div class="num">08</div>
+<!-- Lab -->
+<section class="ch" id="cl2" data-title="Engineering lab job">
+  <div class="num">11</div>
   <div class="wrap">
-    <div class="eyebrow">Chapter 08 · During &amp; after my master's</div>
-    <h2 class="rv">Still drawn to the site — on my own time</h2>
-    <p class="rv">During and after my master's program, I visited several U.S. construction sites on my own, out of pure interest, and spent time there watching, asking questions and learning how work is done here. These are a few of them.</p>
-    <div class="tabs rv" id="vt">
-      <button class="on" data-v="d">Metro bus-shelter renovation</button><button data-v="e">Excavation &amp; ground prep</button><button data-v="s">Foundation walls &amp; formwork</button>
+    <div class="eyebrow">Chapter 11 · Working on campus</div>
+    <h2 class="rv">In the engineering labs, beside the faculty</h2>
+    <div class="when rv">February – May 2025 · Facilities &amp; Lab Resources Assistant, School of Engineering · Part-time · The Catholic University of America</div>
+    <div class="grid2">
+      <div>
+        <p class="rv">A part-time campus job where I supported the daily operation of the construction-materials and structures laboratories, working alongside professors and graduate students.</p>
+        <ul class="bul rv d1"><li>Operated and maintained 3D printers, laser cutters and the computer systems used for research and student projects.</li><li>Helped faculty and graduate students set up, calibrate and test equipment.</li><li>Tracked inventory, equipment condition and lab safety compliance.</li><li>Gave technical support for workshops and sustainable-construction experiments.</li></ul>
+      </div>
+      <div class="rv d1"><figure class="ph"><img data-par="0.12" src="web_lab.jpg" alt="Large-scale 3D printing platform" loading="lazy"><figcaption>Illustrative photo: 3D printing platform</figcaption></figure><figure class="ph" style="margin-top:14px;aspect-ratio:16/9"><img src="web_lab2.jpg" alt="Laser cutting machine" loading="lazy"><figcaption>Illustrative photo: laser cutter</figcaption></figure></div>
     </div>
+  </div>
+</section>
+
+<!-- Restaurant -->
+<section class="ch" id="cr" data-title="Restaurant job">
+  <div class="num">12</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 12 · Starting from the beginning</div>
+    <h2 class="rv">Waiter in the university restaurant</h2>
+    <div class="when rv">Part-time · While studying at The Catholic University of America</div>
+    <div class="grid2 rev">
+      <figure class="ph rv"><img data-par="0.12" src="web_restaurant.jpg" alt="Restaurant tables set for service" loading="lazy"><figcaption>Illustrative photo: restaurant service</figcaption></figure>
+      <div>
+        <p class="rv">Alongside classes and the lab, I worked as a waiter in the university restaurant. It taught me what great service looks like in the U.S.: listening carefully, staying calm in a busy shift, working as a team and keeping every guest comfortable.</p>
+        <p class="rv d1">Those habits carry straight onto a job site, where clear communication and respect for everyone on the crew matter just as much. I never minded starting from the beginning, because I know my strengths and I am always willing to learn.</p>
+        <div class="tags rv d2"><span class="tag">Customer service</span><span class="tag">Teamwork</span><span class="tag">Communication</span><span class="tag">Working under pressure</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Site visits -->
+<section class="ch" id="c9b" data-title="Site visits">
+  <div class="num">13</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 13 · During &amp; after my master's</div>
+    <h2 class="rv">Still drawn to the site — on my own time</h2>
+    <p class="rv">During and after my master's program, I visited several U.S. construction sites on my own, out of pure interest, and spent time there watching, asking questions and learning how work is done here. I looked at plans, saw concrete being tested and poured, read paperwork and field sheets, and traced how electrical circuits were laid out. Tap a topic.</p>
+    <div class="tabs rv" id="vt">
+      <button class="on" data-v="p">Plans &amp; paperwork</button><button data-v="c">Concrete &amp; testing</button><button data-v="d">Metro bus-shelter rebuild</button><button data-v="e">Earthwork &amp; ground prep</button><button data-v="s">Foundation walls</button>
+    </div>
+    <p class="vnote rv" id="vnote"></p>
     <div class="gal" id="gal"></div>
   </div>
 </section>
 <div id="lb" aria-hidden="true"><img alt=""><button aria-label="Close">×</button></div>
 
 <!-- skills -->
+
 <section class="ch" id="c9" data-title="Skills">
   <div class="num">09</div>
   <div class="wrap">
@@ -451,7 +625,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
     <h2 class="rv">Looking for a Project Engineer, Field Engineer or Inspector role</h2>
     <p class="rv d1">Happy to relocate anywhere in the U.S., and eager to learn and grow with a great team. Fluent in English, Telugu and Hindi.</p>
     <a class="btn rv d2" href="mailto:manohareduc@gmail.com">Email me</a><a class="btn ghost rv d2" href="https://www.linkedin.com/in/manoharballipalli/">LinkedIn</a>
-    <footer>© 2026 Manohar Ballipalli · Hyattsville, MD · Faces in site photos are blurred · Some early-chapter images are illustrative (Unsplash) · <a href="https://www.linkedin.com/in/manoharballipalli/">LinkedIn</a></footer>
+    <footer>© 2026 Manohar Ballipalli · Hyattsville, MD · Faces in site photos are blurred · Photos marked illustrative are public-domain or CC-licensed images from Wikimedia Commons · <a href="https://www.linkedin.com/in/manoharballipalli/">LinkedIn</a><br>Photo credits (Wikimedia Commons): canal, culvert and slab photos, CC0; restaurant interior (Amantaka, Luang Prabang), CC BY-SA 4.0; large-scale 3D printing platform (Manufacturing Demonstration Facility), CC BY 2.0; sewer manhole cover, Roslyn NY, CC BY-SA 4.0; laser cutting machine at PTM shop, CC BY-SA 4.0; other illustrative photos as noted.</footer>
   </div>
 </section>
 
@@ -547,10 +721,10 @@ $$('#sewer [data-k]').forEach(el=>el.addEventListener('click',()=>{
 }));
 
 /* tabs */
-$$('#tabs button').forEach(b=>b.addEventListener('click',()=>{
-  $$('#tabs button').forEach(x=>x.classList.toggle('on',x===b));
-  $$('.pane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p));
-}));
+function tabs(btn,pane,cls){$$(btn).forEach(b=>b.addEventListener('click',()=>{
+  $$(btn).forEach(x=>x.classList.toggle('on',x===b));
+  $$(pane).forEach(p=>p.classList.toggle('on',p.id===b.dataset.p))}))}
+tabs('#tabs button','#c7 > .wrap > .pane:not(.pj)');tabs('#ptabs button','.pj');tabs('#atabs button','.ap');
 
 /* cantilever */
 function cant(m){
@@ -581,19 +755,35 @@ $$('#cl li').forEach(li=>li.addEventListener('click',()=>{
 
 /* site visits gallery */
 const vis={
- d:['d_shelter','d_demo','d_rubble','d_dig','d_prep','d_rebar','d_pour','d_finish','d_trench','d_sleeve','d_temp','d_gnss'],
- e:['e_excavator','e_dump','e_roller','e_grade','e_loader','e_rock','e_pipe','e_channel','e_stake','e_sheet'],
- s:['s1_wide','s1_walls','s1_formwork','s1_shoring','s1_trench','s1_rebar','s1_plans','s1_group']};
-function gal(k){$('#gal').innerHTML=vis[k].map(n=>`<figure><img src="${n}.jpg" alt="Construction site photo" loading="lazy"></figure>`).join('');
+ p:{note:'Reading drawings, plan sheets and field paperwork, the way I would on my own job.',items:[['v_circuits','Electrical circuits traced on the site plan: four circuits (47, 45, 37, 39) from the main pole to each shelter junction box'],['v_busbay','Bus-bay concrete demolition limits: dimensions and area calculations'],['s1_plans2','Reading architectural sections on site'],['s1_plans','Pointing out details on the drawings'],['e_sheet','Field sheet: daily paperwork and logs']]},
+ c:{note:'Concrete placement and the tests that go with it.',items:[['d_temp','Checking concrete temperature with a thermometer'],['d_sleeve','Embedded sleeve checked in fresh concrete'],['d_pour','Concrete placement from the chute'],['d_finish','Crew finishing the slab'],['d_prep','Rebar mat ready before the pour'],['d_rebar','Reinforcement and subgrade inspection']]},
+ d:{note:'A metro bus-shelter renovation, from demolition to finished concrete.',items:[['d_shelter','The finished shelter area'],['d_demo','Demolition of the old concrete'],['d_rubble','Breaking out and hauling rubble'],['d_rubble2','Broken concrete before removal'],['d_marks','Layout marks and limits painted on the slab'],['d_dig','Excavating for the new base'],['d_trench','Trenching for utilities'],['d_gnss','Setting out points with a GNSS rover'],['d_gnss2','GNSS rover on site'],['d_night','The canopy at night']]},
+ e:{note:'Large-scale earthwork and ground preparation on an empty site.',items:[['e_excavator','Excavator working the cut'],['e_dump','Loading an articulated dump truck'],['e_roller','Roller compacting the subgrade'],['e_grade','Graded and compacted pad'],['e_loader','Wheel loader with forks'],['e_loader2','Wheel loader on the pad'],['e_rock','Rock found while grading'],['e_pipe','Drainage structure set in the pad'],['e_channel','Drainage channel along the site'],['e_stake','Survey stakes marking grade'],['e_wide','Whole site at work'],['e_compact','Compaction pass'],['e_truck','Hauling spoil'],['e_haul','Excavator and haul trucks']]},
+ s:{note:'A basement renovation and addition: foundation walls, formwork and shoring.',items:[['s1_wide','Foundation walls and formwork'],['s1_walls','Wall forms and crew on a class site visit'],['s1_formwork','Formwork alignment'],['s1_shoring','Shoring and bracing'],['s1_trench','Footing trench and rebar'],['s1_rebar','Rebar in the footing'],['s1_channel','Wall form channel detail'],['s1_group','Learning on site with a class group']]}};
+function gal(k){const v=vis[k];$('#vnote').textContent=v.note;
+ $('#gal').innerHTML=v.items.map(n=>`<figure><img src="${n[0]}.jpg" alt="${n[1]}" loading="lazy"><figcaption>${n[1]}</figcaption></figure>`).join('');
  $$('#gal figure').forEach(f=>f.addEventListener('click',()=>{$('#lb img').src=f.querySelector('img').src;$('#lb').classList.add('on')}))}
-$$('#vt button').forEach(b=>b.addEventListener('click',()=>{$$('#vt button').forEach(x=>x.classList.toggle('on',x===b));gal(b.dataset.v)}));gal('d');
+$$('#vt button').forEach(b=>b.addEventListener('click',()=>{$$('#vt button').forEach(x=>x.classList.toggle('on',x===b));gal(b.dataset.v)}));gal('p');
 $('#lb').addEventListener('click',()=>$('#lb').classList.remove('on'));
 addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
+
+/* journey timeline */
+const J=[['2018','Diploma complete','Civil engineering diploma, Government Polytechnic Ponnur','#c1',0],['Mar–May 2018','Canal internship','18-mile irrigation canal, Kavali','#c3',0],['2018–2021','B.Tech','Civil Engineering, VVIT / JNTU Kakinada','#c5',0],['2018–2021','NSS volunteer','Best Volunteer of the Year','#cn',0],['Jun–Jul 2019','Housing internship','300 affordable homes, Hyderabad','#ch',0],['Sep 2021–Feb 2022','Sewer internship','Sewer and water lines, Mangalagiri','#c6',0],['Mar 2022–Jul 2024','Sree Geetha','Assistant PE to Project Engineer, 3 projects','#c7',0],['Aug 2024','Moved to the U.S.','M.S. at The Catholic University of America','#c8',1],['Feb–May 2025','Engineering lab job','Facilities & Lab Resources Assistant','#cl2',1],['2024–2026','Restaurant job','Waiter while studying','#cr',1],['2025–2026','Site visits','Plans, concrete, earthwork, bus shelters','#c9b',1],['May 2026','M.S. conferred','GPA 3.57','#c8',1],['Jul–Oct 2026','Certified','OSHA 30, flagger, Procore','#c9',1]];
+$('#tl').innerHTML=J.map(j=>`<a href="${j[3]}" class="${j[4]?'us':''}"><b>${j[0]}</b><span>${j[1]}</span><small>${j[2]}</small></a>`).join('');
+$('#acts').innerHTML=['Blood donation camps','Dental camps','Clean-city drives','Tree planting','Eco-awareness programs','Event organizing'].map(t=>`<i>${t}</i>`).join('');
+
+/* EVM + simulation charts */
+function bars(id,txtId,data,max,fmt,base){const el=$(id);const w=400/data.length;
+ el.innerHTML=(base!=null?`<line x1="0" x2="400" y1="${190-base/max*170}" y2="${190-base/max*170}" stroke="#b9573f" stroke-dasharray="5 4"/>`:'')+data.map((d,i)=>{const h=d[1]/max*170;
+ return `<rect class="bar" data-i="${i}" x="${i*w+w*.18}" y="${190-h}" width="${w*.64}" height="${h}" rx="8" fill="${d[3]||'#c47a47'}"/><text x="${i*w+w/2}" y="${190-h-6}" text-anchor="middle" font-size="12" fill="#27323d">${fmt(d[1])}</text><text x="${i*w+w/2}" y="198" text-anchor="middle" font-size="11" fill="#6b7480">${d[0]}</text>`}).join('');
+ $$(id+' .bar').forEach(r=>r.addEventListener('click',()=>{$(txtId).textContent=data[+r.dataset.i][2]}))}
+bars('#evm','#evmTxt',[['Q1',1.02,'Q1: CPI 1.02, 4 days ahead of schedule, under budget.','#5f8f6e'],['Q2',.99,'Q2: CPI 0.99, 7 days ahead, a small cost concern.'],['Q3',.99,'Q3: CPI 0.99, 10 days ahead, steady.'],['Q4',.99,'Q4: CPI 0.99, 18 days behind, recovery needed.','#b9573f']],1.1,v=>v.toFixed(2),1.0);
+bars('#sim','#simTxt',[['Run 1',93832,'Run 1 baseline: 23 weeks, $93,832, 20 defects.','#b9573f'],['Run 2',56748,'Run 2 optimized: 12 weeks, $56,748, 19 defects.'],['Run 3',48865,'Run 3 team plan: 12 weeks, $48,865, 10 defects, 2.8% under budget.','#5f8f6e']],100000,v=>'$'+Math.round(v/1000)+'K',50000);
 
 /* skills */
 const sk=[['Total station','survey'],['Auto level','survey'],['Emlid GNSS','survey'],['Leveling & elevation calculations','survey'],['Slope meter','survey'],
 ['Rebar inspection','field'],['Pre-pour inspection','field'],['Concrete testing','field'],['MIVAN technology','field'],['Safety enforcement','field'],['Housekeeping & site closing','field'],['ADA requirements','field'],
-['AutoCAD','soft'],['Revit','soft'],['STAAD Pro','soft'],['Primavera P6','soft'],['MS Project','soft'],['Bluebeam','soft'],['RSMeans','soft'],['Procore','soft'],
+['AutoCAD','soft'],['CYCLONE simulation','soft'],['Arduino / IoT','soft'],['Cost estimation','mgmt'],['CPM scheduling','mgmt'],['Earned value management','mgmt'],['Team leadership','mgmt'],['Community service (NSS)','mgmt'],['Customer service','mgmt'],['Revit','soft'],['STAAD Pro','soft'],['Primavera P6','soft'],['MS Project','soft'],['Bluebeam','soft'],['RSMeans','soft'],['Procore','soft'],
 ['RFIs','mgmt'],['Submittals','mgmt'],['Change orders','mgmt'],['Scheduling','mgmt'],['MEP coordination','mgmt'],['Labor management','mgmt'],['Plan reading','mgmt']];
 $('#skg').innerHTML=sk.map(s=>`<span class="sk" data-g="${s[1]}">${s[0]}</span>`).join('');
 $$('#skf button').forEach(b=>b.addEventListener('click',()=>{
