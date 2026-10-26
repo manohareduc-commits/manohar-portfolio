@@ -216,7 +216,7 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   <div class="wrap">
     <div class="rv"><b>3.57</b><span>Master's GPA (4.0 scale)</span></div>
     <div class="rv d1"><b data-count="3">0</b><span>Government internships</span></div>
-    <div class="rv d2"><b data-count="104" data-suf="°F">0</b><span>Heat I learned to work in</span></div>
+    <div class="rv d2"><b data-count="110" data-suf="°F">0</b><span>Heat I learned to work in</span></div>
     <div class="rv d3"><b data-count="2">0</b><span>Countries of experience</span></div>
   </div>
 </div>
@@ -243,11 +243,11 @@ footer{font-size:12.5px;opacity:.7;margin-top:60px}
   <div class="num">02</div>
   <div class="wrap">
     <div class="eyebrow">Chapter 02 · Life at my grandfather's house</div>
-    <h2 class="rv">Fields, 104°F, and the people who work through it</h2>
+    <h2 class="rv">Fields, 110°F, and the people who work through it</h2>
     <div class="grid2 rev">
       <figure class="ph rv"><img data-par="0.12" src="field.jpg" alt="Golden farm field at sunrise" loading="lazy"><figcaption>Farm work alongside the laborers</figcaption></figure>
       <div>
-        <p class="rv">While I studied, I also helped with farm work. I spent my days with the laborers and saw first-hand how hard they work in 104°F (40°C) heat — no shade, no shortcuts, and no complaints.</p>
+        <p class="rv">While I studied, I also helped with farm work. I spent my days with the laborers and saw first-hand how hard they work in dusty, 110°F (about 43°C) heat — no shade, no shortcuts, and no complaints.</p>
         <p class="rv d1">That respect for people who do the physical work never left me. It is why, on every site since, I check on the crew before I check the schedule.</p>
         <div class="card rv d2" style="margin-top:20px">
           <div class="thermo"><div class="tube"><i id="mercury"></i></div><div><big id="deg">0°F</big><small>Hover over the thermometer to feel the field.</small></div></div>
@@ -670,7 +670,7 @@ function count(n){
 
 /* thermometer */
 const mer=$('#mercury'),deg=$('#deg');let shown=false;
-function heat(v){mer.style.height=(8+v*.92)+'%';let a=0,to=Math.round(v*.4*9/5+32);const t0=performance.now(),from=parseInt(deg.textContent)||0;
+function heat(v){mer.style.height=(8+v*.92)+'%';let a=0,to=Math.round(v*.4333*9/5+32);const t0=performance.now(),from=parseInt(deg.textContent)||0;
   (function f(now){const k=Math.min(1,(now-t0)/1500);deg.textContent=Math.round(from+(to-from)*k)+'°F';if(k<1)requestAnimationFrame(f)})(t0)}
 new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting&&!shown){shown=true;heat(100)}}),{threshold:.6}).observe($('.thermo'));
 $('.tube').addEventListener('mouseenter',()=>heat(100));
