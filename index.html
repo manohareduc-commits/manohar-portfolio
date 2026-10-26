@@ -282,6 +282,43 @@ section.ch.tight{padding:clamp(24px,4vw,44px) 0}
 .card.tb svg{background:#fffdf8;border-radius:12px}
 #tbt button{background:#33414d;color:#e9e4da;border-color:#4a5a68}
 #tbt button.on{background:#c97d4a;color:#fff;border-color:#c97d4a}
+.pp{display:none}.pp.on{display:block;animation:fade .5s}
+.pp.card{margin-top:4px}
+.ppkpi{display:grid;grid-template-columns:auto auto 1fr auto;gap:10px;align-items:stretch;margin:12px 0}
+.ppkpi>div{background:var(--bg);border-radius:12px;padding:8px 14px;font-size:12px;color:var(--mute)}
+.ppkpi b{display:block;font:600 20px Fraunces,serif;color:var(--ink)}.ppkpi small{display:block;font-size:12px;color:var(--ink);line-height:1.4;margin-top:2px}
+.ppbtn{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 16px;font:500 13px Inter,sans-serif;cursor:pointer;color:var(--ink)}
+.ppbtn:hover{border-color:var(--accent)}
+.gantt{overflow-x:auto}
+.grow{display:grid;grid-template-columns:24px 190px 56px 52px minmax(260px,1fr);gap:8px;align-items:center;padding:3px 0;font-size:13px;min-width:640px}
+.grow.h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:6px}
+.grow .id{font-weight:600;color:var(--steel)}
+.grow input{width:52px;padding:4px 6px;border:1px solid var(--line);border-radius:8px;font:13px Inter,sans-serif;background:var(--card);color:var(--ink)}
+.gtrack{position:relative;height:16px;background:var(--bg);border-radius:6px}
+.gtrack i{position:absolute;top:0;height:100%;border-radius:6px;background:var(--steel);opacity:.75;transition:left .4s,width .4s}
+.gtrack i.cr{background:var(--accent);opacity:1}
+.grow.crit .nm{font-weight:600}
+.ppfilter{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.ppfilter button{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px;font:500 13px Inter,sans-serif;cursor:pointer;color:var(--ink)}
+.ppfilter button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pptable .r{border-top:1px solid var(--line);padding:10px 4px;cursor:pointer}
+.pptable .r .top{display:grid;grid-template-columns:78px 1fr auto;gap:10px;align-items:center;font-size:14px}
+.pptable .r .top b{color:var(--steel)}
+.pptable .det{display:none;font-size:13.5px;color:#3f4b57;padding:8px 0 4px 88px;line-height:1.55}
+.pptable .r.open .det{display:block}
+.tag{font-size:11.5px;padding:3px 10px;border-radius:99px;background:var(--bg);color:var(--ink);white-space:nowrap}
+.tag.g{background:#dfeee4;color:#2e6a45}.tag.o{background:#f6e3d3;color:#8a4a21}.tag.r{background:#f4d9d2;color:#8d3a27}
+.ppacts{list-style:none;padding:0;margin:0}.ppacts li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.ppacts li.done span{text-decoration:line-through;color:var(--mute)}
+.ppacts input,.ppchk input{margin-top:3px;width:17px;height:17px;accent-color:var(--accent)}
+.ppgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:12px 0}
+.ppgrid label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}.ppgrid input{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:10px;font:15px Inter,sans-serif;background:var(--card);color:var(--ink)}
+.ppstat{display:flex;align-items:center;gap:12px;margin:10px 0 8px;font-size:14px}
+.ppstat .tag{font-size:13px;padding:5px 14px}
+.ppchk{list-style:none;padding:0;margin:14px 0 0}.ppchk li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.ppchk li em{font-style:normal;font-size:11px;background:#f4d9d2;color:#8d3a27;border-radius:99px;padding:2px 8px;margin-left:6px}
+.jha table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}.jha td,.jha th{padding:9px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top}.jha th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:700px){.ppkpi{grid-template-columns:1fr 1fr}.pptable .det{padding-left:4px}.jha table,.jha tbody,.jha tr,.jha td{display:block}.jha th{display:none}.jha td{border:0;padding:3px 0}.jha tr{border-top:1px solid var(--line);padding:8px 0}}
 </style>
 </head>
 <body>
@@ -729,6 +766,69 @@ section.ch.tight{padding:clamp(24px,4vw,44px) 0}
 </section>
 <div id="lb" aria-hidden="true"><img alt=""><button aria-label="Close">×</button></div>
 
+
+<section class="ch" id="pp" data-title="Practice projects">
+  <div class="wrap">
+    <div class="eyebrow">Practice projects</div>
+    <h2 class="rv">Planning, coordination and quality, worked through on a sample building</h2>
+    <p class="rv">To keep building my project-management skills, I worked through a practice project: a two-story, 12,000 SF steel-frame office building. The scope and numbers are assumed for learning, not from a real job. Everything below is editable, so try it.</p>
+    <div class="tabs rv" id="pptabs">
+      <button class="on" data-k="0">CPM schedule</button><button data-k="1">RFIs and submittals</button><button data-k="2">Change order</button><button data-k="3">Pre-pour QA/QC</button><button data-k="4">Safety plan</button>
+    </div>
+
+    <div class="pp card on" data-k="0">
+      <h3>Critical path schedule</h3>
+      <p class="hint">Change any duration (working days). The critical path, float and finish date update right away. Orange bars are critical, so any delay there moves the finish.</p>
+      <div class="ppkpi"><div>Project length<b id="cpLen">—</b></div><div>Critical activities<b id="cpCnt">—</b></div><div>Critical path<small id="cpPath">—</small></div><button id="cpReset" class="ppbtn">Reset durations</button></div>
+      <div class="gantt" id="gantt"></div>
+      <p class="hint" style="margin-top:10px">Logic is finish-to-start. Steel fabrication runs alongside site work, which is why long-lead items get ordered early.</p>
+    </div>
+
+    <div class="pp card" data-k="1">
+      <h3>RFI and submittal logs</h3>
+      <p class="hint">Tap a row to read the question, the answer and the schedule effect. Filter by status.</p>
+      <div class="ppfilter" id="rfiF"><button class="on" data-f="all">All</button><button data-f="Open">Open</button><button data-f="Answered">Answered</button></div>
+      <div class="pptable" id="rfiT"></div>
+      <h4 style="margin:22px 0 8px">Submittals</h4>
+      <div class="ppfilter" id="subF"><button class="on" data-f="all">All</button><button data-f="Approved">Approved</button><button data-f="Pending">In review</button><button data-f="Revise">Revise and resubmit</button><button data-f="Not yet">Not yet submitted</button></div>
+      <div class="pptable" id="subT"></div>
+      <h4 style="margin:22px 0 8px">Weekly meeting action items</h4>
+      <p class="hint">Check items off as they close.</p>
+      <ul class="ppacts" id="ppActs"></ul>
+    </div>
+
+    <div class="pp card" data-k="2">
+      <h3>Change order pricing</h3>
+      <p class="hint">A quick way to price an owner-requested change: direct costs, then markup, then added days.</p>
+      <div class="ppgrid">
+        <div><label>Labor hours</label><input id="coH" type="number" value="48"></div>
+        <div><label>Labor rate ($/hr, loaded)</label><input id="coR" type="number" value="62"></div>
+        <div><label>Materials ($)</label><input id="coM" type="number" value="3800"></div>
+        <div><label>Equipment ($)</label><input id="coE" type="number" value="900"></div>
+        <div><label>Subcontractor ($)</label><input id="coS" type="number" value="0"></div>
+        <div><label>Added working days</label><input id="coD" type="number" value="2"></div>
+        <div><label>Overhead (%)</label><input id="coOH" type="number" value="10"></div>
+        <div><label>Profit (%)</label><input id="coPR" type="number" value="5"></div>
+      </div>
+      <div class="out"><div>Direct cost<b id="coDir">—</b></div><div>Overhead and profit<b id="coMk">—</b></div><div>Change order total<b id="coTot">—</b></div><div>Schedule effect<b id="coSch">—</b></div></div>
+    </div>
+
+    <div class="pp card" data-k="3">
+      <h3>Pre-pour checklist</h3>
+      <p class="hint">The checks I make before concrete is placed. Items marked critical must all be done before the pour is released.</p>
+      <div class="ppstat" id="ppStat"></div>
+      <div class="meter"><i id="ppMeter"></i></div>
+      <ul class="ppchk" id="ppChk"></ul>
+    </div>
+
+    <div class="pp card" data-k="4">
+      <h3>Site safety plan: hazards and controls</h3>
+      <p class="hint">Job hazard analysis for the main activities, with the OSHA construction standard that governs each. Tap an activity.</p>
+      <div class="ppfilter" id="jhaF"></div>
+      <div id="jhaB" class="jha"></div>
+    </div>
+  </div>
+</section>
 
 <section class="ch tight" id="tb" data-title="Toolbox">
   <div class="wrap">
@@ -1272,6 +1372,117 @@ function ft(){const t=+$('#ftT').value,sp=+$('#ftSs').value,sm=+$('#ftSm').value
   [Math.abs(air-as)<=1.5,'Air content',fx(air,1)+'% ('+(air-as>=0?'+':'')+fx(air-as,1)+'%)','Pressure method (ASTM C231): meter reading minus aggregate correction; usual tolerance ±1.5%']];
  $('#ftchk').innerHTML=rows.map(r=>`<li class="${r[0]?'ok':'no'}"><b>${r[0]?'✓':'!'}</b><span>${r[1]}: <strong>${r[2]}</strong></span><em>${r[3]}</em></li>`).join('')}
 ['ftT','ftSs','ftSm','ftAs','ftG','ftAc'].forEach(i=>$('#'+i).addEventListener('input',ft));ft()})();
+(function(){
+const Q=s=>document.querySelector(s),QA=s=>[...document.querySelectorAll(s)];
+/* tabs */
+QA('#pptabs button').forEach(b=>b.addEventListener('click',()=>{QA('#pptabs button').forEach(x=>x.classList.toggle('on',x===b));QA('.pp').forEach(p=>p.classList.toggle('on',p.dataset.k===b.dataset.k))}));
+/* CPM */
+const base=[
+['A','Mobilization and permits',5,[]],
+['B','Clearing and erosion control',5,['A']],
+['C','Excavation and layout',4,['B']],
+['D','Footings and foundation walls',12,['C']],
+['E','Underground utilities',8,['C']],
+['F','Slab on grade',6,['D','E']],
+['G','Steel fabrication (long lead)',30,['A']],
+['H','Steel erection',15,['F','G']],
+['I','Metal deck and 2nd floor slab',10,['H']],
+['J','Roofing',8,['I']],
+['K','Exterior framing and envelope',20,['I']],
+['L','Windows and doors',8,['K']],
+['M','MEP rough-in',25,['I']],
+['N','Interior framing',15,['K']],
+['O','Drywall and finishing',18,['M','N','L']],
+['P','Ceilings and flooring',12,['O']],
+['Q','Paint and trim-out',10,['O']],
+['R','Paving and landscaping',12,['J','K']],
+['S','Inspections and punch list',7,['P','Q','R']],
+['T','Closeout and turnover',3,['S']]];
+const dur={};base.forEach(a=>dur[a[0]]=a[2]);
+function cpm(){
+  const ES={},EF={},LS={},LF={};
+  base.forEach(([id,,,p])=>{ES[id]=Math.max(0,...p.map(x=>EF[x]));EF[id]=ES[id]+dur[id]});
+  const end=Math.max(...base.map(a=>EF[a[0]]));
+  [...base].reverse().forEach(([id])=>{const succ=base.filter(a=>a[3].includes(id));LF[id]=succ.length?Math.min(...succ.map(s=>LS[s[0]])):end;LS[id]=LF[id]-dur[id]});
+  return {ES,EF,LS,LF,end};
+}
+function drawG(){
+  const r=cpm(),end=r.end||1;
+  const crit=base.filter(a=>r.LS[a[0]]-r.ES[a[0]]===0);
+  Q('#cpLen').textContent=end+' days (about '+(end/5).toFixed(0)+' weeks)';
+  Q('#cpCnt').textContent=crit.length+' of '+base.length;
+  Q('#cpPath').textContent=crit.map(a=>a[0]).join(' → ');
+  const rows=Q('#gantt');
+  if(!rows.dataset.built){
+    rows.innerHTML='<div class="grow h"><span></span><span>Activity</span><span>Days</span><span>Float</span><span>Timeline (working days)</span></div>'+base.map(a=>`<div class="grow" data-id="${a[0]}"><span class="id">${a[0]}</span><span class="nm">${a[1]}<br><small style="color:var(--mute)">after ${a[3].join(', ')||'start'}</small></span><input type="number" min="1" max="120" value="${a[2]}" aria-label="Duration of ${a[1]}"><span class="fl"></span><div class="gtrack"><i></i></div></div>`).join('');
+    rows.dataset.built=1;
+    QA('#gantt input').forEach(inp=>inp.addEventListener('input',()=>{const id=inp.closest('.grow').dataset.id;dur[id]=Math.max(1,Math.min(120,+inp.value||1));drawG()}));
+  }
+  QA('#gantt .grow[data-id]').forEach(row=>{
+    const id=row.dataset.id,fl=r.LS[id]-r.ES[id],c=fl===0;
+    row.classList.toggle('crit',c);
+    row.querySelector('.fl').textContent=fl+' d';
+    const bar=row.querySelector('i');bar.className=c?'cr':'';
+    bar.style.left=(r.ES[id]/end*100)+'%';bar.style.width=(dur[id]/end*100)+'%';
+  });
+}
+Q('#cpReset').addEventListener('click',()=>{base.forEach(a=>dur[a[0]]=a[2]);QA('#gantt input').forEach(i=>i.value=dur[i.closest('.grow').dataset.id]);drawG()});
+drawG();
+/* RFIs */
+const rfis=[
+['RFI-001','Footing depth conflict at grid C-4','Answered','Structural drawing S-201 shows the footing bottom at 4\'-6" below grade; civil sheet C-3 shows a utility crossing at 4\'-0". Which governs?','Engineer: lower the utility 12 in. at the crossing and keep the footing as drawn. Revised sketch attached.','No delay. Answered in 4 days, before footing forms were set.'],
+['RFI-002','Vapor barrier thickness under slab','Answered','Drawings note a 10-mil barrier, the specification calls for 15-mil. Which should be installed?','Engineer: specification governs, install 15-mil Class A.','No delay. Material added to the order.'],
+['RFI-003','Rooftop unit curb height vs. parapet','Open','Curb height on the mechanical sheet leaves about 14 in. between the unit and the parapet, less than the manufacturer asks for service access. Please confirm the curb height or parapet height.','Pending response from architect and mechanical engineer.','Could affect roofing start (activity J) if not answered within 7 days.'],
+['RFI-004','Door hardware for room 104','Open','Door 104 appears in the schedule but no hardware set is listed. Please confirm the hardware set.','Pending response from architect.','Needed before the door submittal can be closed. No schedule effect yet.'],
+['RFI-005','Fireproofing thickness on W16 beams','Answered','The structural notes say 1-hour rating but the fireproofing spec lists 2-hour. Please confirm the rating.','Architect: 2-hour rating at columns, 1-hour at floor beams, per the code summary sheet.','No delay. Quantity of spray-applied fireproofing reduced.']];
+const subs=[
+['SUB-01','Concrete mix designs (4,000 and 3,000 psi)','Approved','Spec 03 30 00 · lead time 2 weeks'],
+['SUB-02','Reinforcing steel shop drawings','Approved','Spec 03 20 00 · approved as noted'],
+['SUB-03','Structural steel shop drawings','Revise','Spec 05 12 00 · connection details to be revised; fabrication is the longest lead item'],
+['SUB-04','Roofing system','Pending','Spec 07 50 00 · lead time 6 weeks'],
+['SUB-05','Storefront and windows','Pending','Spec 08 40 00 · lead time 10 weeks'],
+['SUB-06','Fire alarm system','Not yet','Spec 28 31 00 · due before MEP rough-in']];
+function tagCls(s){return s==='Answered'||s==='Approved'?'g':s==='Open'||s==='Pending'?'o':s==='Revise'?'r':''}
+function tagTxt(s){return {Pending:'In review',Revise:'Revise and resubmit','Not yet':'Not yet submitted'}[s]||s}
+function drawR(f){Q('#rfiT').innerHTML=rfis.filter(r=>f==='all'||r[2]===f).map(r=>`<div class="r"><div class="top"><b>${r[0]}</b><span>${r[1]}</span><span class="tag ${tagCls(r[2])}">${r[2]}</span></div><div class="det"><b>Question:</b> ${r[3]}<br><b>Response:</b> ${r[4]}<br><b>Schedule effect:</b> ${r[5]}</div></div>`).join('');QA('#rfiT .r').forEach(x=>x.addEventListener('click',()=>x.classList.toggle('open')))}
+function drawS(f){Q('#subT').innerHTML=subs.filter(r=>f==='all'||r[2]===f).map(r=>`<div class="r"><div class="top"><b>${r[0]}</b><span>${r[1]}<br><small style="color:var(--mute)">${r[3]}</small></span><span class="tag ${tagCls(r[2])}">${tagTxt(r[2])}</span></div></div>`).join('')}
+function filt(id,fn){QA(id+' button').forEach(b=>b.addEventListener('click',()=>{QA(id+' button').forEach(x=>x.classList.toggle('on',x===b));fn(b.dataset.f)}))}
+filt('#rfiF',drawR);filt('#subF',drawS);drawR('all');drawS('all');
+const acts=[['Re-issue structural steel shop drawings with revised connections','Steel fabricator','Fri'],['Chase architect on RFI-003 (rooftop unit curb) before roofing starts','Project engineer','Wed'],['Confirm concrete testing lab and cylinder pick-up schedule','Superintendent','Mon'],['Update three-week look-ahead and post in the site office','Project engineer','Fri'],['Send roofing submittal reminder to the architect','Project engineer','Tue']];
+Q('#ppActs').innerHTML=acts.map((a,i)=>`<li><input type="checkbox" id="ac${i}"><span><b>${a[0]}</b><br><small style="color:var(--mute)">${a[1]} · due ${a[2]}</small></span></li>`).join('');
+QA('#ppActs input').forEach(c=>c.addEventListener('change',()=>c.closest('li').classList.toggle('done',c.checked)));
+/* change order */
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+function co(){
+  const v=i=>+Q('#'+i).value||0,dir=v('coH')*v('coR')+v('coM')+v('coE')+v('coS'),oh=dir*v('coOH')/100,pr=(dir+oh)*v('coPR')/100;
+  Q('#coDir').textContent=money(dir);Q('#coMk').textContent=money(oh+pr);Q('#coTot').textContent=money(dir+oh+pr);
+  const d=v('coD');Q('#coSch').textContent=d?('+'+d+' working day'+(d>1?'s':'')):'None';
+}
+['coH','coR','coM','coE','coS','coD','coOH','coPR'].forEach(i=>Q('#'+i).addEventListener('input',co));co();
+/* pre-pour */
+const chk=[
+['Inspection request approved and inspector scheduled',1],['Forms plumb, braced and clean',1],['Rebar size, spacing and cover checked against the drawings',1],['Chairs and cover blocks in place',1],['Embeds, sleeves and blockouts placed per plans',1],['Subgrade and vapor barrier checked',0],['Delivery ticket matches the approved mix design',1],['Slump, air and temperature equipment ready; cylinder molds and curing box on site',1],['Weather checked (cold below 40°F and hot above 90°F need a plan)',0],['Pump, trucks and site access scheduled',0],['Crew briefed on the pour and PPE checked',1],['Finishing and curing plan agreed',0]];
+Q('#ppChk').innerHTML=chk.map((c,i)=>`<li><input type="checkbox" id="pc${i}" data-c="${c[1]}"><label for="pc${i}">${c[0]}${c[1]?'<em>critical</em>':''}</label></li>`).join('');
+function pp(){
+  const all=QA('#ppChk input'),n=all.filter(x=>x.checked).length,cr=all.filter(x=>x.dataset.c==='1'),crDone=cr.filter(x=>x.checked).length;
+  Q('#ppMeter').style.width=(n/all.length*100)+'%';
+  const ok=crDone===cr.length;
+  Q('#ppStat').innerHTML=`<span class="tag ${ok?'g':'r'}">${ok?(n===all.length?'Ready to pour':'Critical items done'):'Hold: critical items open'}</span><span>${n} of ${all.length} complete · ${crDone} of ${cr.length} critical</span>`;
+}
+QA('#ppChk input').forEach(x=>x.addEventListener('change',pp));pp();
+/* JHA */
+const jha={
+'Excavation':[['Cave-in or wall collapse','Slope, shore or shield any trench 5 ft or deeper; competent person inspects daily and after rain','29 CFR 1926 Subpart P'],['Utility strike','Call 811, locate and pothole before digging; keep spotters near the machine','Subpart P; state 811 law'],['Falls into the trench','Keep spoil 2 ft back; provide ladders within 25 ft of workers','Subpart P']],
+'Steel erection':[['Falls from height','Fall protection at 15 ft or more during erection; connectors tie off as required','Subpart R'],['Dropped loads','Controlled access zone below; no one under a suspended load','Subpart R'],['Unstable columns','Anchor bolts checked and columns secured before the crane releases','Subpart R']],
+'Concrete placement':[['Pump or chute hazards','Hoses secured, line pressure bled before disconnecting, crew clear of the discharge swing','Subpart Q'],['Skin burns from wet concrete','Gloves, long sleeves and rubber boots; wash off promptly','Subpart Q; PPE standards'],['Formwork failure','Check bracing before the pour; keep people clear while placing','Subpart Q']],
+'Work at height':[['Falls from edges and openings','Guardrails, covers and tie-off at 6 ft or more; ladders inspected and secured','Subpart M'],['Falling tools','Tool lanyards and toe boards; barricade areas below','Subpart M']],
+'Hot work':[['Fire','Fire watch during and after welding or cutting; extinguisher within reach; clear combustibles','Subpart J'],['Fumes and arc flash','Ventilation, welding screens and the right eye protection','Subpart J']]};
+const keys=Object.keys(jha);
+Q('#jhaF').innerHTML=keys.map((k,i)=>`<button data-f="${k}" class="${i?'':'on'}">${k}</button>`).join('');
+function jh(k){Q('#jhaB').innerHTML='<table><thead><tr><th>Hazard</th><th>Control</th><th>Standard</th></tr></thead><tbody>'+jha[k].map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')+'</tbody></table>'}
+filt('#jhaF',jh);jh(keys[0]);
+})();
+
 </script>
 </body>
 </html>
