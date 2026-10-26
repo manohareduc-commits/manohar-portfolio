@@ -429,14 +429,14 @@ section.ch.tight{padding:clamp(24px,4vw,44px) 0}
       </div>
       <div class="card rv d1">
         <h3>Try it: leveling calculator</h3>
-        <p class="hint">The height-of-instrument method I used on canal lines. Change the numbers (feet).</p>
+        <p class="hint">The height-of-instrument method I used on canal lines. Change any number and the diagram follows: elevation scale, instrument height and ground level all update (feet).</p>
         <div class="calc">
           <div><label>Benchmark elev. (ft)</label><input id="bm" type="number" step="0.01" value="100.00"></div>
           <div><label>Backsight (ft)</label><input id="bs" type="number" step="0.01" value="4.57"></div>
           <div><label>Foresight (ft)</label><input id="fs" type="number" step="0.01" value="2.87"></div>
         </div>
-        <svg id="lvl" viewBox="0 0 440 230" width="100%" role="img" aria-label="Leveling diagram"></svg>
-        <div class="out"><div>Height of instrument<b id="hi">—</b></div><div>Elevation of new point<b id="rl">—</b></div></div>
+        <svg id="lvl" viewBox="0 0 440 260" width="100%" role="img" aria-label="Leveling diagram"></svg>
+        <div class="out"><div>Height of instrument<b id="hi">—</b></div><div>Elevation of new point<b id="rl">—</b></div><div>Compared with benchmark<b id="rf">—</b></div></div>
       </div>
     </div>
   </div>
@@ -918,18 +918,28 @@ const ns='http://www.w3.org/2000/svg';
 function lvl(){
   const bm=+$('#bm').value||0,bs=+$('#bs').value||0,fs=+$('#fs').value||0,hi=bm+bs,rl=hi-fs;
   $('#hi').textContent=hi.toFixed(2)+' ft';$('#rl').textContent=rl.toFixed(2)+' ft';
-  const u=30,g1=170,line=g1-bs*u,g2=line+fs*u;
+  const d=rl-bm;$('#rf').textContent=(d>=0?'Rise ':'Fall ')+Math.abs(d).toFixed(2)+' ft';
+  const lo=Math.min(bm,rl,hi)-1.2,top=Math.max(bm,rl,hi)+1.8,H0=250,u=Math.min(44,190/(top-lo));
+  const Y=e=>H0-(e-lo)*u,x1=70,x2=360,xm=215,yb=Y(bm),yn=Y(rl),yh=Y(hi),ym=(yb+yn)/2;
+  const step=[0.5,1,2,5,10,20,50,100].find(k=>(top-lo)/k<=7)||100;
+  let ticks='';for(let e=Math.ceil(lo/step)*step;e<=top;e+=step){const y=Y(e);ticks+=`<line x1="34" x2="40" y1="${y}" y2="${y}" stroke="#7d8790"/><text x="32" y="${y+4}" font-size="10" fill="#7d8790" text-anchor="end">${+e.toFixed(2)}</text>`}
+  const staff=(x,yg)=>`<rect x="${x-6}" y="${yh-u*0.9}" width="12" height="${yg-yh+u*0.9}" fill="#fffdf8" stroke="#27323d" stroke-width="2.5"/>`;
+  const tripH=Math.max(24,ym-yh+0);const tripBottom=Math.max(yh+24,ym);
   $('#lvl').innerHTML=`
-  <rect x="0" y="${Math.min(g1,g2)}" width="440" height="${230}" fill="#e7dcc9"/>
-  <path d="M0 ${g1}H150 L290 ${g2}H440V230H0Z" fill="#d8c9ae"/>
-  <g stroke="#27323d" stroke-width="3"><rect x="62" y="${g1-118}" width="12" height="118" fill="#fffdf8"/></g>
-  <g stroke="#27323d" stroke-width="3"><rect x="354" y="${g2-118}" width="12" height="118" fill="#fffdf8"/></g>
-  ${[...Array(10)].map((_,i)=>`<line x1="62" x2="74" y1="${g1-i*12}" y2="${g1-i*12}" stroke="#c47a47"/><line x1="354" x2="366" y1="${g2-i*12}" y2="${g2-i*12}" stroke="#c47a47"/>`).join('')}
-  <line x1="40" x2="400" y1="${line}" y2="${line}" stroke="#b9573f" stroke-width="2" stroke-dasharray="6 5"/>
-  <g transform="translate(212 ${line})"><rect x="-16" y="-14" width="32" height="14" rx="4" fill="#4f6477"/><path d="M0 0L-18 56M0 0L18 56M0 0V56" stroke="#27323d" stroke-width="3"/></g>
-  <text x="52" y="${g1+22}" font-size="12" fill="#27323d">Benchmark</text><text x="338" y="${g2+22}" font-size="12" fill="#27323d">New point</text>
-  <text x="84" y="${(g1+line)/2+4}" font-size="12" fill="#b9573f">Backsight ${bs.toFixed(2)}</text>
-  <text x="300" y="${(g2+line)/2+4}" font-size="12" fill="#b9573f">Foresight ${fs.toFixed(2)}</text>`;
+  <rect width="440" height="260" fill="#f4efe6"/>
+  <line x1="40" x2="40" y1="6" y2="250" stroke="#b9bfc5"/>${ticks}
+  <text x="6" y="14" font-size="10" fill="#7d8790">RL (ft)</text>
+  <path d="M40 ${yb}H${x1} L${x2} ${yn}H440V260H40Z" fill="#d8c9ae"/>
+  <line x1="40" x2="440" y1="${yh}" y2="${yh}" stroke="#b9573f" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <line x1="${x1}" x2="${x1}" y1="${yh}" y2="${yb}" stroke="#b9573f" stroke-width="2"/><line x1="${x2}" x2="${x2}" y1="${yh}" y2="${yn}" stroke="#b9573f" stroke-width="2"/>
+  ${staff(x1,yb)}${staff(x2,yn)}
+  <g transform="translate(${xm} ${yh})"><rect x="-16" y="-14" width="32" height="14" rx="4" fill="#4f6477"/><path d="M0 0L-18 ${tripBottom-yh}M0 0L18 ${tripBottom-yh}M0 0V${tripBottom-yh}" stroke="#27323d" stroke-width="3"/></g>
+  <circle cx="${x1}" cy="${yb}" r="4" fill="#27323d"/><circle cx="${x2}" cy="${yn}" r="4" fill="#27323d"/>
+  <text x="${x1+10}" y="${yb+18}" font-size="12" font-weight="600" fill="#27323d">BM ${bm.toFixed(2)}</text>
+  <text x="${x2+8}" y="${yn+18}" font-size="12" font-weight="600" fill="#27323d" text-anchor="middle">RL ${rl.toFixed(2)}</text>
+  <text x="${xm+22}" y="${yh-6}" font-size="12" font-weight="600" fill="#b9573f">HI ${hi.toFixed(2)}</text>
+  <text x="${x1+10}" y="${(yh+yb)/2+4}" font-size="11" fill="#b9573f">BS ${bs.toFixed(2)}</text>
+  <text x="${x2-10}" y="${(yh+yn)/2+4}" font-size="11" fill="#b9573f" text-anchor="end">FS ${fs.toFixed(2)}</text>`;
 }
 ['#bm','#bs','#fs'].forEach(s=>$(s).addEventListener('input',lvl));lvl();
 
