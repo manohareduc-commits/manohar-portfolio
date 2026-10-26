@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manohar Ballipalli — Civil Engineer · The Story So Far</title>
+<meta name="description" content="Manohar Ballipalli, civil engineer (MS Construction Engineering Management, CUA). An interactive story from a diploma in Andhra Pradesh to field engineering in the USA.">
+<meta property="og:title" content="Manohar Ballipalli — Civil Engineer">
+<meta property="og:description" content="An interactive, scroll-through story of building a civil engineering career — site by site.">
+<meta property="og:image" content="hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f3ec; --bg2:#efe8dc; --card:#fffdf8; --ink:#27323d; --mute:#6b7480; --line:#ddd3c3;
+  --accent:#c47a47; --accent2:#7e9a86; --steel:#4f6477; --good:#5f8f6e; --bad:#b9573f;
+  --r:20px; --shadow:0 18px 40px -22px rgba(60,45,30,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.7 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(1120px,100% - 40px);margin:0 auto}
+
+/* progress bar with moving bike */
+#bar{position:fixed;top:0;left:0;right:0;height:5px;z-index:60;background:transparent}
+#bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+#bike{position:fixed;top:-3px;left:0;z-index:61;width:34px;transform:translateX(-50%);transition:left .1s linear;pointer-events:none}
+
+/* side rail */
+#rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:10px}
+#rail a{position:relative;width:11px;height:11px;border-radius:50%;background:var(--line);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--line);transition:.3s}
+#rail a.on{background:var(--accent);transform:scale(1.5);box-shadow:0 0 0 1px var(--accent)}
+#rail a span{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;background:var(--ink);color:#fff;padding:3px 9px;border-radius:99px;opacity:0;pointer-events:none;transition:.25s}
+#rail a:hover span{opacity:1}
+@media(max-width:900px){#rail{display:none}}
+
+/* hero */
+.hero{min-height:100vh;position:relative;display:grid;align-items:end;color:#fff;overflow:hidden}
+.hero .bg{position:absolute;inset:-10% 0 -10%;background:url(hero.jpg) center/cover;will-change:transform;filter:saturate(.85)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(39,50,61,.28) 0%,rgba(247,243,236,.0) 25%,rgba(39,50,61,.35) 60%,rgba(39,50,61,.82))}
+.hero .wrap{position:relative;z-index:2;padding:0 0 11vh}
+.eyebrow{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+.hero .eyebrow{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero h1{font-size:clamp(44px,8vw,104px);margin:14px 0 18px}
+.hero p.lead{max-width:640px;font-size:clamp(18px,2.2vw,22px);color:#f4efe6}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{padding:7px 15px;border-radius:99px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);font-size:14px}
+.scrollcue{position:absolute;z-index:2;right:28px;bottom:28px;color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.85}
+.scrollcue:after{content:"";display:block;width:1px;height:46px;background:#fff;margin:10px auto 0;animation:drip 1.8s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* stats band */
+.stats{background:var(--ink);color:#f4efe6;padding:46px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats b{display:block;font:600 clamp(32px,5vw,52px)/1 Fraunces,serif;color:#f1c9a5}
+.stats span{font-size:14px;opacity:.8}
+@media(max-width:700px){.stats .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* chapters */
+section.ch{padding:clamp(70px,11vw,140px) 0;position:relative}
+section.ch:nth-of-type(even){background:var(--bg2)}
+.num{font:600 clamp(70px,12vw,150px)/1 Fraunces,serif;color:transparent;-webkit-text-stroke:1.5px #d2c4ae;position:absolute;top:30px;right:5%;opacity:.8;pointer-events:none}
+.ch h2{font-size:clamp(32px,5vw,56px);margin:10px 0 18px;max-width:780px}
+.ch p{color:#3f4b57;max-width:640px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,70px);align-items:center;margin-top:34px}
+.grid2.rev{grid-template-columns:.95fr 1.05fr}.grid2.rev>:first-child{order:2}
+@media(max-width:860px){.grid2,.grid2.rev{grid-template-columns:1fr}.grid2.rev>:first-child{order:0}}
+.ph{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:#ddd}
+.ph img{position:absolute;left:0;top:-13%;width:100%;height:126%;object-fit:cover;will-change:transform}
+.ph figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,253,248,.92);padding:5px 12px;border-radius:99px;font-size:12.5px;color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.tag{font-size:13px;padding:5px 13px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--steel)}
+.when{display:inline-block;font-size:13px;padding:4px 12px;border-radius:99px;background:var(--accent);color:#fff;margin-top:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,32px);box-shadow:var(--shadow)}
+.card h3{font-size:22px;margin-bottom:6px}
+.card .hint{font-size:14px;color:var(--mute);margin-bottom:14px}
+.quote{font:italic 500 clamp(22px,3vw,30px)/1.4 Fraunces,serif;border-left:3px solid var(--accent);padding-left:20px;margin:26px 0;color:var(--ink);max-width:700px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+/* thermometer */
+.thermo{display:flex;align-items:center;gap:18px}
+.tube{width:26px;height:150px;border-radius:99px;background:#eadfcf;position:relative;overflow:hidden;border:1px solid var(--line)}
+.tube i{position:absolute;bottom:0;left:0;right:0;height:8%;background:linear-gradient(0deg,#d65f3a,#efa05e);transition:height 2.4s cubic-bezier(.2,.7,.2,1)}
+.thermo big{font:600 54px/1 Fraunces,serif;color:#b9573f}
+.thermo small{display:block;color:var(--mute);font-size:14px;max-width:210px}
+
+/* level calc */
+.calc{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.calc label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);display:block}
+.calc input{width:100%;margin-top:4px;padding:9px 11px;border-radius:12px;border:1px solid var(--line);background:#fff;font:500 16px Inter;color:var(--ink)}
+.out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.out div{background:var(--bg);border-radius:14px;padding:10px 14px;font-size:13px;color:var(--mute)}
+.out b{display:block;font:600 24px Fraunces,serif;color:var(--ink)}
+svg text{font-family:Inter,sans-serif}
+
+/* rank grid */
+#dots{display:grid;grid-template-columns:repeat(60,1fr);gap:3px;margin:16px 0 10px}
+#dots i{aspect-ratio:1;border-radius:50%;background:#d9cdb9;transition:background .4s,transform .4s}
+#dots i.hit{background:var(--accent);transform:scale(1.5)}
+.legend{font-size:13px;color:var(--mute);display:flex;gap:18px;flex-wrap:wrap}
+.legend em{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;font-style:normal}
+
+/* toggle */
+.seg{display:inline-flex;background:var(--bg2);border-radius:99px;padding:4px;margin-bottom:12px}
+.seg button{border:0;background:transparent;padding:8px 16px;border-radius:99px;font:500 14px Inter;color:var(--mute);cursor:pointer;transition:.25s}
+.seg button.on{background:var(--ink);color:#fff}
+
+/* checklist */
+.cl{list-style:none;display:grid;gap:8px}
+.cl li{display:flex;gap:12px;align-items:center;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;cursor:pointer;transition:.25s;font-size:15px;user-select:none}
+.cl li:hover{transform:translateX(4px)}
+.cl li b{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:#fff;flex:none;transition:.25s}
+.cl li.ok{background:#eef5ef;border-color:#bcd3c2}
+.cl li.ok b{background:var(--good);border-color:var(--good)}
+.cl li.ok b:after{content:"✓"}
+.meter{height:10px;background:#eadfcf;border-radius:99px;overflow:hidden;margin:16px 0 8px}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--good));transition:width .5s}
+#pour{font-weight:600;color:var(--mute);font-size:15px}
+#pour.go{color:var(--good)}
+
+/* stories (tabs) */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 16px}
+.tabs button{border:1px solid var(--line);background:var(--card);padding:9px 18px;border-radius:99px;font:500 14px Inter;color:var(--steel);cursor:pointer;transition:.25s}
+.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pane{display:none;animation:fade .6s}.pane.on{display:grid}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* gallery strip */
+.strip{display:flex;gap:18px;overflow-x:auto;padding:6px 20px 24px;scroll-snap-type:x mandatory;margin-top:30px}
+.strip figure{flex:0 0 min(78vw,380px);scroll-snap-align:center;border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:3/4;box-shadow:var(--shadow);transition:transform .4s}
+.strip figure:hover{transform:translateY(-8px) rotate(-.6deg)}
+.strip img{width:100%;height:100%;object-fit:cover}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:50px 18px 16px;color:#fff;background:linear-gradient(0deg,rgba(30,35,40,.8),transparent);font-size:14px}
+.strip::-webkit-scrollbar{height:6px}.strip::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+
+/* skills */
+.skillgrid{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.sk{padding:9px 16px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:15px;transition:.35s}
+.sk.dim{opacity:.18;transform:scale(.95)}
+.cert{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:26px}
+.cert .card{padding:22px}
+.cert h3{font-size:19px}.cert small{color:var(--mute);font-size:13.5px}
+
+/* contact */
+.contact{color:#fff;text-align:center;position:relative;overflow:hidden;padding:clamp(90px,14vw,170px) 0 70px}
+.contact:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(39,50,61,.78),rgba(39,50,61,.9)),url(siteWalk.jpg) center/cover;filter:saturate(.8)}
+.contact .wrap{position:relative}
+.contact h2{font-size:clamp(36px,6vw,72px);margin-bottom:16px}
+.contact p{margin:0 auto 26px;color:#e8dfd0;max-width:560px}
+.btn{display:inline-block;padding:15px 30px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;transition:.3s;margin:6px}
+.btn:hover{transform:translateY(-3px);background:#d48a58}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.6)}
+footer{font-size:12.5px;opacity:.7;margin-top:60px}
+@media(max-width:700px){.num{font-size:64px;top:14px;right:4%;opacity:.45}.hero:after{background:linear-gradient(180deg,rgba(39,50,61,.45) 0%,rgba(39,50,61,.55) 40%,rgba(39,50,61,.92))}.hero .wrap{padding-bottom:9vh}.scrollcue{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="bar"><i></i></div>
+<svg id="bike" viewBox="0 0 40 26" fill="none" stroke="#27323d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="19" r="5" fill="#f7f3ec"/><circle cx="32" cy="19" r="5" fill="#f7f3ec"/><path d="M8 19l7-9h8l5 9M15 10l-2-3h-3M23 10l4-3h3M17 19h8"/></svg>
+
+<nav id="rail" aria-label="Chapters"></nav>
+
+<header class="hero" id="top">
+  <div class="bg" data-par="0.25"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">Civil Engineer · Construction Engineering Management</div>
+    <h1 class="rv d1">Manohar<br>Ballipalli</h1>
+    <p class="lead rv d2">I learned this trade the slow way: in the heat with the labourers, on survey lines with an auto level, and in front of the rebar before the pour. Scroll — this is how I got here.</p>
+    <div class="chips rv d3"><span class="chip">MS · Catholic University of America</span><span class="chip">B.Tech · VVIT / JNTUK</span><span class="chip">Diploma · SBTET</span><span class="chip">Hyattsville · DC Metro</span></div>
+  </div>
+  <div class="scrollcue">Scroll the story</div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="rv"><b data-count="1178">0</b><span>State rank in ECET</span></div>
+    <div class="rv d1"><b data-count="3">0</b><span>Government internships</span></div>
+    <div class="rv d2"><b data-count="40" data-suf="°C">0</b><span>Heat I learned to work in</span></div>
+    <div class="rv d3"><b data-count="2">0</b><span>Continents of experience</span></div>
+  </div>
+</div>
+
+<!-- 1 -->
+<section class="ch" id="c1" data-title="Diploma">
+  <div class="num">01</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 01 · The start</div>
+    <h2 class="rv">A diploma in civil engineering at SBTET</h2>
+    <div class="grid2">
+      <div>
+        <p class="rv">It began with a diploma in civil engineering through SBTET. Drawings, levels, concrete, soil — all the fundamentals I would lean on for years after.</p>
+        <p class="rv d1">To keep studying, I moved into my grandfather's house. Quiet evenings, a lot of reading, and a life far simpler than any site office I would see later.</p>
+        <div class="tags rv d2"><span class="tag">Building drawing</span><span class="tag">Surveying</span><span class="tag">Concrete technology</span><span class="tag">Estimating</span></div>
+      </div>
+      <figure class="ph rv d1"><img data-par="0.12" src="plans.jpg" alt="Hands drawing on construction plans" loading="lazy"><figcaption>Where it started — plans on a desk</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="c2" data-title="Grandfather's farm">
+  <div class="num">02</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 02 · Life at my grandfather's house</div>
+    <h2 class="rv">Fields, 40 degrees, and the people who work through it</h2>
+    <div class="grid2 rev">
+      <figure class="ph rv"><img data-par="0.12" src="field.jpg" alt="Golden farm field at sunrise" loading="lazy"><figcaption>Agriculture work alongside the labourers</figcaption></figure>
+      <div>
+        <p class="rv">While I studied, I also contributed to the agricultural work at home. I spent my days with the labourers and saw first hand how hard they work in 40 °C heat — no shade, no shortcuts, and no complaints.</p>
+        <p class="rv d1">That respect for people who do the physical work never left me. It is why, on every site since, I check on the crew before I check the schedule.</p>
+        <div class="card rv d2" style="margin-top:20px">
+          <div class="thermo"><div class="tube"><i id="mercury"></i></div><div><big id="deg">0°C</big><small>Hover over the thermometer to feel the field.</small></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:60px">
+      <div>
+        <h2 class="rv" style="font-size:clamp(26px,3.6vw,40px)">And then I learned to ride</h2>
+        <p class="rv d1">Somewhere in those months I learned to ride a motorcycle. It became my way of getting around, of clearing my head, and — later — of exploring with friends. Look at the top of this page: that little bike has been following your scroll all along.</p>
+      </div>
+      <figure class="ph rv d1"><img data-par="0.12" src="crops.jpg" alt="Young crops growing in rows" loading="lazy"><figcaption>Growing season</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="c3" data-title="Govt internship">
+  <div class="num">03</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 03 · First internship</div>
+    <h2 class="rv">Government of Andhra Pradesh — culverts, canals and the auto level</h2>
+    <div class="grid2">
+      <div>
+        <p class="rv">My first real site experience: an internship with the Government of Andhra Pradesh, on culverts and surveying. I assisted the engineers, took readings with the auto level, did the calculations, and read plans for canals and reservoirs.</p>
+        <div class="tags rv d1"><span class="tag">Culverts</span><span class="tag">Auto level</span><span class="tag">Canal plans</span><span class="tag">Reservoirs</span><span class="tag">Calculations</span></div>
+        <figure class="ph rv d2" style="margin-top:22px"><img data-par="0.12" src="culvert.jpg" alt="Concrete bridge structure from below" loading="lazy"><figcaption>Cross-drainage and bridge structures</figcaption></figure>
+      </div>
+      <div class="card rv d1">
+        <h3>Try it: level-sheet calculator</h3>
+        <p class="hint">The height-of-instrument method I used on canal lines. Change the numbers.</p>
+        <div class="calc">
+          <div><label>Bench mark RL (m)</label><input id="bm" type="number" step="0.001" value="100.000"></div>
+          <div><label>Back sight (m)</label><input id="bs" type="number" step="0.001" value="1.425"></div>
+          <div><label>Fore sight (m)</label><input id="fs" type="number" step="0.001" value="0.875"></div>
+        </div>
+        <svg id="lvl" viewBox="0 0 440 230" width="100%" role="img" aria-label="Leveling diagram"></svg>
+        <div class="out"><div>Height of instrument<b id="hi">—</b></div><div>RL of new point<b id="rl">—</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="c4" data-title="ECET rank">
+  <div class="num">04</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 04 · Diploma finished, ECET written</div>
+    <h2 class="rv">Rank 1178 out of roughly 12,000</h2>
+    <div class="grid2">
+      <div>
+        <p class="rv">After finishing my diploma I sat for ECET and secured a state rank of 1178 among about 12,000 candidates — that put me in the top ten percent of the state and opened the door to a B.Tech.</p>
+        <p class="rv d1">Each dot on the right is a group of ten candidates. Press the button and watch where I land.</p>
+        <button class="btn" id="rankBtn" style="border:0;cursor:pointer;margin-left:0">Show my rank</button>
+      </div>
+      <div class="card rv d1">
+        <div id="dots"></div>
+        <div class="legend"><span><em style="background:#d9cdb9"></em>10 candidates</span><span><em style="background:var(--accent)"></em>Ahead of or with me</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="c5" data-title="B.Tech">
+  <div class="num">05</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 05 · Bachelor's at VVIT (JNTUK)</div>
+    <h2 class="rv">Applying everything I knew — and enjoying it</h2>
+    <div class="grid2 rev">
+      <figure class="ph rv"><img data-par="0.12" src="rebar.jpg" alt="Reinforcement bars on a slab with workers" loading="lazy"><figcaption>Rebar checking, Hyderabad housing layout</figcaption></figure>
+      <div>
+        <p class="rv">At VVIT, affiliated with JNTUK, I applied all the diploma knowledge I already had. I lived with my parents, and spent plenty of time with friends — long motorcycle rides, good food, and movies.</p>
+        <p class="rv d1">During the bachelor's I did an internship in Hyderabad with a government housing layout. Inspection of works, rebar checking, reading plans, testing concrete and managing labourers — it was my first taste of being responsible for quality on site.</p>
+        <div class="tags rv d2"><span class="tag">Inspection</span><span class="tag">Rebar checking</span><span class="tag">Plan reading</span><span class="tag">Concrete testing</span><span class="tag">Labour management</span></div>
+        <p class="rv d3" style="margin-top:12px"><b>Capstone:</b> a G+3 residential building — structural analysis, BIM modelling and scheduling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="c6" data-title="Mangalagiri">
+  <div class="num">06</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 06 · After graduating</div>
+    <h2 class="rv">Mangalagiri Municipality — the world below the road</h2>
+    <div class="grid2">
+      <div>
+        <p class="rv">After my bachelor's I interned with Mangalagiri Municipality, working with engineers and contractors on underground utilities: laying manholes and building the underground sewage system.</p>
+        <p class="rv d1">Tap a layer in the section on the right to see what each one demands.</p>
+        <div class="tags rv d2"><span class="tag">Underground utilities</span><span class="tag">Manholes</span><span class="tag">Sewer lines</span><span class="tag">Contractor coordination</span></div>
+      </div>
+      <div class="card rv d1">
+        <svg id="sewer" viewBox="0 0 440 280" width="100%" role="img" aria-label="Manhole and sewer section"></svg>
+        <p id="sewerTxt" style="margin:8px 0 0;font-size:15px;min-height:50px">Tap a part of the section.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="c7" data-title="Sree Geetha">
+  <div class="num">07</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 07 · Sree Geetha Constructions · Mar 2022 – Jul 2024</div>
+    <h2 class="rv">Running the details on a real building site</h2>
+    <div class="grid2">
+      <div>
+        <p class="rv">This was where everything came together. I handled survey work, MEP coordination, RFIs, submittals, change orders, scheduling, labour management, plan reading, and inspection before concrete pours — working with MIVAN technology along the way.</p>
+        <div class="tags rv d1"><span class="tag">Total station</span><span class="tag">Auto level</span><span class="tag">Emlid GNSS</span><span class="tag">MEP</span><span class="tag">RFIs</span><span class="tag">Submittals</span><span class="tag">Change orders</span><span class="tag">Scheduling</span><span class="tag">Concrete testing</span></div>
+      </div>
+      <figure class="ph rv d1"><img data-par="0.12" src="mivan.jpg" alt="Workers on tall rebar cages" loading="lazy"><figcaption>Wall reinforcement and formwork</figcaption></figure>
+    </div>
+
+    <div class="tabs rv" id="tabs">
+      <button class="on" data-p="p1">Catching rebar errors</button>
+      <button data-p="p2">Safety on site</button>
+      <button data-p="p3">Before every section</button>
+      <button data-p="p4">Pre-pour checklist</button>
+    </div>
+
+    <div class="pane on card grid2" id="p1" style="margin-top:0">
+      <div>
+        <h3>"The bars are on the bottom."</h3>
+        <p>I flagged wrong rebar sizes, missing cover and missing minimum ties. Twice, on cantilever sections, the crew placed the main bars at the bottom instead of the top. I caught it both times and had it corrected before the concrete went in.</p>
+        <p>After that, I started staying with the crew whenever they work on a cantilever.</p>
+      </div>
+      <div>
+        <div class="seg" id="seg"><button class="on" data-m="bad">As placed</button><button data-m="good">Corrected</button></div>
+        <svg id="cant" viewBox="0 0 440 210" width="100%" role="img" aria-label="Cantilever slab with rebar"></svg>
+        <p id="cantTxt" style="font-size:14px;color:var(--mute);margin:4px 0 0"></p>
+      </div>
+    </div>
+
+    <div class="pane card grid2" id="p2" style="margin-top:0">
+      <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="ppe.jpg" alt="Worker wearing full PPE" loading="lazy"><figcaption>No PPE, no work</figcaption></figure>
+      <div>
+        <h3>"No PPE, no work."</h3>
+        <p>I caught people working without the safety guidelines. Many new labourers didn't listen to me directly, so I went straight to the contractor and said "no PPE, no work." After that, they followed.</p>
+        <p>Safety is the one thing I never negotiate on — and it is why I later earned my OSHA 30 and Flagger certifications.</p>
+      </div>
+    </div>
+
+    <div class="pane card grid2" id="p3" style="margin-top:0">
+      <div>
+        <h3>Reading the drawings one more time</h3>
+        <p>Before starting any new section I read the MEP and structural drawings again. Then I hold a quick meeting with the MEP and structural subs about how things are going, hand them their schedule, and adjust it where needed.</p>
+        <p>That ten minutes of coordination has saved far more time than it cost.</p>
+      </div>
+      <figure class="ph" style="aspect-ratio:16/10"><img data-par="0.08" src="mep.jpg" alt="Electrician working on a panel" loading="lazy"><figcaption>MEP coordination</figcaption></figure>
+    </div>
+
+    <div class="pane card grid2" id="p4" style="margin-top:0">
+      <div>
+        <h3>Are we ready to pour?</h3>
+        <p>My inspection before a pour, as a checklist. Tick each item.</p>
+        <div class="meter"><i id="meter"></i></div>
+        <div id="pour">0 of 7 checked</div>
+      </div>
+      <ul class="cl" id="cl"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="c8" data-title="USA">
+  <div class="num">08</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 08 · A new country — August 2024</div>
+    <h2 class="rv">Starting again, on purpose</h2>
+    <div class="grid2 rev">
+      <figure class="ph rv"><img data-par="0.12" src="usa.jpg" alt="City skyscrapers seen from below" loading="lazy"><figcaption>Washington DC metro area</figcaption></figure>
+      <div>
+        <p class="rv">I moved to the USA to study for a Master's in Civil Engineering (Construction Engineering Management) at the Catholic University of America, graduating in May 2026 with a 3.57 GPA.</p>
+        <p class="rv d1">Alongside classes I worked in a university lab, and as a waiter in the university restaurant. Nobody hands you a title in a new country — you earn it again. I never minded starting from the bottom, because I know my strengths, and they help me grow faster.</p>
+        <div class="tags rv d2"><span class="tag">University lab</span><span class="tag">University restaurant</span><span class="tag">Customer service</span><span class="tag">Teamwork</span></div>
+      </div>
+    </div>
+    <div class="quote rv">Whatever position you reach in life, there is still something left to learn.</div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="c9" data-title="Skills">
+  <div class="num">09</div>
+  <div class="wrap">
+    <div class="eyebrow">Chapter 09 · Toolbox</div>
+    <h2 class="rv">What I bring to a project</h2>
+    <div class="tabs rv" id="skf">
+      <button class="on" data-f="all">All</button><button data-f="field">On site</button><button data-f="survey">Surveying</button><button data-f="soft">Software</button><button data-f="mgmt">Management</button>
+    </div>
+    <div class="skillgrid" id="skg"></div>
+
+    <h3 class="rv" style="margin-top:56px;font-size:30px">Certifications</h3>
+    <div class="cert">
+      <div class="card rv"><h3>OSHA 30-Hour</h3><small>Construction Safety &amp; Health · Mid Atlantic OTI · July 2026</small></div>
+      <div class="card rv d1"><h3>Certified Flagger</h3><small>ATSSA · July 2026 – July 2030</small></div>
+      <div class="card rv d2"><h3>Procore Certification</h3><small>Student · Procore Technologies · October 2026</small></div>
+      <div class="card rv d3"><h3>BPI Certification</h3><small>Building Performance Institute</small></div>
+      <div class="card rv d3"><h3>FE Exam</h3><small>Currently preparing</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- gallery -->
+<section class="ch" id="c10" data-title="Gallery" style="padding-bottom:40px">
+  <div class="wrap"><div class="eyebrow">Interlude</div><h2 class="rv">Sites, steel and sunrise</h2><p class="rv">Swipe or scroll sideways.</p></div>
+  <div class="strip">
+    <figure><img src="hero.jpg" alt="Tower cranes" loading="lazy"><figcaption>Towers going up</figcaption></figure>
+    <figure><img src="siteWalk.jpg" alt="Site walk on a slab" loading="lazy"><figcaption>The walk-through before the pour</figcaption></figure>
+    <figure><img src="reno.jpg" alt="Building renovation work" loading="lazy"><figcaption>Every building has a second life</figcaption></figure>
+    <figure><img src="rebar.jpg" alt="Rebar mat" loading="lazy"><figcaption>Top bars, bottom bars, cover</figcaption></figure>
+    <figure><img src="culvert.jpg" alt="Bridge underside" loading="lazy"><figcaption>Infrastructure you drive under every day</figcaption></figure>
+  </div>
+</section>
+
+<section class="contact" id="c11" data-title="Contact">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#f3d9c2">Let's build something</div>
+    <h2 class="rv">Looking for a Project Engineer, Field Engineer or Inspector role</h2>
+    <p class="rv d1">Available to start immediately and happy to relocate anywhere in the USA. Fluent in English, Telugu and Hindi.</p>
+    <a class="btn rv d2" href="mailto:manohareduc@gmail.com">Email me</a>
+    <footer>© 2026 Manohar Ballipalli · Hyattsville, MD · Photos are illustrative, from Unsplash</footer>
+  </div>
+</section>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* rail */
+const chs=$$('[data-title]');
+$('#rail').innerHTML=chs.map(c=>`<a href="#${c.id}" data-for="${c.id}"><span>${c.dataset.title}</span></a>`).join('');
+
+/* scroll: progress, bike, parallax, spy */
+function onScroll(){
+  const h=document.documentElement.scrollHeight-innerHeight, p=h>0?scrollY/h:0;
+  $('#bar i').style.width=(p*100)+'%';
+  $('#bike').style.left=(p*100)+'%';
+  if(!reduce){
+    $$('[data-par]').forEach(el=>{
+      const r=el.parentElement.getBoundingClientRect();
+      if(r.bottom<-200||r.top>innerHeight+200)return;
+      const k=parseFloat(el.dataset.par);
+      el.style.transform=`translateY(${(r.top+r.height/2-innerHeight/2)*-k}px)`;
+    });
+  }
+  let cur=chs[0].id;chs.forEach(c=>{if(c.getBoundingClientRect().top<innerHeight*.5)cur=c.id});
+  $$('#rail a').forEach(a=>a.classList.toggle('on',a.dataset.for===cur));
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);
+  const n=e.target.querySelector('[data-count]');if(n)count(n);
+}),{threshold:.18});
+$$('.rv').forEach(el=>io.observe(el));
+function count(n){
+  const t=+n.dataset.count,s=n.dataset.suf||'',t0=performance.now();
+  (function f(now){const k=Math.min(1,(now-t0)/1600);n.textContent=Math.round(t*(1-Math.pow(1-k,3))).toLocaleString()+s;if(k<1)requestAnimationFrame(f)})(t0);
+}
+
+/* thermometer */
+const mer=$('#mercury'),deg=$('#deg');let shown=false;
+function heat(v){mer.style.height=(8+v*.92)+'%';let a=0,to=Math.round(v*.4);const t0=performance.now(),from=parseInt(deg.textContent)||0;
+  (function f(now){const k=Math.min(1,(now-t0)/1500);deg.textContent=Math.round(from+(to-from)*k)+'°C';if(k<1)requestAnimationFrame(f)})(t0)}
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting&&!shown){shown=true;heat(100)}}),{threshold:.6}).observe($('.thermo'));
+$('.tube').addEventListener('mouseenter',()=>heat(100));
+$('.tube').addEventListener('mouseleave',()=>heat(25));
+
+/* level calculator */
+const ns='http://www.w3.org/2000/svg';
+function lvl(){
+  const bm=+$('#bm').value||0,bs=+$('#bs').value||0,fs=+$('#fs').value||0,hi=bm+bs,rl=hi-fs;
+  $('#hi').textContent=hi.toFixed(3)+' m';$('#rl').textContent=rl.toFixed(3)+' m';
+  const u=60,g1=170,line=g1-bs*u,g2=line+fs*u;
+  $('#lvl').innerHTML=`
+  <rect x="0" y="${Math.min(g1,g2)}" width="440" height="${230}" fill="#e7dcc9"/>
+  <path d="M0 ${g1}H150 L290 ${g2}H440V230H0Z" fill="#d8c9ae"/>
+  <g stroke="#27323d" stroke-width="3"><rect x="62" y="${g1-118}" width="12" height="118" fill="#fffdf8"/></g>
+  <g stroke="#27323d" stroke-width="3"><rect x="354" y="${g2-118}" width="12" height="118" fill="#fffdf8"/></g>
+  ${[...Array(10)].map((_,i)=>`<line x1="62" x2="74" y1="${g1-i*12}" y2="${g1-i*12}" stroke="#c47a47"/><line x1="354" x2="366" y1="${g2-i*12}" y2="${g2-i*12}" stroke="#c47a47"/>`).join('')}
+  <line x1="40" x2="400" y1="${line}" y2="${line}" stroke="#b9573f" stroke-width="2" stroke-dasharray="6 5"/>
+  <g transform="translate(212 ${line})"><rect x="-16" y="-14" width="32" height="14" rx="4" fill="#4f6477"/><path d="M0 0L-18 56M0 0L18 56M0 0V56" stroke="#27323d" stroke-width="3"/></g>
+  <text x="52" y="${g1+22}" font-size="12" fill="#27323d">BM</text><text x="338" y="${g2+22}" font-size="12" fill="#27323d">New point</text>
+  <text x="84" y="${(g1+line)/2+4}" font-size="12" fill="#b9573f">BS ${bs.toFixed(3)}</text>
+  <text x="300" y="${(g2+line)/2+4}" font-size="12" fill="#b9573f">FS ${fs.toFixed(3)}</text>`;
+}
+['#bm','#bs','#fs'].forEach(s=>$(s).addEventListener('input',lvl));lvl();
+
+/* ECET rank dots */
+const dots=$('#dots');dots.innerHTML='<i></i>'.repeat(1200);
+$('#rankBtn').addEventListener('click',()=>{
+  const d=[...dots.children];d.forEach(x=>x.classList.remove('hit'));
+  for(let i=0;i<118;i++)setTimeout(()=>d[i].classList.add('hit'),i*14);
+});
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){$('#rankBtn').click();o.disconnect()}}),{threshold:.5}).observe(dots);
+
+/* sewer section */
+const parts={
+  road:['Road surface & base','Restored after the trench is backfilled and compacted in layers, so the pavement doesn\'t settle over the line.'],
+  shaft:['Manhole shaft','Precast or masonry rings set true and plumb, with the cover frame at finished road level so traffic rides smoothly.'],
+  pipe:['Sewer pipe','Laid to a continuous gradient on a bedding of granular material — a small error in slope means standing sewage later.'],
+  bed:['Bedding & trench','Dewatering, shoring and a clean bedding make the difference between a line that lasts decades and one that fails.']
+};
+$('#sewer').innerHTML=`
+ <rect width="440" height="280" fill="#efe8dc"/>
+ <rect y="40" width="440" height="240" fill="#d8c9ae"/>
+ <rect y="26" width="440" height="16" fill="#8b9199" data-k="road" style="cursor:pointer"/>
+ <rect x="190" y="26" width="60" height="16" fill="#4f6477" data-k="shaft" style="cursor:pointer"/>
+ <rect x="196" y="42" width="48" height="150" fill="#cdbf9f" stroke="#4f6477" stroke-width="5" data-k="shaft" style="cursor:pointer"/>
+ <rect x="0" y="162" width="190" height="42" fill="#fffdf8" stroke="#4f6477" stroke-width="5" data-k="pipe" style="cursor:pointer"/>
+ <rect x="250" y="176" width="190" height="42" fill="#fffdf8" stroke="#4f6477" stroke-width="5" data-k="pipe" style="cursor:pointer"/>
+ <rect x="0" y="204" width="190" height="30" fill="#b8a785" data-k="bed" style="cursor:pointer"/>
+ <rect x="250" y="218" width="190" height="30" fill="#b8a785" data-k="bed" style="cursor:pointer"/>
+ <path d="M30 190H190M250 204H410" stroke="#7e9a86" stroke-width="4" stroke-dasharray="3 7"/>
+ <rect x="196" y="192" width="48" height="26" fill="#cdbf9f" stroke="#4f6477" stroke-width="5"/>
+ <text x="14" y="18" font-size="12" fill="#6b7480">Tap the road, shaft, pipe or bedding</text>`;
+$$('#sewer [data-k]').forEach(el=>el.addEventListener('click',()=>{
+  const p=parts[el.dataset.k];$('#sewerTxt').innerHTML=`<b>${p[0]}.</b> ${p[1]}`;
+  $$('#sewer [data-k]').forEach(x=>x.style.opacity=x.dataset.k===el.dataset.k?1:.45);
+}));
+
+/* tabs */
+$$('#tabs button').forEach(b=>b.addEventListener('click',()=>{
+  $$('#tabs button').forEach(x=>x.classList.toggle('on',x===b));
+  $$('.pane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p));
+}));
+
+/* cantilever */
+function cant(m){
+  const good=m==='good',y=good?58:128;
+  $('#cant').innerHTML=`
+  <rect x="0" y="20" width="70" height="170" fill="#cfc4b0"/>
+  <rect x="70" y="40" width="330" height="110" fill="#e9e2d4" stroke="#b5a98f" stroke-width="2"/>
+  <path d="M400 40L420 190" stroke="none"/>
+  <line x1="40" x2="380" y1="${y}" y2="${y}" stroke="${good?'#5f8f6e':'#b9573f'}" stroke-width="6" stroke-linecap="round"/>
+  ${[...Array(7)].map((_,i)=>`<circle cx="${100+i*42}" cy="${y+(good?-0:0)}" r="3.5" fill="${good?'#5f8f6e':'#b9573f'}"/>`).join('')}
+  <path d="M70 40V150" stroke="#b5a98f" stroke-width="2"/>
+  ${good?'':'<path d="M120 40L132 78L122 100" stroke="#b9573f" stroke-width="3" fill="none"/>'}
+  <text x="82" y="${good?32:176}" font-size="12.5" fill="${good?'#5f8f6e':'#b9573f'}" font-weight="600">${good?'Main bars on top — where the tension is':'Main bars at the bottom — slab would crack'}</text>
+  <text x="6" y="14" font-size="11" fill="#6b7480">Wall</text>`;
+  $('#cantTxt').textContent=good?'A cantilever bends so its top face pulls apart. The steel has to be there.':'Looks fine from a distance. This is exactly what I caught before the pour.';
+}
+$$('#seg button').forEach(b=>b.addEventListener('click',()=>{$$('#seg button').forEach(x=>x.classList.toggle('on',x===b));cant(b.dataset.m)}));cant('bad');
+
+/* checklist */
+const items=['Rebar size & spacing match structural drawings','Cover blocks in place — no missing cover','Minimum ties & lap lengths checked','Top & bottom steel placed correctly (cantilevers)','MEP sleeves, conduits & embeds confirmed','Formwork tight, clean & properly supported','Crew in PPE, access safe, concrete tests arranged'];
+$('#cl').innerHTML=items.map(t=>`<li><b></b>${t}</li>`).join('');
+$$('#cl li').forEach(li=>li.addEventListener('click',()=>{
+  li.classList.toggle('ok');const n=$$('#cl li.ok').length;
+  $('#meter').style.width=(n/items.length*100)+'%';
+  $('#pour').textContent=n===items.length?'All clear — good to pour.':`${n} of ${items.length} checked`;
+  $('#pour').classList.toggle('go',n===items.length);
+}));
+
+/* skills */
+const sk=[['Total station','survey'],['Auto level','survey'],['Emlid GNSS','survey'],['Level sheets & RL calculations','survey'],['Slope meter','survey'],
+['Rebar inspection','field'],['Pre-pour inspection','field'],['Concrete testing','field'],['MIVAN technology','field'],['Safety enforcement','field'],['Housekeeping & site closing','field'],['ADA requirements','field'],
+['AutoCAD','soft'],['Revit','soft'],['STAAD Pro','soft'],['Primavera P6','soft'],['MS Project','soft'],['Bluebeam','soft'],['RSMeans','soft'],['Procore','soft'],
+['RFIs','mgmt'],['Submittals','mgmt'],['Change orders','mgmt'],['Scheduling','mgmt'],['MEP coordination','mgmt'],['Labour management','mgmt'],['Plan reading','mgmt']];
+$('#skg').innerHTML=sk.map(s=>`<span class="sk" data-g="${s[1]}">${s[0]}</span>`).join('');
+$$('#skf button').forEach(b=>b.addEventListener('click',()=>{
+  $$('#skf button').forEach(x=>x.classList.toggle('on',x===b));
+  $$('.sk').forEach(s=>s.classList.toggle('dim',b.dataset.f!=='all'&&s.dataset.g!==b.dataset.f));
+}));
+})();
+</script>
+</body>
+</html>
