@@ -265,6 +265,23 @@ section.ch.tight{padding:clamp(24px,4vw,44px) 0}
 @media(max-width:760px){.bgrid{grid-template-columns:1fr}.tb .calc.c4,.tb .calc.c3{grid-template-columns:1fr 1fr}.bplot{overflow-x:auto}.bplot svg{min-width:520px}}
 .nssrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.nssrow .ph{aspect-ratio:4/3}.nssrow .ph figcaption{font-size:11px}@media(max-width:700px){.nssrow{grid-template-columns:1fr}}
 .me{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);margin-bottom:10px}
+
+.meet{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:center}
+.meetph{aspect-ratio:1/1!important;margin:0}
+.meetph img{object-position:center 20%}
+.ctgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.ctgrid .ph{aspect-ratio:3/4;margin:0}
+@media(max-width:760px){.meet{grid-template-columns:1fr}.meetph{max-width:280px}.ctgrid{grid-template-columns:repeat(2,1fr)}}
+/* toolbox restyle */
+.card.tb{background:#26323d;color:#e9e4da;border:0}
+.card.tb label,.card.tb .lab,.card.tb small{color:#b9c2c9}
+.card.tb select,.card.tb input{background:#33414d;color:#f4efe6;border:1px solid #4a5a68;font-size:15px}
+.card.tb .out div,.card.tb .kp{background:#33414d;color:#b9c2c9}
+.card.tb .out b{color:#f4efe6;font-size:20px}
+.card.tb .out.sm b{font-size:18px}
+.card.tb svg{background:#fffdf8;border-radius:12px}
+#tbt button{background:#33414d;color:#e9e4da;border-color:#4a5a68}
+#tbt button.on{background:#c97d4a;color:#fff;border-color:#c97d4a}
 </style>
 </head>
 <body>
@@ -327,6 +344,34 @@ section.ch.tight{padding:clamp(24px,4vw,44px) 0}
           <div class="thermo"><div class="tube"><i id="mercury"></i></div><div><big id="deg">0°F</big><small>Hover over the thermometer to feel an Indian summer day.</small></div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- meet me + concrete testing -->
+<section class="ch" id="cm" data-title="About me" style="padding-bottom:30px">
+  <div class="wrap meet">
+    <figure class="ph meetph rv"><img src="manohar.jpg" alt="Manohar Ballipalli in a hard hat and safety vest" loading="lazy"><figcaption>Me on a job site</figcaption></figure>
+    <div class="rv d1">
+      <div class="eyebrow">Meet me</div>
+      <h2>Hi, I am Manohar.</h2>
+      <p>I am a civil engineer who learned construction on the ground: surveying with an auto level, checking rebar before pours, and working next to crews in the heat. I am now finishing my master's in the U.S. and I am excited to keep learning and growing here.</p>
+      <p>The concrete photos in the next section are from my own job sites.</p>
+    </div>
+  </div>
+</section>
+<section class="ch" id="cc" data-title="Concrete testing" style="padding-bottom:50px">
+  <div class="wrap">
+    <div class="eyebrow">In the field</div>
+    <h2 class="rv">Concrete testing and placement, from my own photos</h2>
+    <p class="rv">Bus-shelter rebuild, Maryland, summer 2026. Faces of other people are blurred.</p>
+    <div class="ctgrid">
+      <figure class="ph rv"><img src="d_temp.jpg" alt="Thermometer in fresh concrete" loading="lazy"><figcaption>Checking concrete temperature</figcaption></figure>
+      <figure class="ph rv d1"><img src="d_sleeve.jpg" alt="Sleeve embedded in concrete" loading="lazy"><figcaption>Sleeve embedded in the fresh pour</figcaption></figure>
+      <figure class="ph rv d2"><img src="d_pour.jpg" alt="Concrete placement from the chute" loading="lazy"><figcaption>Concrete placed over rebar and sheeting</figcaption></figure>
+      <figure class="ph rv d3"><img src="d_finish.jpg" alt="Crew finishing concrete" loading="lazy"><figcaption>Crew screeding and finishing the slab</figcaption></figure>
+      <figure class="ph rv"><img src="d_rebar.jpg" alt="Rebar mat before the pour" loading="lazy"><figcaption>Rebar mat checked before the pour</figcaption></figure>
+      <figure class="ph rv d1"><img src="d_prep.jpg" alt="Prep work before the pour" loading="lazy"><figcaption>Rebar and site prep before the pour</figcaption></figure>
     </div>
   </div>
 </section>
